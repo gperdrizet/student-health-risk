@@ -1,0 +1,43 @@
+// For format details, see https://aka.ms/devcontainer.json.
+{
+	"name": "Kaggle Student Health",
+	"image": "python:3.12-slim",
+    "runArgs": [
+		"--network=bridge"            // Explicitly use bridge network for internet access
+	],
+	"remoteUser": "vscode",           // Use the 'vscode' user provided by the base image
+
+	// Custom configuration options
+	"customizations": {
+
+	  // Configure VS Code settings and extensions
+	  "vscode": {
+
+		// Use 'settings' to set default VS Code values on container create
+		"settings": {
+			// Set the default Python interpreter
+			"python.defaultInterpreterPath": "/usr/bin/python",
+
+			// Disable automatic port forwarding to give explicit control
+			"remote.restoreForwardedPorts": false
+		},
+
+		// Extensions for Python data science work
+		"extensions": [
+		  "-dbaeumer.vscode-eslint",                // Explicitly exclude ESLint (not needed for Python projects)
+		  "ms-python.python",                       // Core Python language support, IntelliSense, debugging
+		  "ms-toolsai.jupyter",                     // Jupyter notebook support for interactive data science
+		  "streetsidesoftware.code-spell-checker"   // Spell checking for code and documentation
+		]
+	  }
+	},
+
+	// Create data and notebooks directories on first container creation
+	"onCreateCommand": "mkdir -p data",
+
+	// Use 'postCreateCommand' to run commands once after the container is created
+	"postCreateCommand": "pip install -r requirements.txt",
+
+	// Use 'postAttachCommand' to run commands each time a user connects to the container
+	"postAttachCommand": ""
+}
