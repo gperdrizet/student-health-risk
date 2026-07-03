@@ -1,0 +1,24 @@
+name: CD
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g. 4.1.0)'
+        required: true
+        type: string
+
+jobs:
+  release:
+  name: Release to Kaggle and Github
+  runs-on: ubuntu-latest
+
+  permissions:
+    contents: write # Required to create a github release
+
+  env:
+    KAGGLE_USERNAME:
+    KAGGLE_KEY:
+    VERSION:
+    DATASET_NAME:
+    KERNEL_NAME:
