@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json.
 {
 	"name": "Kaggle Student Health",
-	"image": "python:3.12-slim",
+	"image": "mcr.microsoft.com/devcontainers/python:3.12-trixie",
     "runArgs": [
 		"--network=bridge"            // Explicitly use bridge network for internet access
 	],
