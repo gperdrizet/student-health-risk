@@ -11,6 +11,8 @@ on:
 # List of jobs to run
 jobs:
   submit_predictions:
+    name: Submit predictions
+    runs-on: ubuntu-latest
 
   # Sequence of steps to submit predictions
   steps:
