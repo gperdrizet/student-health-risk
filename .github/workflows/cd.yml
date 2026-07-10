@@ -3,11 +3,10 @@ name: Submit to Kaggle
 
 # Event trigger for the workflow
 on:
-  pull_request:
-    types:
-      - closed
+  push:
     branches:
       - main
+  workflow_dispatch:
 
 # List of jobs to run
 jobs:
