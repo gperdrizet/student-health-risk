@@ -1,4 +1,7 @@
 # student-health-risk
+
+[![Submit to Kaggle](https://github.com/gperdrizet/student-health-risk/actions/workflows/submit.yml/badge.svg)](https://github.com/gperdrizet/student-health-risk/actions/workflows/submit.yml)
+
 Kaggle Playground Series Season 6 Episode 7 solution.
 
 ## Helpful documentation
