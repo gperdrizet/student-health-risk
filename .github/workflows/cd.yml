@@ -31,12 +31,9 @@ jobs:
     - name: Install Kaggle CLI
       run: pip install --no-cache-dir kaggle
 
-    # Authenticate Kaggle CLI
-    - name: Authenticate Kaggle CLI
+    # Submit predictions CSV
+    - name: Submit to competition
       env:
         KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
         KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
-
-    # Submit predictions CSV
-    - name: Submit to competition
       run: kaggle competitions submit -c playground-series-s6e7 -f ../data/submission.csv -m "Submission from GitHub Actions"
