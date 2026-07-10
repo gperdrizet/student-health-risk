@@ -3,17 +3,25 @@ name: Submit to Kaggle
 
 # Event trigger for the workflow
 on:
+  # Workflow triggers on pull request closed
   pull_request:
     types: [closed]
     branches:
       - main
+  # And/or can be manually triggered on GitHub
   workflow_dispatch:
 
-# List of jobs to run
+# List of jobs to run - we only have one job for submitting predictions
 jobs:
+
+  # The job responsible for submitting predictions to Kaggle
   submit_predictions:
     name: Submit predictions
+
+    # Define the environment for the job - in this case, it runs on an Ubuntu machine
     runs-on: ubuntu-latest
+
+    # Only run this job if the pull request was merged or if manually triggered
     if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
 
     # Sequence of steps to submit predictions
@@ -31,13 +39,19 @@ jobs:
 
     # Install Kaggle CLI
     - name: Install Kaggle CLI
+
+      # Run the command to install the Kaggle CLI
       run: pip install --no-cache-dir kaggle
 
     # Submit predictions CSV
     - name: Submit to competition
+
+      # Set environment variables for Kaggle authentication
       env:
         KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
         KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+
+      # Run the Kaggle submission command
       run: |
         kaggle competitions submit \
           -c playground-series-s6e7 \
