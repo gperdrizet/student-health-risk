@@ -16,7 +16,7 @@
 		// Use 'settings' to set default VS Code values on container create
 		"settings": {
 			// Set the default Python interpreter
-			"python.defaultInterpreterPath": "/usr/bin/python",
+			"python.defaultInterpreterPath": "/usr/local/bin/python",
 
 			// Disable automatic port forwarding to give explicit control
 			"remote.restoreForwardedPorts": false
