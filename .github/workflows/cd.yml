@@ -14,8 +14,8 @@ jobs:
     name: Submit predictions
     runs-on: ubuntu-latest
 
-  # Sequence of steps to submit predictions
-  steps:
+    # Sequence of steps to submit predictions
+    steps:
 
     # Checkout code from the repo
     - name: Checkout
