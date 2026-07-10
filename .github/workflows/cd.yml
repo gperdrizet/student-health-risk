@@ -3,7 +3,8 @@ name: Submit to Kaggle
 
 # Event trigger for the workflow
 on:
-  push:
+  pull_request:
+    types: [closed]
     branches:
       - main
   workflow_dispatch:
@@ -13,6 +14,7 @@ jobs:
   submit_predictions:
     name: Submit predictions
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
 
     # Sequence of steps to submit predictions
     steps:
@@ -36,4 +38,8 @@ jobs:
       env:
         KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
         KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
-      run: kaggle competitions submit -c playground-series-s6e7 -f data/submission.csv -m "Submission from GitHub Actions"
+      run: |
+        kaggle competitions submit \
+          -c playground-series-s6e7 \
+          -f data/submission.csv \
+          -m "Submission from PR #${{ github.event.pull_request.number }}"
