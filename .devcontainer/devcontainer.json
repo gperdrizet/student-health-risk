@@ -16,10 +16,16 @@
 		// Use 'settings' to set default VS Code values on container create
 		"settings": {
 			// Set the default Python interpreter
-			"python.defaultInterpreterPath": "/usr/bin/python",
+			"python.defaultInterpreterPath": "/usr/local/bin/python",
 
-			// Disable automatic port forwarding to give explicit control
-			"remote.restoreForwardedPorts": false
+			// Exclude system Python 3.13 environment
+			// Prevents confusion by hiding system Python versions we don't want to use
+			"jupyter.kernels.excludePythonEnvironments": ["/usr/local/bin/python3"],
+
+			// Disable automatic port forwarding and restoration of forwarded ports
+			// from prior sessions to give explicit control
+			"remote.restoreForwardedPorts": false,
+			"remote.autoForwardPorts": false
 		},
 
 		// Extensions for Python data science work
@@ -33,10 +39,12 @@
 	},
 
 	// Create data and notebooks directories on first container creation
-	"onCreateCommand": "mkdir -p data",
+	// Updates pip and installs project Python dependencies
+	"onCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt",
 
 	// Use 'postCreateCommand' to run commands once after the container is created
-	"postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt",
+	// Installs Git LFS and configures it to track CSV files
+	"postCreateCommand": "sudo apt update &&sudo apt install git-lfs -y && git lfs install && git lfs track \"*.csv\"",
 
 	// Use 'postAttachCommand' to run commands each time a user connects to the container
 	"postAttachCommand": ""

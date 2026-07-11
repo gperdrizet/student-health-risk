@@ -1,5 +1,6 @@
 scikit-learn==1.6
 numpy==2.0
 pandas==2.3
+seaborn
 matplotlib==3.10
 ipykernel
