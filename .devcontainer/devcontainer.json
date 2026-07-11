@@ -18,8 +18,10 @@
 			// Set the default Python interpreter
 			"python.defaultInterpreterPath": "/usr/local/bin/python",
 
-			// Disable automatic port forwarding to give explicit control
-			"remote.restoreForwardedPorts": false
+			// Disable automatic port forwarding and restoration of forwarded ports
+			// from prior sessions to give explicit control
+			"remote.restoreForwardedPorts": false,
+			"remote.autoForwardPorts": false
 		},
 
 		// Extensions for Python data science work
