@@ -4,3 +4,4 @@ pandas==2.3
 seaborn
 matplotlib==3.10
 ipykernel
+jupyterlab

@@ -39,6 +39,16 @@ Development work is done in a Python 3.12 devcontainer which aims to recapitulat
 1. Fork and clone this repository
 2. Open it in a devcontainer with VS Codes's `Dev Container: Open Folder in Container` command
 
+### LAN Jupyter
+
+The devcontainer automatically starts a Jupyter Lab server that is accessible on the LAN, using the following command:
+
+```bash
+jupyter lab --no-browser --ip=0.0.0.0 --port 8880 --IdentityProvider.token='' --ServerApp.password=''
+```
+
+Anyone on the same network as the host machine can access it at `host-ip:8880/lab`. This lets you work on the project from the couch with a laptop, while the compute is running on your data science box/homelab server.
+
 ## Helpful documentation
 
 - [Kaggle CLI tutorial](https://github.com/Kaggle/kaggle-cli/blob/main/docs/tutorials.md)
