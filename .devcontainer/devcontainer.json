@@ -4,7 +4,7 @@
 	"image": "mcr.microsoft.com/devcontainers/python:3.12-trixie",
     "runArgs": [
 		"--network=bridge",           // Explicitly use bridge network for internet access
-		"-p", "0.0.0.0:8880:8880"     // Bind port 8888 to all host interfaces for LAN access
+		"-p", "0.0.0.0:8880:8880"    // Bind port 8880 to all host interfaces for LAN access
 	],
 	"remoteUser": "vscode",           // Use the 'vscode' user provided by the base image
 
