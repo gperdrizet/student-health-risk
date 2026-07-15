@@ -42,9 +42,8 @@
 	// Updates pip and installs project Python dependencies
 	"onCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt",
 
-	// Use 'postCreateCommand' to run commands once after the container is created
-	// Installs Git LFS and configures it to track CSV files
-	"postCreateCommand": "sudo apt update &&sudo apt install git-lfs -y && git lfs install && git lfs track \"*.csv\"",
+	// Data files are fetched from an external server instead of being stored with Git LFS.
+	"postCreateCommand": "",
 
 	// Use 'postAttachCommand' to run commands each time a user connects to the container
 	"postAttachCommand": ""

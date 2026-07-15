@@ -12,6 +12,6 @@ Configuration for the VS Code dev container used for development.
   ```
   Then open `http://<host-ip>:8888` in a browser on any LAN device, using the token printed in the terminal output.
 - **On create**: upgrades `pip` and installs Python dependencies from `requirements.txt`.
-- **Post create**: installs Git LFS and configures it to track `*.csv` files so large data files are managed outside the main Git history.
+- **Post create**: installs lightweight helper tools only. Large data files should be hosted on an external server and fetched separately.
 - **VS Code extensions**: Python language support, Jupyter notebooks, and spell checking. ESLint is explicitly excluded as it is not needed for a Python project.
 - **VS Code settings**: sets the default Python interpreter to `/usr/local/bin/python` and hides the system Python 3.13 environment to avoid kernel confusion in Jupyter.
