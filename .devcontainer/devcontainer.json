@@ -3,8 +3,7 @@
 	"name": "Kaggle Student Health",
 	"image": "mcr.microsoft.com/devcontainers/python:3.12-trixie",
     "runArgs": [
-		"--network=bridge",           // Explicitly use bridge network for internet access
-		"-p", "0.0.0.0:8880:8880"    // Bind port 8880 to all host interfaces for LAN access
+		"--network=host"              // Use host network stack directly - no port mapping needed
 	],
 	"remoteUser": "vscode",           // Use the 'vscode' user provided by the base image
 
@@ -48,5 +47,5 @@
 	"postCreateCommand": "sudo apt update &&sudo apt install git-lfs -y && git lfs install && git lfs track \"*.csv\"",
 
 	// Use 'postAttachCommand' to run commands each time a user connects to the container
-	"postAttachCommand": "jupyter lab --no-browser --ip=0.0.0.0 --port 8880 --IdentityProvider.token='' --ServerApp.password=''"
+	"postAttachCommand": ""
 }
