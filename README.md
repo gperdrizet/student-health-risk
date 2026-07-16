@@ -8,7 +8,8 @@ Kaggle Playground Series Season 6 Episode 7 solution. In addition to the S6E7 so
 ## Notebooks
 
 1. [`01-EDA.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/01-EDA.ipynb): Data exploration and analysis of features and labels
-2. [`02-gradient-boosting.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/01-gradient-boosting.ipynb): Basic Scikit-learn gradient boosting solution with minimal data preprocessing.
+2. [`02-gradient-boosting.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/02-gradient-boosting.ipynb): Basic Scikit-learn gradient boosting solution with minimal data preprocessing.
+3. [`03-data-preprocessing`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/03-data-preprocessing.ipynb)
 
 
 ## Submissions
