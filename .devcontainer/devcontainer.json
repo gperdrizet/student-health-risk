@@ -43,7 +43,7 @@
 	"onCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt",
 
 	// Data files are fetched from an external server instead of being stored with Git LFS.
-	"postCreateCommand": "mkdir -p data/results",
+	"postCreateCommand": "",
 
 	// Use 'postAttachCommand' to run commands each time a user connects to the container
 	"postAttachCommand": ""
