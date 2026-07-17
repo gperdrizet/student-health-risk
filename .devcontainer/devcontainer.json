@@ -1,7 +1,8 @@
 // For format details, see https://aka.ms/devcontainer.json.
 {
 	"name": "Kaggle Student Health",
-	"image": "mcr.microsoft.com/devcontainers/python:3.12-trixie",
+	// "image": "mcr.microsoft.com/devcontainers/python:3.12-trixie",
+	"image": "gperdrizet/kaggle-cpu:6.0.1",
     "runArgs": [
 		"--network=host"              // Use host network stack directly - no port mapping needed
 	],
