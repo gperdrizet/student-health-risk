@@ -273,7 +273,7 @@ def target_encoder(
 
     train_df = pd.concat(
         [train_df.drop(columns=features).reset_index(drop=True),
-         encoded_train_df.reset_index(drop=True)],
+        encoded_train_df.reset_index(drop=True)],
         axis=1
     )
 
@@ -283,7 +283,7 @@ def target_encoder(
 
         test_df = pd.concat(
             [test_df.drop(columns=features).reset_index(drop=True),
-             encoded_test_df.reset_index(drop=True)],
+            encoded_test_df.reset_index(drop=True)],
             axis=1
         )
 
