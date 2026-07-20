@@ -4,7 +4,13 @@
 	// "image": "mcr.microsoft.com/devcontainers/python:3.12-trixie",
 	"image": "gperdrizet/kaggle-cpu:6.0.1",
     "runArgs": [
-		"--network=host"              // Use host network stack directly - no port mapping needed
+		"--network=host",     // Use host network stack directly - no port mapping needed
+		"--cpuset-cpus=8-23", // Limit container to CPU cores 8-23 to avoid thrashing the host 
+		                      // system and to allow other processes to run on cores 0-7
+		"--cpus=16",          // Limit container to 16 total CPU cores to avoid thrashing
+		"--memory=64g",       // Limit container memory to 64GB to avoid excessive swapping
+		"--memory-swap=4g",   // Limit swap to 4GB to avoid excessive swapping
+		"--shm-size=4g"       // Limit shared memory to 4GB to avoid excessive swapping
 	],
 	"remoteUser": "vscode",           // Use the 'vscode' user provided by the base image
 
