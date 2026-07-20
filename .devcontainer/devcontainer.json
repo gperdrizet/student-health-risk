@@ -8,9 +8,9 @@
 		"--cpuset-cpus=8-23", // Limit container to CPU cores 8-23 to avoid thrashing the host 
 		                      // system and to allow other processes to run on cores 0-7
 		"--cpus=16",          // Limit container to 16 total CPU cores to avoid thrashing
-		"--memory=64g",       // Limit container memory to 64GB to avoid excessive swapping
-		"--memory-swap=4g",   // Limit swap to 4GB to avoid excessive swapping
-		"--shm-size=4g"       // Limit shared memory to 4GB to avoid excessive swapping
+		"--memory=64g",       // Limit container memory
+		"--memory-swap=64g",  // Limit total memory + swap to 64GB to avoid swapping
+		"--shm-size=4g"       // Limit shared memory to 4GB
 	],
 	"remoteUser": "vscode",           // Use the 'vscode' user provided by the base image
 
