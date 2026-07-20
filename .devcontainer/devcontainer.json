@@ -1,9 +1,16 @@
 // For format details, see https://aka.ms/devcontainer.json.
 {
 	"name": "Kaggle Student Health",
-	"image": "mcr.microsoft.com/devcontainers/python:3.12-trixie",
+	// "image": "mcr.microsoft.com/devcontainers/python:3.12-trixie",
+	"image": "gperdrizet/kaggle-cpu:6.0.1",
     "runArgs": [
-		"--network=bridge"            // Explicitly use bridge network for internet access
+		"--network=host",     // Use host network stack directly - no port mapping needed
+		"--cpuset-cpus=8-23", // Limit container to CPU cores 8-23 to avoid thrashing the host 
+		                      // system and to allow other processes to run on cores 0-7
+		"--cpus=16",          // Limit container to 16 total CPU cores to avoid thrashing
+		"--memory=64g",       // Limit container memory
+		"--memory-swap=64g",  // Limit total memory + swap to 64GB to avoid swapping
+		"--shm-size=4g"       // Limit shared memory to 4GB
 	],
 	"remoteUser": "vscode",           // Use the 'vscode' user provided by the base image
 
@@ -42,9 +49,8 @@
 	// Updates pip and installs project Python dependencies
 	"onCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt",
 
-	// Use 'postCreateCommand' to run commands once after the container is created
-	// Installs Git LFS and configures it to track CSV files
-	"postCreateCommand": "sudo apt update &&sudo apt install git-lfs -y && git lfs install && git lfs track \"*.csv\"",
+	// Data files are fetched from an external server instead of being stored with Git LFS.
+	"postCreateCommand": "",
 
 	// Use 'postAttachCommand' to run commands each time a user connects to the container
 	"postAttachCommand": ""

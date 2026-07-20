@@ -30,8 +30,6 @@ jobs:
     # Checkout code from the repo
     - name: Checkout
       uses: actions/checkout@v7
-      with:
-        lfs: true
 
     # Setup Python
     - name: Setup Python
