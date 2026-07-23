@@ -1,161 +1,161 @@
 Condition,Cross-validation score
-"One-hot encoding, iterative imputation, +indicator",0.8726259938372433
-"Target encoding (smoothing 0.1), iterative imputation, +indicator",0.8724038947383512
-"Target encoding (smoothing 10.0), iterative imputation, +indicator",0.8724038947383512
-"Target encoding (smoothing 1.0), iterative imputation, +indicator",0.8724038947383512
-"One-hot encoding, KNN imputation (7 neighbors), +indicator",0.8706396937829242
-"One-hot encoding, KNN imputation (3 neighbors), +indicator",0.870336609046927
-"One-hot encoding, KNN imputation (5 neighbors), +indicator",0.8691950763487751
-"One-hot encoding, KNN imputation (5 neighbors), -indicator",0.8677315214088382
-"Target encoding (smoothing 10.0), iterative imputation, -indicator",0.8673857712327996
-"Target encoding (smoothing 0.1), iterative imputation, -indicator",0.8673013901679104
-"Target encoding (smoothing 1.0), iterative imputation, -indicator",0.8673013901679104
-"One-hot encoding, iterative imputation, -indicator",0.8670070165941169
-"One-hot encoding, KNN imputation (7 neighbors), -indicator",0.8669032597300346
-"Target encoding (smoothing 10.0), iterative imputation, +indicator",0.8662480595987508
-"One-hot encoding, KNN imputation (3 neighbors), -indicator",0.866199127482016
-"Target encoding (smoothing 0.1), iterative imputation, +indicator",0.866134525001207
-"Target encoding (smoothing 1.0), iterative imputation, +indicator",0.866134525001207
-"Target encoding (smoothing 0.1), iterative imputation, +indicator",0.8659237981070551
-"Target encoding (smoothing 10.0), iterative imputation, +indicator",0.8659237981070551
-"Target encoding (smoothing 1.0), iterative imputation, +indicator",0.8659237981070551
-"One-hot encoding, iterative imputation, +indicator",0.8657134447765493
-"One-hot encoding, iterative imputation, +indicator",0.8629043357162822
-"Target encoding (smoothing 1.0), iterative imputation, +indicator",0.8617553100445754
-"Target encoding (smoothing 0.1), iterative imputation, +indicator",0.8617553100445754
-"One-hot encoding, iterative imputation, +indicator",0.8609913107143249
-"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), -indicator",0.8608265426382221
-"One-hot encoding, KNN imputation (3 neighbors), -indicator",0.8607589747388031
-"One-hot encoding, KNN imputation (3 neighbors), +indicator",0.8607209122870523
-"Target encoding (smoothing 10.0), iterative imputation, +indicator",0.8606137575331599
-"One-hot encoding, KNN imputation (3 neighbors), +indicator",0.8605910163501226
-"Target encoding (smoothing 1.0), iterative imputation, -indicator",0.8605530913625271
-"One-hot encoding, iterative imputation, +indicator",0.8604689445211413
-"Target encoding (smoothing 0.1), iterative imputation, -indicator",0.8602308749944368
-"Target encoding (smoothing 1.0), iterative imputation, -indicator",0.8602308749944368
-"Target encoding (smoothing 0.1), iterative imputation, -indicator",0.8602114491914139
-"Target encoding (smoothing 10.0), iterative imputation, -indicator",0.8602027503459949
-"One-hot encoding, KNN imputation (5 neighbors), +indicator",0.860044165987856
-"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), +indicator",0.8600230125532646
-"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), +indicator",0.8600230125532646
-"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), +indicator",0.8600230125532646
-"One-hot encoding, KNN imputation (5 neighbors), +indicator",0.8599767875430029
-"One-hot encoding, iterative imputation, -indicator",0.8599514540157651
-"Target encoding (smoothing 10.0), iterative imputation, -indicator",0.8598133187535381
-"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), -indicator",0.8594502858373197
-"One-hot encoding, KNN imputation (5 neighbors), -indicator",0.8593361162597325
-"One-hot encoding, KNN imputation (3 neighbors), -indicator",0.8592059411183431
-"One-hot encoding, KNN imputation (5 neighbors), +indicator",0.8590646870638761
-"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), +indicator",0.8589420860334324
-"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), +indicator",0.8589139590118027
-"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), -indicator",0.8586356058696513
-"One-hot encoding, KNN imputation (7 neighbors), -indicator",0.8586271632630246
-"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), -indicator",0.8586263762935765
-"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), -indicator",0.8586263762935765
-"One-hot encoding, KNN imputation (7 neighbors), +indicator",0.8585929363585381
-"One-hot encoding, KNN imputation (7 neighbors), +indicator",0.8584858254843665
-"One-hot encoding, KNN imputation (5 neighbors), -indicator",0.8584660322491686
-"One-hot encoding, iterative imputation, -indicator",0.858418388823952
-"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), -indicator",0.8582389104926903
-"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), -indicator",0.8582355150649065
-"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), +indicator",0.8581492205854643
-"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), -indicator",0.8578407800548145
-"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), +indicator",0.8577821342433637
-"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), +indicator",0.8577821342433637
-"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), +indicator",0.8577821342433637
-"One-hot encoding, KNN imputation (7 neighbors), -indicator",0.8577356788596343
-"Target encoding (smoothing 1.0), iterative imputation, +indicator",0.8574463011128244
-"Target encoding (smoothing 0.1), iterative imputation, +indicator",0.8574463011128244
-"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), -indicator",0.8573539164169892
-"One-hot encoding, KNN imputation (7 neighbors), +indicator",0.8572716338159777
-"Target encoding (smoothing 10.0), iterative imputation, +indicator",0.8570198094298155
-"One-hot encoding, KNN imputation (7 neighbors), -indicator",0.8568904311702621
-"One-hot encoding, KNN imputation (7 neighbors), +indicator",0.856758196188531
-"One-hot encoding, KNN imputation (3 neighbors), -indicator",0.8567008575602699
-"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), -indicator",0.8562277359506852
-"One-hot encoding, KNN imputation (5 neighbors), +indicator",0.8561066883324848
-"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), +indicator",0.8560267912034178
-"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), +indicator",0.8560267912034178
-"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), -indicator",0.8559139770849473
-"One-hot encoding, KNN imputation (3 neighbors), +indicator",0.855909564957574
-"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), -indicator",0.8558012324017374
-"One-hot encoding, iterative imputation, -indicator",0.8556452730329992
-"One-hot encoding, KNN imputation (3 neighbors), +indicator",0.8553619403308766
-"One-hot encoding, iterative imputation, -indicator",0.8550982377766134
-"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), +indicator",0.8550192775415595
-"One-hot encoding, KNN imputation (5 neighbors), -indicator",0.8548400354651363
-"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), -indicator",0.8544534222044241
-"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), -indicator",0.8544534222044241
-"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), +indicator",0.8542154835132033
-"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), +indicator",0.8542154835132033
-"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), +indicator",0.8540853283517
-"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), -indicator",0.853993282333445
-"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), -indicator",0.8539873534344983
-"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), +indicator",0.8538774908066405
-"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), +indicator",0.8538774908066405
-"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), -indicator",0.8537980259139485
-"Target encoding (smoothing 10.0), iterative imputation, -indicator",0.8536868752695579
-"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), -indicator",0.8534437001945308
-"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), -indicator",0.8534202266433412
-"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), +indicator",0.8531374839741482
-"Target encoding (smoothing 0.1), iterative imputation, -indicator",0.8530239071928548
-"Target encoding (smoothing 1.0), iterative imputation, -indicator",0.8530239071928548
-"One-hot encoding, KNN imputation (5 neighbors), -indicator",0.8530067285648767
-"Target encoding (smoothing 1.0), iterative imputation, -indicator",0.8529997048660897
-"Target encoding (smoothing 0.1), iterative imputation, -indicator",0.8529997048660897
-"Target encoding (smoothing 10.0), iterative imputation, -indicator",0.8529075154182822
-"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), -indicator",0.8528778211255176
-"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), -indicator",0.8527883086504308
-"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), -indicator",0.8527718326929624
-"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), +indicator",0.8527085810559818
-"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), +indicator",0.8527085810559818
-"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), -indicator",0.8526874516280735
-"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), -indicator",0.8526140399351786
-"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), -indicator",0.852583053777213
-"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), -indicator",0.85256305825389
-"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), -indicator",0.85256305825389
-"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), -indicator",0.8524903282531624
-"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), -indicator",0.8524291218270744
-"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), -indicator",0.8524291218270744
-"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), -indicator",0.8521562505335084
-"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), -indicator",0.852023224013091
-"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), -indicator",0.8514816434737876
-"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), +indicator",0.8513097650651541
-"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), +indicator",0.8512569191433789
-"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), +indicator",0.8512569191433789
-"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), -indicator",0.8508892046542798
-"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), +indicator",0.8507024058964724
-"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), +indicator",0.8506742812480304
-"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), +indicator",0.8506653171683304
-"One-hot encoding, KNN imputation (7 neighbors), -indicator",0.8504981389220018
-"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), -indicator",0.8504807260705206
-"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), -indicator",0.8504592977302236
-"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), -indicator",0.8504428217727554
-"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), -indicator",0.8504406995319246
-"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), -indicator",0.8504406995319246
-"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), +indicator",0.8503328879534277
-"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), +indicator",0.8501271843839584
-"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), +indicator",0.8501000957392928
-"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), +indicator",0.8501000957392928
-"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), +indicator",0.8500679977744424
-"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), +indicator",0.8500679977744424
-"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), -indicator",0.8497324033019954
-"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), -indicator",0.8497324033019954
-"One-hot encoding, KNN imputation (3 neighbors), -indicator",0.8497057617343039
-"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), -indicator",0.8497030491637664
-"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), -indicator",0.849471732941224
-"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), +indicator",0.8493610598532036
-"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), +indicator",0.8493610598532036
-"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), +indicator",0.8492159513024379
-"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), +indicator",0.8491272181024886
-"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), +indicator",0.8490711982827324
-"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), +indicator",0.8489303289510808
-"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), +indicator",0.8488928435503303
-"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), +indicator",0.8488928435503303
-"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), -indicator",0.8488786612663849
-"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), +indicator",0.8485103148753179
-"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), +indicator",0.8483874454934993
-"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), +indicator",0.8479484096674503
-"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), -indicator",0.8473968275291082
-"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), +indicator",0.84671077690061
-"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), +indicator",0.84671077690061
+"One-hot encoding, iterative imputation, +indicator",0.09074512264428078
+"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), +indicator",0.09124529043215197
+"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), +indicator",0.09134950851230055
+"Target encoding (smoothing 1.0), iterative imputation, +indicator",0.09137091569718538
+"Target encoding (smoothing 0.1), iterative imputation, +indicator",0.09154887516697519
+"One-hot encoding, KNN imputation (7 neighbors), +indicator",0.09166630871962253
+"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), +indicator",0.09167851936589791
+"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), +indicator",0.09169201839975032
+"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), +indicator",0.09177241180573177
+"Target encoding (smoothing 10.0), iterative imputation, +indicator",0.09182514303527951
+"One-hot encoding, KNN imputation (3 neighbors), +indicator",0.09184882515329425
+"One-hot encoding, KNN imputation (5 neighbors), +indicator",0.09202491277921053
+"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), +indicator",0.09202716199469949
+"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), +indicator",0.09213161455198625
+"One-hot encoding, KNN imputation (3 neighbors), +indicator",0.092137564405904
+"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), +indicator",0.09220928155997671
+"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), +indicator",0.09228701028796683
+"Target encoding (smoothing 1.0), iterative imputation, +indicator",0.09244382164881793
+"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), +indicator",0.09247323486760198
+"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), +indicator",0.09252657112276401
+"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), +indicator",0.09257647408469069
+"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), +indicator",0.09258931173994951
+"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), +indicator",0.0926676329551182
+"Target encoding (smoothing 0.1), iterative imputation, +indicator",0.09269547292440233
+"One-hot encoding, KNN imputation (7 neighbors), +indicator",0.09270591442535997
+"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), +indicator",0.092737822151958
+"One-hot encoding, iterative imputation, +indicator",0.09291296463999127
+"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), +indicator",0.09306571606656643
+"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), +indicator",0.09323054621356279
+"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), +indicator",0.09330390253467419
+"Target encoding (smoothing 10.0), iterative imputation, +indicator",0.09345326014457854
+"One-hot encoding, KNN imputation (5 neighbors), +indicator",0.09356225809615447
+"Target encoding (smoothing 10.0), iterative imputation, +indicator",0.0958660502800463
+"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), +indicator",0.09593337586066193
+"One-hot encoding, iterative imputation, +indicator",0.0968641174081976
+"Target encoding (smoothing 1.0), iterative imputation, +indicator",0.09694035545047326
+"Target encoding (smoothing 0.1), iterative imputation, +indicator",0.09721604914164718
+"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), +indicator",0.09723806786624944
+"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), +indicator",0.09724176949390767
+"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), +indicator",0.09735509524815066
+"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), +indicator",0.09739339911347258
+"One-hot encoding, KNN imputation (5 neighbors), +indicator",0.09740974680492819
+"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), +indicator",0.09741231455044301
+"One-hot encoding, KNN imputation (7 neighbors), +indicator",0.0979570075920389
+"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), +indicator",0.09798084887097068
+"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), +indicator",0.09801389896231376
+"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), +indicator",0.09804606550135167
+"One-hot encoding, KNN imputation (3 neighbors), +indicator",0.0983684081268746
+"Target encoding (smoothing 10.0), iterative imputation, +indicator",0.09886546263733864
+"Target encoding (smoothing 0.1), iterative imputation, +indicator",0.09893903351453626
+"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), +indicator",0.09896908867921571
+"Target encoding (smoothing 1.0), iterative imputation, +indicator",0.09946092170937156
+"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), +indicator",0.0994666497412501
+"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), +indicator",0.09970317787417941
+"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), +indicator",0.09983185537721424
+"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), +indicator",0.09986881115459544
+"One-hot encoding, iterative imputation, +indicator",0.09997861439183872
+"Target encoding (smoothing 1.0), iterative imputation, -indicator",0.10009744366850952
+"Target encoding (smoothing 0.1), iterative imputation, -indicator",0.10019961211286262
+"Target encoding (smoothing 10.0), iterative imputation, -indicator",0.10027661190813472
+"One-hot encoding, KNN imputation (5 neighbors), +indicator",0.1003480247327601
+"One-hot encoding, KNN imputation (3 neighbors), +indicator",0.10036666019786897
+"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), +indicator",0.10043681211079847
+"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), +indicator",0.1004580607307915
+"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), +indicator",0.10066760565351898
+"One-hot encoding, iterative imputation, -indicator",0.10088966281428047
+"Target encoding (smoothing 0.1), iterative imputation, -indicator",0.10153103839031595
+"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), +indicator",0.10187879989511793
+"One-hot encoding, KNN imputation (7 neighbors), +indicator",0.10195275517051804
+"Target encoding (smoothing 10.0), iterative imputation, -indicator",0.10260337629312292
+"Target encoding (smoothing 1.0), iterative imputation, -indicator",0.10283562297488012
+"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), +indicator",0.10321451383578169
+"Target encoding (smoothing 1.0), iterative imputation, +indicator",0.10362309259965138
+"One-hot encoding, iterative imputation, -indicator",0.10362345901150773
+"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), +indicator",0.10363521279704435
+"One-hot encoding, iterative imputation, +indicator",0.10382208205013599
+"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), +indicator",0.10403754449287732
+"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), +indicator",0.10405087516594197
+"One-hot encoding, KNN imputation (7 neighbors), +indicator",0.10409469040229925
+"One-hot encoding, KNN imputation (3 neighbors), +indicator",0.1041955660870137
+"Target encoding (smoothing 0.1), iterative imputation, +indicator",0.10426628588910215
+"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), +indicator",0.10452539785982269
+"Target encoding (smoothing 10.0), iterative imputation, +indicator",0.10468403797039433
+"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), +indicator",0.10488235950126534
+"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), +indicator",0.10492561006288591
+"One-hot encoding, KNN imputation (5 neighbors), +indicator",0.10496587160979333
+"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), +indicator",0.1061470356408952
+"Target encoding (smoothing 10.0), iterative imputation, -indicator",0.10684524376420576
+"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), +indicator",0.10747249694306739
+"Target encoding (smoothing 1.0), iterative imputation, -indicator",0.10764975479224079
+"Target encoding (smoothing 1.0), iterative imputation, -indicator",0.10796219257090868
+"Target encoding (smoothing 0.1), iterative imputation, -indicator",0.10797007557119755
+"Target encoding (smoothing 10.0), iterative imputation, -indicator",0.10836100598346071
+"Target encoding (smoothing 0.1), iterative imputation, -indicator",0.10846811318428927
+"One-hot encoding, iterative imputation, -indicator",0.10846927517453352
+"One-hot encoding, iterative imputation, -indicator",0.10972291223265265
+"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), -indicator",0.11287153947670922
+"Target encoding (smoothing 0.1), iterative imputation, -indicator",0.11312198653492915
+"One-hot encoding, KNN imputation (7 neighbors), -indicator",0.11348103176100569
+"One-hot encoding, iterative imputation, -indicator",0.11391007430097108
+"Target encoding (smoothing 10.0), iterative imputation, -indicator",0.11416406207511388
+"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), -indicator",0.11417641390715455
+"One-hot encoding, KNN imputation (5 neighbors), -indicator",0.11434638529521872
+"Target encoding (smoothing 1.0), iterative imputation, -indicator",0.11475740103833011
+"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), -indicator",0.11531845414865663
+"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), -indicator",0.11558815587436494
+"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), -indicator",0.1157643644562949
+"One-hot encoding, KNN imputation (7 neighbors), -indicator",0.11591212458948674
+"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), -indicator",0.11597676082942311
+"One-hot encoding, KNN imputation (5 neighbors), -indicator",0.11627830245027466
+"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), -indicator",0.11684302863384108
+"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), -indicator",0.11752613736696499
+"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), -indicator",0.1175490289515466
+"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), -indicator",0.11769276017106896
+"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), -indicator",0.11813075043794924
+"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), -indicator",0.11817249015116162
+"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), -indicator",0.11824899974594258
+"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), -indicator",0.11832174299762543
+"One-hot encoding, KNN imputation (3 neighbors), -indicator",0.11833583218845929
+"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), -indicator",0.11879208831927378
+"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), -indicator",0.11917705105299953
+"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), -indicator",0.11944587794551163
+"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), -indicator",0.1195236616241566
+"One-hot encoding, KNN imputation (3 neighbors), -indicator",0.11996497049935329
+"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), -indicator",0.1200528794515416
+"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), -indicator",0.12060827462863696
+"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), -indicator",0.12066805711495673
+"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), -indicator",0.12096058105252269
+"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), -indicator",0.12101016583730081
+"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), -indicator",0.12101883181044373
+"One-hot encoding, KNN imputation (7 neighbors), -indicator",0.12106754134400657
+"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), -indicator",0.1211878123723375
+"One-hot encoding, KNN imputation (7 neighbors), -indicator",0.12194631542091797
+"One-hot encoding, KNN imputation (5 neighbors), -indicator",0.12217253483329132
+"One-hot encoding, KNN imputation (3 neighbors), -indicator",0.12272032835902993
+"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), -indicator",0.12285065544774129
+"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), -indicator",0.12291227653650681
+"One-hot encoding, KNN imputation (5 neighbors), -indicator",0.12302345344819761
+"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), -indicator",0.12377673722362471
+"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), -indicator",0.123857759354091
+"One-hot encoding, KNN imputation (3 neighbors), -indicator",0.12407988610679871
+"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), -indicator",0.12417836588192625
+"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), -indicator",0.12498260066943688
+"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), -indicator",0.1252360700212797
+"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), -indicator",0.12547533482536097
+"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), -indicator",0.1263387823813458
+"One-hot encoding, KNN imputation (7 neighbors), -indicator",0.12676312109207652
+"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), -indicator",0.12761232576050086
+"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), -indicator",0.12853901177937493
+"Target encoding (smoothing 0.1), KNN imputation (7 neighbors), -indicator",0.12861866541897332
+"Target encoding (smoothing 1.0), KNN imputation (7 neighbors), -indicator",0.12881907981064852
+"Target encoding (smoothing 10.0), KNN imputation (5 neighbors), -indicator",0.1294838183249733
+"Target encoding (smoothing 10.0), KNN imputation (7 neighbors), -indicator",0.12953920305261515
+"One-hot encoding, KNN imputation (5 neighbors), -indicator",0.13033540000687535
+"Target encoding (smoothing 0.1), KNN imputation (5 neighbors), -indicator",0.13046489494827346
+"One-hot encoding, KNN imputation (3 neighbors), -indicator",0.13083100280171783
+"Target encoding (smoothing 1.0), KNN imputation (5 neighbors), -indicator",0.13119593394366766
+"Target encoding (smoothing 1.0), KNN imputation (3 neighbors), -indicator",0.13300123218279677
+"Target encoding (smoothing 0.1), KNN imputation (3 neighbors), -indicator",0.13458273956882538
+"Target encoding (smoothing 10.0), KNN imputation (3 neighbors), -indicator",0.13580584116697436
