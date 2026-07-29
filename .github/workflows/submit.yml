@@ -74,8 +74,8 @@ jobs:
       # Run the command to install the Kaggle CLI
       run: pip install --no-cache-dir kaggle
 
-    # Get last PR body for submission message
-    - name: Get last PR body for submission message
+    # Get release body from corresponding GitHub release version for submission message
+    - name: Get release body for submission message
 
       # Set environment variable for GitHub token to authenticate with GitHub CLI
       env:
@@ -85,11 +85,11 @@ jobs:
       id: pr_body
 
       run: |
-        # Fetch the last pull request body using GitHub CLI
-        pr_body=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
-        echo "PR Body: $pr_body"
-        # Set the PR body as an output variable for later use
-        echo "pr_body=$pr_body" >> $GITHUB_OUTPUT
+        # Fetch the release body using GitHub CLI
+        release_body=$(gh release view ${{ github.event.inputs.version }} --json body --jq '.body')
+        echo "Release Body: $release_body"
+        # Set the release body as an output variable for later use
+        echo "release_body=$release_body" >> $GITHUB_OUTPUT
 
     # Submit predictions CSV
     - name: Submit to competition
@@ -104,4 +104,4 @@ jobs:
         kaggle competitions submit \
           -c playground-series-s6e7 \
           -f data/submission_v${{ github.event.inputs.version }}.csv \
-          -m "Submission from PR #${{ github.event.pull_request.number }}: ${{ steps.pr_body.outputs.pr_body }}"
+          -m "Submission from PR #${{ github.event.pull_request.number }}: ${{ steps.pr_body.outputs.release_body }}"
