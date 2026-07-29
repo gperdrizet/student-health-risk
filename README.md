@@ -39,6 +39,8 @@ Kaggle Playground Series Season 6 Episode 7 solution. In addition to the S6E7 so
 
 The `submit.yml` workflow runs when a version tag like `v0.2.3` is pushed. It creates a GitHub Release, uploads the versioned submission CSV, submits that artifact to Kaggle, and then updates this README with the latest leaderboard badge and a score distribution plot.
 
+The canonical submission file is `data/submission.csv`. Modeling notebooks overwrite this file directly, and the release workflow snapshots it to `data/submission.<tag>.csv` so every tagged submission records exactly what was sent to Kaggle.
+
 Release notes are generated from [`.github/release.yml`](.github/release.yml), which groups commit messages by prefix such as `model:` and `feature:`.
 
 ### Required authentication setup
