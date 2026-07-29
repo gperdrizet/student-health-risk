@@ -1,6 +1,5 @@
 name: Submit to Kaggle
 
-# Trigger automatically whenever a tag starting with 'v' is pushed
 on:
   push:
     tags:
@@ -11,47 +10,45 @@ permissions:
 
 jobs:
   submit_predictions:
-    name: Submit predictions
+    name: Build Release and Submit
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v7
       with:
-        fetch-depth: 0 # Required for GitHub to scan history and generate the release notes
+        fetch-depth: 0
 
     - name: Setup Python
       uses: actions/setup-python@v6
       with:
         python-version: "3.12"
 
-    # Extracts the tag name (e.g., v0.1.0)
     - name: Set Version Environment Variable
       run: |
         VERSION=${GITHUB_REF#refs/tags/}
         echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
 
-    # Creates the GitHub Release. The --generate-notes flag automatically
-    # reads your .github/release.yml configuration file to format the body text.
+    # Creates the GitHub Release using your .github/release.yml prefix rules
     - name: Create GitHub Release
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         gh release create ${{ env.RELEASE_VERSION }} --generate-notes
 
-    # Copy the submission CSV file using the dynamic version name
+    # Create the immutable tagged file asset
     - name: Version submission CSV
       run: |
         cp data/submission.csv data/submission.${{ env.RELEASE_VERSION }}.csv
 
-    # Upload the file to the newly created release
+    # Upload file asset to the online release page
     - name: Upload submission file to release
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         gh release upload ${{ env.RELEASE_VERSION }} data/submission.${{ env.RELEASE_VERSION }}.csv --clobber
 
-    # Fetch the newly generated, categorized release notes for Kaggle
+    # Gather the dynamic release notes text
     - name: Get release body for submission message
       id: release_body
       env:
@@ -62,11 +59,10 @@ jobs:
         echo "$release_body" >> $GITHUB_OUTPUT
         echo "EOF" >> $GITHUB_OUTPUT
 
-    # Install Kaggle CLI
     - name: Install Kaggle CLI
       run: pip install --no-cache-dir kaggle
 
-    # Submit predictions CSV to Kaggle with your structured release notes
+    # Send the final payload to Kaggle
     - name: Submit to competition
       env:
         KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
