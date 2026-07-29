@@ -87,6 +87,10 @@ jobs:
           -f data/submission.${{ env.RELEASE_VERSION }}.csv \
           -m "Submission Version ${{ env.RELEASE_VERSION }}: ${{ steps.release_body.outputs.release_body }}"
 
+    # Install Pandas for use in rank verification
+    - name: Install Pandas
+      run: pip install --no-cache-dir pandas
+
     # Wait for evaluation loop, pull the new rank, and update README
     - name: Fetch Kaggle Rank and Update Badge
       env:
