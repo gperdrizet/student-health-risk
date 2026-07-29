@@ -1,5 +1,6 @@
 import argparse
 import pathlib
+import re
 import subprocess
 import sys
 
@@ -37,15 +38,18 @@ def load_commits(range_spec, excluded_authors):
 
     commits = []
     for record in raw_log.split('\x1e'):
-        record = record.strip()
-        if not record:
+        # Keep field separators intact; body can be empty, which leaves a trailing
+        # unit separator that would be stripped by str.strip().
+        record = record.rstrip('\n')
+        if not record or not record.strip():
             continue
 
         parts = record.split('\x1f')
-        if len(parts) < 4:
+        if len(parts) < 3:
             continue
 
-        sha, author, subject, body = parts[0], parts[1], parts[2], '\x1f'.join(parts[3:])
+        sha, author, subject = parts[0], parts[1], parts[2]
+        body = '\x1f'.join(parts[3:]) if len(parts) > 3 else ''
         if author in excluded_authors:
             continue
 
@@ -59,19 +63,35 @@ def load_commits(range_spec, excluded_authors):
     return commits
 
 
+def normalize_subject_for_prefix_matching(subject):
+    """Normalize common markdown wrappers around conventional commit-style subjects."""
+    normalized = subject.strip()
+
+    # Remove markdown heading markers, e.g. "#### model: ..."
+    normalized = re.sub(r'^#+\s*', '', normalized)
+
+    # Unwrap a single markdown link when the title carries the commit prefix.
+    link_match = re.match(r'^\[([^\]]+)\]\([^\)]+\)$', normalized)
+    if link_match:
+        normalized = link_match.group(1).strip()
+
+    return normalized
+
+
 def classify_commit(subject, categories, fallback_title):
-    lowered_subject = subject.lower()
+    normalized_subject = normalize_subject_for_prefix_matching(subject)
+    lowered_subject = normalized_subject.lower()
 
     for category in categories:
         prefixes = category.get('commit-prefixes') or []
         for prefix in prefixes:
             if lowered_subject.startswith(prefix.lower()):
-                cleaned = subject[len(prefix):].strip()
+                cleaned = normalized_subject[len(prefix):].strip()
                 if cleaned.startswith(':'):
                     cleaned = cleaned[1:].strip()
-                return category['title'], cleaned or subject
+                return category['title'], cleaned or normalized_subject
 
-    return fallback_title, subject
+    return fallback_title, normalized_subject
 
 
 def build_notes(tag_name, commits, config):

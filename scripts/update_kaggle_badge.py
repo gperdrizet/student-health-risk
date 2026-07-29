@@ -80,6 +80,7 @@ def wait_for_completion():
             'leaderboard',
             '-c',
             COMP_ID,
+            '--show',
             '--csv',
         ])
 
@@ -265,6 +266,7 @@ leaderboard_df = run_kaggle_csv([
     'leaderboard',
     '-c',
     COMP_ID,
+    '--show',
     '--csv',
 ])
 
