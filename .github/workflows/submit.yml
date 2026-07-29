@@ -1,120 +1,65 @@
-# Work on dev branch -> PR (verify submission) -> Merge to main -> Create release x.x.x -> Submit submission_Vx.x.x.csv 
 name: Submit to Kaggle
 
-# Event trigger for the workflow
+# Trigger automatically whenever a release is published on GitHub
 on:
+  release:
+    types: [published]
 
-  # Trigger manually via GitHub Actions UI with inputs for version and confirmation
-  workflow_dispatch:
-    inputs:
-      version:
-        description: "Version to create and submit (e.g. 1.2.3)"
-        required: true
-      confirm:
-        description: "Type 'submit' to confirm submission"
-        required: true
-        default: ""
+permissions:
+  contents: write
 
-# List of jobs to run - we only have one job for submitting predictions
 jobs:
-
-  # A guard job to ensure the user has confirmed the submission
-  guard:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Confirm intent
-        run: |
-          if [ "${{ github.event.inputs.confirm }}" != "submit" ]; then
-            echo "Confirmation string must be 'submit'. Got: ${{ github.event.inputs.confirm }}"
-            exit 1
-          fi
-
-  # The job responsible for submitting predictions to Kaggle
   submit_predictions:
     name: Submit predictions
-
-    # Check that we have cleared submission guard
-    needs: guard
-
-    # Define the environment for the job - in this case, it runs on an Ubuntu machine
     runs-on: ubuntu-latest
 
-    # Only run this job if the pull request was merged or if manually triggered
-    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
-
-    # Sequence of steps to submit predictions
     steps:
-
-    # Checkout code from the repo
     - name: Checkout
       uses: actions/checkout@v7
 
-    # Setup Python
     - name: Setup Python
       uses: actions/setup-python@v6
       with:
         python-version: "3.12"
 
-    # Copy the submission CSV file with version number
+    # Uses the actual tag name from the release (e.g., v0.1.0 or 0.1.0)
+    # replaces 'refs/tags/' from the github.ref variable
+    - name: Set Version Environment Variable
+      run: |
+        VERSION=${GITHUB_REF#refs/tags/}
+        echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
+
+    # Copy the submission CSV file using the dynamic version name
     - name: Version submission CSV
       run: |
-        cp data/submission.csv data/submission.${{ github.event.inputs.version }}.csv
+        cp data/submission.csv data/submission.${{ env.RELEASE_VERSION }}.csv
 
-    # Commit new submission CSV with version number
-    - name: Commit new submission CSV
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add data/submission.${{ github.event.inputs.version }}.csv
-        git commit -m "Update submission.csv to version ${{ github.event.inputs.version }}"
-
-    # Install Kaggle CLI
-    - name: Install Kaggle CLI
-
-      # Run the command to install the Kaggle CLI
-      run: pip install --no-cache-dir kaggle
-
-    # Add versioned submission file to GitHub release
+    # Add the versioned submission file back onto the release assets list
     - name: Upload submission file to release
-
-      # Set environment variable for GitHub token to authenticate with GitHub CLI
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # Run the upload command to attach the submission CSV to the GitHub release
       run: |
-        gh release upload ${{ github.event.inputs.version }} data/submission.${{ github.event.inputs.version }}.csv --clobber
+        gh release upload ${{ env.RELEASE_VERSION }} data/submission.${{ env.RELEASE_VERSION }}.csv --clobber
 
-    # Get release body from corresponding GitHub release version for submission message
+    # Extracts the exact release notes markdown directly from the trigger payload
     - name: Get release body for submission message
-
-      # Set environment variable for GitHub token to authenticate with GitHub CLI
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # Set an output variable to store the release body for later use
       id: release_body
-
       run: |
-        # Fetch the release body
-        release_body=$(gh release view ${{ github.event.inputs.version }} --json body --jq '.body')
-        echo "Release Body: $release_body"
-        # Safely save multi-line string to GITHUB_OUTPUT
+        # Use a heredoc to safely store multi-line text into outputs
         echo "release_body<<EOF" >> $GITHUB_OUTPUT
-        echo "$release_body" >> $GITHUB_OUTPUT
+        echo "${{ github.event.release.body }}" >> $GITHUB_OUTPUT
         echo "EOF" >> $GITHUB_OUTPUT
 
-    # Submit predictions CSV
-    - name: Submit to competition
+    - name: Install Kaggle CLI
+      run: pip install --no-cache-dir kaggle
 
-      # Set environment variables for Kaggle authentication
+    # Submit predictions CSV to Kaggle
+    - name: Submit to competition
       env:
         KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
         KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
-
-      # Run the Kaggle submission command
       run: |
         kaggle competitions submit \
           -c playground-series-s6e7 \
-          -f data/submission.${{ github.event.inputs.version }}.csv \
-          -m "Submission from PR #${{ github.event.pull_request.number }}: ${{ steps.release_body.outputs.release_body }}"
+          -f data/submission.${{ env.RELEASE_VERSION }}.csv \
+          -m "Submission Version ${{ env.RELEASE_VERSION }}: ${{ steps.release_body.outputs.release_body }}"
