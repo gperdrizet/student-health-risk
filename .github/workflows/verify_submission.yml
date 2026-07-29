@@ -1,4 +1,4 @@
-name: Verify Submission Format
+name: Verify submission
 
 on:
   push:
