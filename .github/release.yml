@@ -1,17 +1,15 @@
 changelog:
   exclude:
-    labels:
-      - ignore-changelog
     authors:
       - github-actions[bot]
   categories:
     - title: "Model architecture & tuning"
-      labels:
-        - model
-        - enhancement
-    - title: "Feature engineering"
-      labels:
-        - features
-        - data
-    - title: "Other changes"
+      commit-prefixes:
+        - "model:"
+        - "tune:"
+    - title: "Feature engineering & data processing"
+      commit-prefixes:
+        - "feature:"
+        - "data:"
+    - title: "General maintenance"
       collapse_after: 3
