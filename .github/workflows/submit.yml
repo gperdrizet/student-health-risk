@@ -36,12 +36,22 @@ jobs:
         VERSION=${GITHUB_REF#refs/tags/}
         echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
 
+    - name: Install release note dependencies
+      run: pip install --no-cache-dir pyyaml
+
+    - name: Generate release notes
+      run: |
+        python scripts/generate_release_notes.py \
+          --config .github/release.yml \
+          --tag "${{ env.RELEASE_VERSION }}" \
+          --output release_notes.md
+
     # Creates the GitHub Release using your .github/release.yml prefix rules
     - name: Create GitHub Release
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        gh release create ${{ env.RELEASE_VERSION }} --generate-notes
+        gh release create ${{ env.RELEASE_VERSION }} --notes-file release_notes.md
 
     # Create version tagged submission file
     - name: Version submission CSV
@@ -58,16 +68,8 @@ jobs:
     # Gather the dynamic release notes text
     - name: Get release body for submission message
       id: release_body
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        release_body=$(gh release view ${{ env.RELEASE_VERSION }} --json body --jq '.body')
-        
-        # If the body only contains the default hidden GitHub HTML comment, reset it
-        if [[ "$release_body" == *"<!--"* ]]; then
-          release_body="Routine model submission for version ${{ env.RELEASE_VERSION }}."
-        fi
-        
+        release_body=$(cat release_notes.md)
         echo "release_body<<EOF" >> $GITHUB_OUTPUT
         echo "$release_body" >> $GITHUB_OUTPUT
         echo "EOF" >> $GITHUB_OUTPUT
@@ -87,11 +89,11 @@ jobs:
           -f data/submission.${{ env.RELEASE_VERSION }}.csv \
           -m "Submission Version ${{ env.RELEASE_VERSION }}: ${{ steps.release_body.outputs.release_body }}"
 
-    # Install Pandas for use in rank verification
-    - name: Install Pandas
-      run: pip install --no-cache-dir pandas
+    # Install the Python packages needed for leaderboard parsing and plotting
+    - name: Install Leaderboard Plotting Dependencies
+      run: pip install --no-cache-dir kaggle pandas matplotlib numpy
 
-    # Wait for evaluation loop, pull the new rank, and update README
+    # Wait for Kaggle to score the submission, then update the README badge and plot
     - name: Fetch Kaggle Rank and Update Badge
       env:
         KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
@@ -99,56 +101,10 @@ jobs:
         COMP_ID: "playground-series-s6e7" # Pass it down as a real environment variable
       run: |
         echo "Waiting for Kaggle to score the new submission..."
-        
-        # Monitor the submission using a resilient inline Python verification loop
-        python -c "
-        import os, subprocess, time, io, pandas as pd
-        
-        comp_id = os.environ['COMP_ID'] # Correctly extract the variable inside Python
-        
-        while True:
-            # 1. Safely run the command using the extracted variable string
-            result = subprocess.run(['kaggle', 'competitions', 'submissions', '-c', comp_id, '--csv'], capture_output=True, text=True)
-            df = pd.read_csv(io.StringIO(result.stdout))
-            
-            # 2. Extract the first row's 'status' column accurately
-            current_status = str(df['status'].iloc[0]).strip()
-            
-            if current_status == 'complete':
-                print('Submission scoring complete!')
-                break
-            elif current_status in ['error', 'failed']:
-                print('Error: Kaggle scoring failed.')
-                exit(1)
-            else:
-                print(f'Status is currently: {current_status}. Checking again in 15 seconds...')
-                time.sleep(15)
-        "
-
-        # 3. Fetch the public leaderboard position
-        sleep 5
-        RANK_DATA=$(kaggle competitions list --group entered --csv)
-        MY_RANK=$(echo "$RANK_DATA" | grep "$COMP_ID" | cut -d',' -f7 | tr -d '[:space:]')
-        
-        if [ -z "$MY_RANK" ] || [ "$MY_RANK" == "0" ]; then
-          MY_RANK="Pending"
-        fi
-        
-        # Fixed URL parameter format for Shields.io badge path formatting
-        BADGE_MARKDOWN="![Kaggle Rank](https://shields.io{MY_RANK}-blue?logo=kaggle&logoColor=white)"
-        
-        python -c "
-        import re
-        with open('README.md', 'r') as f:
-            content = f.read()
-        pattern = r'(<!-- KAGGLE_BADGE_START -->)(.*?)(<!-- KAGGLE_BADGE_END -->)'
-        replacement = f'\\\\1\\\\n{BADGE_MARKDOWN}\\\\n\\\\3'
-        with open('README.md', 'w') as f:
-            f.write(re.sub(pattern, replacement, content, flags=re.DOTALL))
-        "
+        python scripts/update_kaggle_badge.py
         
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add README.md
-        git commit -m "chore: automated update of leaderboard rank badge to ${MY_RANK} [skip ci]" || echo "No change in rank."
+        git add README.md docs/kaggle-leaderboard-rank.png
+        git commit -m "chore: automated update of leaderboard rank badge [skip ci]" || echo "No change in rank."
         git push origin main
