@@ -1,6 +1,12 @@
 # student-health-risk
 
+[![Verify submission](https://github.com/gperdrizet/student-health-risk/actions/workflows/verify_submission.yml/badge.svg)](https://github.com/gperdrizet/student-health-risk/actions/workflows/verify_submission.yml)
+
 [![Submit to Kaggle](https://github.com/gperdrizet/student-health-risk/actions/workflows/submit.yml/badge.svg)](https://github.com/gperdrizet/student-health-risk/actions/workflows/submit.yml)
+
+<!-- KAGGLE_BADGE_START -->
+![Kaggle Rank](https://shields.io)
+<!-- KAGGLE_BADGE_END -->
 
 Kaggle Playground Series Season 6 Episode 7 solution. In addition to the S6E7 solution, this repository provides a convenient containerized development environment for Kaggle competitions, and an automated submission workflow using GitHub actions.
 
@@ -24,11 +30,27 @@ Kaggle Playground Series Season 6 Episode 7 solution. In addition to the S6E7 so
 
 ## Submission workflow
 
-1. Work on `dev` branch, commit & push changes to GitHub
-2. When new submission is ready, open pull request against main
-3. Merging pull request triggers GitHub actions workflow to submit `data/submission.csv`
+### Required authentication setup
 
-**Note**: you must add `KAGGLE_API_TOKEN` and `KAGGLE_USERNAME` to GitHub action secretes for Kaggle submission to work.
+The execution layer requires configuration of two sensitive variables within your repository repository actions portal (`Settings -> Secrets and variables -> Actions`):
+
+* `KAGGLE_USERNAME`: Your personal Kaggle account username.
+* `KAGGLE_API_TOKEN`: A valid API Token string generated via your Kaggle user profile settings page.
+
+### Local workflow instructions
+
+To deploy, simply commit changes locally, use semantic prefix messages, and push your version tags from your terminal:
+
+```bash
+# 1. Commit and push data adjustments to test layout automatically
+git add .
+git commit -m "model: upgraded stacking ensemble with a LightGBM meta-learner"
+git push origin main
+
+# 2. Tag your target structure once the layout verification step passes green
+git tag v1.0.0
+git push origin v1.0.0
+```
 
 
 ## Development environment

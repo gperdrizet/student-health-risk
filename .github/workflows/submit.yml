@@ -1,59 +1,68 @@
 name: Submit to Kaggle
 
-# Trigger automatically whenever a release is published on GitHub
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - 'v*'
 
 permissions:
   contents: write
 
 jobs:
   submit_predictions:
-    name: Submit predictions
+    name: Build Release and Submit
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
+    - name: Checkout code
       uses: actions/checkout@v7
+      with:
+        fetch-depth: 0
 
     - name: Setup Python
       uses: actions/setup-python@v6
       with:
         python-version: "3.12"
 
-    # Uses the actual tag name from the release (e.g., v0.1.0 or 0.1.0)
-    # replaces 'refs/tags/' from the github.ref variable
     - name: Set Version Environment Variable
       run: |
         VERSION=${GITHUB_REF#refs/tags/}
         echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
 
-    # Copy the submission CSV file using the dynamic version name
+    # Creates the GitHub Release using your .github/release.yml prefix rules
+    - name: Create GitHub Release
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh release create ${{ env.RELEASE_VERSION }} --generate-notes
+
+    # Create the immutable tagged file asset
     - name: Version submission CSV
       run: |
         cp data/submission.csv data/submission.${{ env.RELEASE_VERSION }}.csv
 
-    # Add the versioned submission file back onto the release assets list
+    # Upload file asset to the online release page
     - name: Upload submission file to release
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         gh release upload ${{ env.RELEASE_VERSION }} data/submission.${{ env.RELEASE_VERSION }}.csv --clobber
 
-    # Extracts the exact release notes markdown directly from the trigger payload
+    # Gather the dynamic release notes text
     - name: Get release body for submission message
       id: release_body
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        # Use a heredoc to safely store multi-line text into outputs
+        release_body=$(gh release view ${{ env.RELEASE_VERSION }} --json body --jq '.body')
         echo "release_body<<EOF" >> $GITHUB_OUTPUT
-        echo "${{ github.event.release.body }}" >> $GITHUB_OUTPUT
+        echo "$release_body" >> $GITHUB_OUTPUT
         echo "EOF" >> $GITHUB_OUTPUT
 
     - name: Install Kaggle CLI
       run: pip install --no-cache-dir kaggle
 
-    # Submit predictions CSV to Kaggle
+    # Send the final payload to Kaggle
     - name: Submit to competition
       env:
         KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
@@ -63,3 +72,66 @@ jobs:
           -c playground-series-s6e7 \
           -f data/submission.${{ env.RELEASE_VERSION }}.csv \
           -m "Submission Version ${{ env.RELEASE_VERSION }}: ${{ steps.release_body.outputs.release_body }}"
+
+    # Wait for evaluation loop, pull the new rank, and update README
+    - name: Fetch Kaggle Rank and Update Badge
+      env:
+        KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+        KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+      run: |
+        COMP_ID="playground-series-s6e7"
+        echo "Waiting for Kaggle to score the new submission..."
+        
+        # 1. Loop and check submission status until it is no longer processing
+        # Grabs the first entry in your submission list (the one we just made)
+        while true; do
+          # Extracts the status column from your most recent submission row
+          SUB_STATUS=$(kaggle competitions submissions -c $COMP_ID --csv | head -n 2 | tail -n 1 | cut -d',' -f4 | tr -d '[:space:]')
+          
+          if [ "$SUB_STATUS" == "complete" ]; then
+            echo "Submission scoring complete!"
+            break
+          elif [ "$SUB_STATUS" == "error" ] || [ "$SUB_STATUS" == "failed" ]; then
+            echo "Error: Kaggle scoring failed or threw an exception."
+            exit 1
+          else
+            echo "Status is '$SUB_STATUS'. Sleeping for 15 seconds before checking again..."
+            sleep 15
+          fi
+        done
+
+        # 2. Add an extra 5-second buffer to let the public leaderboard update calculations
+        sleep 5
+
+        # 3. Fetch your updated user rank
+        RANK_DATA=$(kaggle competitions list --group entered --csv)
+        MY_RANK=$(echo "$RANK_DATA" | grep "$COMP_ID" | cut -d',' -f7 | tr -d '[:space:]')
+        
+        if [ -z "$MY_RANK" ] || [ "$MY_RANK" == "0" ]; then
+          MY_RANK="Pending"
+        fi
+        echo "Verified New Leaderboard Rank: $MY_RANK"
+        
+        # 4. Generate the Shields.io badge text
+        BADGE_MARKDOWN="![Kaggle Rank](https://shields.io{MY_RANK}-blue?logo=kaggle&logoColor=white)"
+        
+        # 5. Overwrite the specific markdown anchor block in the root README.md
+        python -c "
+        import re
+        with open('README.md', 'r') as f:
+            content = f.read()
+            
+        pattern = r'(<!-- KAGGLE_BADGE_START -->)(.*?)(<!-- KAGGLE_BADGE_END -->)'
+        replacement = f'\\\\1\\\\n{BADGE_MARKDOWN}\\\\n\\\\3'
+        updated_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+        
+        with open('README.md', 'w') as f:
+            f.write(updated_content)
+        "
+        
+        # 6. Push the updated file back to the main branch securely
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add README.md
+        git commit -m "chore: automated update of leaderboard rank badge to ${MY_RANK} [skip ci]" || echo "No change in rank detected."
+        git push origin main

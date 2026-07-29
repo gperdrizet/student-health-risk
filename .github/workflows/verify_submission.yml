@@ -1,0 +1,60 @@
+name: Verify submission
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/submission.csv' # Triggers when the submission file changes
+
+jobs:
+  validate_file:
+    name: Validate CSV
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v7
+
+    - name: Setup Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: "3.12"
+
+    - name: Strict Data Verification
+      run: |
+        python -c '
+        import os, pandas as pd
+        file_path = "data/submission.csv"
+        print("Running automated verification loop...")
+        
+        if not os.path.exists(file_path) or os.path.getsize(file_path) == 0:
+            print("Error: File is missing or empty.")
+            exit(1)
+            
+        try:
+            df = pd.read_csv(file_path)
+            
+            # Constraints Verification
+            if len(df) != 295753:
+                print(f"Error: Row count mismatch. Expected 295753, got {len(df)}.")
+                exit(1)
+                
+            if list(df.columns) != ["id", "health_condition"]:
+                print(f"Error: Column mismatch. Got {list(df.columns)}.")
+                exit(1)
+                
+            allowed = {"unhealthy", "at-risk", "fit"}
+            if not set(df["health_condition"].dropna().unique()).issubset(allowed):
+                print("Error: Contained illegal prediction classes.")
+                exit(1)
+                
+            if int(df["id"].iloc[0]) != 690088 or int(df["id"].iloc[-1]) != 985840:
+                print("Error: Boundary IDs mismatch.")
+                exit(1)
+                
+            print("Verification passed successfully!")
+        except Exception as e:
+            print(f"Error analyzing CSV: {e}")
+            exit(1)
+        '
