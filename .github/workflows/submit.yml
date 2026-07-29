@@ -1,5 +1,12 @@
 name: Submit to Kaggle
 
+# Runs the following steps when a new version tag is pushed to the repository
+# 1. Creates GitHub Release from tag version number
+# 2. Creates a version tagged submission file from current contents of data/submission.csv
+# 3. Adds the version tagged submission file to the release
+# 4. Submits the version tagged submission file to the Kaggle competition
+# 5. Updates the leaderboard rank badge in the README file
+
 on:
   push:
     tags:
@@ -10,7 +17,7 @@ permissions:
 
 jobs:
   submit_predictions:
-    name: Build Release and Submit
+    name: Submit test set predictions
     runs-on: ubuntu-latest
 
     steps:
@@ -36,7 +43,7 @@ jobs:
       run: |
         gh release create ${{ env.RELEASE_VERSION }} --generate-notes
 
-    # Create the immutable tagged file asset
+    # Create version tagged submission file
     - name: Version submission CSV
       run: |
         cp data/submission.csv data/submission.${{ env.RELEASE_VERSION }}.csv
@@ -55,10 +62,17 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         release_body=$(gh release view ${{ env.RELEASE_VERSION }} --json body --jq '.body')
+        
+        # If the body only contains the default hidden GitHub HTML comment, reset it
+        if [[ "$release_body" == *"<!--"* ]]; then
+          release_body="Routine model submission for version ${{ env.RELEASE_VERSION }}."
+        fi
+        
         echo "release_body<<EOF" >> $GITHUB_OUTPUT
         echo "$release_body" >> $GITHUB_OUTPUT
         echo "EOF" >> $GITHUB_OUTPUT
 
+    # Install Kaggle CLI to up load submission
     - name: Install Kaggle CLI
       run: pip install --no-cache-dir kaggle
 
@@ -82,56 +96,52 @@ jobs:
         COMP_ID="playground-series-s6e7"
         echo "Waiting for Kaggle to score the new submission..."
         
-        # 1. Loop and check submission status until it is no longer processing
-        # Grabs the first entry in your submission list (the one we just made)
-        while true; do
-          # Extracts the status column from your most recent submission row
-          SUB_STATUS=$(kaggle competitions submissions -c $COMP_ID --csv | head -n 2 | tail -n 1 | cut -d',' -f4 | tr -d '[:space:]')
-          
-          if [ "$SUB_STATUS" == "complete" ]; then
-            echo "Submission scoring complete!"
-            break
-          elif [ "$SUB_STATUS" == "error" ] || [ "$SUB_STATUS" == "failed" ]; then
-            echo "Error: Kaggle scoring failed or threw an exception."
-            exit 1
-          else
-            echo "Status is '$SUB_STATUS'. Sleeping for 15 seconds before checking again..."
-            sleep 15
-          fi
-        done
+        # Monitor the submission using a resilient inline Python verification loop
+        python -c "
+        import subprocess, time, io, pandas as pd
+        
+        while True:
+            # 1. Safely run the command and stream text directly to a data frame
+            result = subprocess.run(['kaggle', 'competitions', 'submissions', '-c', '$COMP_ID', '--csv'], capture_output=True, text=True)
+            df = pd.read_csv(io.StringIO(result.stdout))
+            
+            # 2. Extract the first row's 'status' column accurately
+            current_status = str(df['status'].iloc[0]).strip()
+            
+            if current_status == 'complete':
+                print('Submission scoring complete!')
+                break
+            elif current_status in ['error', 'failed']:
+                print('Error: Kaggle scoring failed.')
+                exit(1)
+            else:
+                print(f'Status is currently: {current_status}. Checking again in 15 seconds...')
+                time.sleep(15)
+        "
 
-        # 2. Add an extra 5-second buffer to let the public leaderboard update calculations
+        # 3. Fetch the public leaderboard position
         sleep 5
-
-        # 3. Fetch your updated user rank
         RANK_DATA=$(kaggle competitions list --group entered --csv)
         MY_RANK=$(echo "$RANK_DATA" | grep "$COMP_ID" | cut -d',' -f7 | tr -d '[:space:]')
         
         if [ -z "$MY_RANK" ] || [ "$MY_RANK" == "0" ]; then
           MY_RANK="Pending"
         fi
-        echo "Verified New Leaderboard Rank: $MY_RANK"
         
-        # 4. Generate the Shields.io badge text
-        BADGE_MARKDOWN="![Kaggle Rank](https://shields.io{MY_RANK}-blue?logo=kaggle&logoColor=white)"
+        BADGE_MARKDOWN="![Kaggle Rank](https://shields.io/badge/Kaggle-Rank%20${MY_RANK}-blue?logo=kaggle&logoColor=white)"
         
-        # 5. Overwrite the specific markdown anchor block in the root README.md
         python -c "
         import re
         with open('README.md', 'r') as f:
             content = f.read()
-            
         pattern = r'(<!-- KAGGLE_BADGE_START -->)(.*?)(<!-- KAGGLE_BADGE_END -->)'
         replacement = f'\\\\1\\\\n{BADGE_MARKDOWN}\\\\n\\\\3'
-        updated_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
-        
         with open('README.md', 'w') as f:
-            f.write(updated_content)
+            f.write(re.sub(pattern, replacement, content, flags=re.DOTALL))
         "
         
-        # 6. Push the updated file back to the main branch securely
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add README.md
-        git commit -m "chore: automated update of leaderboard rank badge to ${MY_RANK} [skip ci]" || echo "No change in rank detected."
+        git commit -m "chore: automated update of leaderboard rank badge to ${MY_RANK} [skip ci]" || echo "No change in rank."
         git push origin main

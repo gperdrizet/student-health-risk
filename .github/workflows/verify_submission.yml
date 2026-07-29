@@ -21,7 +21,10 @@ jobs:
       with:
         python-version: "3.12"
 
-    - name: Strict Data Verification
+    - name: Install Pandas
+      run: pip install --no-cache-dir pandas
+
+    - name: Data verification
       run: |
         python -c '
         import os, pandas as pd
