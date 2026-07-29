@@ -4,9 +4,13 @@
 ![Kaggle Rank](https://shields.io)
 <!-- KAGGLE_BADGE_END -->
 
+<!-- KAGGLE_RANK_PLOT_START -->
+![Kaggle leaderboard score distribution](docs/kaggle-leaderboard-rank.png)
+<!-- KAGGLE_RANK_PLOT_END -->
+
 [![Verify submission](https://github.com/gperdrizet/student-health-risk/actions/workflows/verify_submission.yml/badge.svg)](https://github.com/gperdrizet/student-health-risk/actions/workflows/verify_submission.yml) [![Submit to Kaggle](https://github.com/gperdrizet/student-health-risk/actions/workflows/submit.yml/badge.svg)](https://github.com/gperdrizet/student-health-risk/actions/workflows/submit.yml)
 
-Kaggle Playground Series Season 6 Episode 7 solution. In addition to the S6E7 solution, this repository provides a convenient containerized development environment for Kaggle competitions, and an automated submission workflow using GitHub actions.
+Kaggle Playground Series Season 6 Episode 7 solution. In addition to the S6E7 solution, this repository provides a convenient containerized development environment for Kaggle competitions, and an automated tag-driven submission workflow using GitHub Actions.
 
 
 ## Notebooks
@@ -28,24 +32,28 @@ Kaggle Playground Series Season 6 Episode 7 solution. In addition to the S6E7 so
 
 ## Submission workflow
 
+The `submit.yml` workflow runs when a version tag like `v0.2.3` is pushed. It creates a GitHub Release, uploads the versioned submission CSV, submits that artifact to Kaggle, and then updates this README with the latest leaderboard badge and a score distribution plot.
+
+Release notes are generated from [`.github/release.yml`](.github/release.yml), which groups commit messages by prefix such as `model:` and `feature:`.
+
 ### Required authentication setup
 
-The execution layer requires configuration of two sensitive variables within your repository repository actions portal (`Settings -> Secrets and variables -> Actions`):
+The execution layer requires configuration of two sensitive variables in your repository actions portal (`Settings -> Secrets and variables -> Actions`):
 
 * `KAGGLE_USERNAME`: Your personal Kaggle account username.
 * `KAGGLE_API_TOKEN`: A valid API Token string generated via your Kaggle user profile settings page.
 
 ### Local workflow instructions
 
-To deploy, simply commit changes locally, use semantic prefix messages, and push your version tags from your terminal:
+To deploy, commit changes locally, use semantic prefix messages, and push your version tags from your terminal:
 
 ```bash
-# 1. Commit and push data adjustments to test layout automatically
+# 1. Commit and push data adjustments to update the release notes grouping
 git add .
 git commit -m "model: upgraded stacking ensemble with a LightGBM meta-learner"
 git push origin main
 
-# 2. Tag your target structure once the layout verification step passes green
+# 2. Tag the release once the verification step passes green
 git tag v1.0.0
 git push origin v1.0.0
 ```
