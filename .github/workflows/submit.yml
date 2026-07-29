@@ -1,9 +1,10 @@
 name: Submit to Kaggle
 
-# Trigger automatically whenever a release is published on GitHub
+# Trigger automatically whenever a tag starting with 'v' is pushed
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - 'v*'
 
 permissions:
   contents: write
@@ -14,46 +15,58 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
+    - name: Checkout code
       uses: actions/checkout@v7
+      with:
+        fetch-depth: 0 # Required for GitHub to scan history and generate the release notes
 
     - name: Setup Python
       uses: actions/setup-python@v6
       with:
         python-version: "3.12"
 
-    # Uses the actual tag name from the release (e.g., v0.1.0 or 0.1.0)
-    # replaces 'refs/tags/' from the github.ref variable
+    # Extracts the tag name (e.g., v0.1.0)
     - name: Set Version Environment Variable
       run: |
         VERSION=${GITHUB_REF#refs/tags/}
         echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
+
+    # Creates the GitHub Release. The --generate-notes flag automatically
+    # reads your .github/release.yml configuration file to format the body text.
+    - name: Create GitHub Release
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh release create ${{ env.RELEASE_VERSION }} --generate-notes
 
     # Copy the submission CSV file using the dynamic version name
     - name: Version submission CSV
       run: |
         cp data/submission.csv data/submission.${{ env.RELEASE_VERSION }}.csv
 
-    # Add the versioned submission file back onto the release assets list
+    # Upload the file to the newly created release
     - name: Upload submission file to release
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         gh release upload ${{ env.RELEASE_VERSION }} data/submission.${{ env.RELEASE_VERSION }}.csv --clobber
 
-    # Extracts the exact release notes markdown directly from the trigger payload
+    # Fetch the newly generated, categorized release notes for Kaggle
     - name: Get release body for submission message
       id: release_body
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        # Use a heredoc to safely store multi-line text into outputs
+        release_body=$(gh release view ${{ env.RELEASE_VERSION }} --json body --jq '.body')
         echo "release_body<<EOF" >> $GITHUB_OUTPUT
-        echo "${{ github.event.release.body }}" >> $GITHUB_OUTPUT
+        echo "$release_body" >> $GITHUB_OUTPUT
         echo "EOF" >> $GITHUB_OUTPUT
 
+    # Install Kaggle CLI
     - name: Install Kaggle CLI
       run: pip install --no-cache-dir kaggle
 
-    # Submit predictions CSV to Kaggle
+    # Submit predictions CSV to Kaggle with your structured release notes
     - name: Submit to competition
       env:
         KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
