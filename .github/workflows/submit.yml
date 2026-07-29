@@ -1,10 +1,10 @@
 name: Submit to Kaggle
 
 # Runs the following steps when a new version tag is pushed to the repository
-# 1. Creates GitHub Release from tag version number
-# 2. Creates a version tagged submission file from current contents of data/submission.csv
-# 3. Adds the version tagged submission file to the release
-# 4. Submits the version tagged submission file to the Kaggle competition
+# 1. Creates GitHub release from the tag version number
+# 2. Creates a version-tagged submission file from the current contents of data/submission.csv
+# 3. Adds the version-tagged submission file to the release
+# 4. Submits the version-tagged submission file to the Kaggle competition
 # 5. Updates the leaderboard rank badge in the README file
 
 on:
@@ -26,12 +26,12 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Setup Python
+    - name: Set up Python
       uses: actions/setup-python@v6
       with:
         python-version: "3.12"
 
-    - name: Set Version Environment Variable
+    - name: Set version environment variable
       run: |
         VERSION=${GITHUB_REF#refs/tags/}
         echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
@@ -46,19 +46,19 @@ jobs:
           --tag "${{ env.RELEASE_VERSION }}" \
           --output release_notes.md
 
-    # Creates the GitHub Release using your .github/release.yml prefix rules
+    # Create the GitHub release using your .github/release.yml prefix rules
     - name: Create GitHub Release
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         gh release create ${{ env.RELEASE_VERSION }} --notes-file release_notes.md
 
-    # Create version tagged submission file
+    # Create the version-tagged submission file
     - name: Version submission CSV
       run: |
         cp data/submission.csv data/submission.${{ env.RELEASE_VERSION }}.csv
 
-    # Upload file asset to the online release page
+    # Upload the file asset to the online release page
     - name: Upload submission file to release
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -74,7 +74,7 @@ jobs:
         echo "$release_body" >> $GITHUB_OUTPUT
         echo "EOF" >> $GITHUB_OUTPUT
 
-    # Install Kaggle CLI to up load submission
+    # Install Kaggle CLI to upload the submission
     - name: Install Kaggle CLI
       run: pip install --no-cache-dir kaggle
 
@@ -90,15 +90,16 @@ jobs:
           -m "Submission Version ${{ env.RELEASE_VERSION }}: ${{ steps.release_body.outputs.release_body }}"
 
     # Install the Python packages needed for leaderboard parsing and plotting
-    - name: Install Leaderboard Plotting Dependencies
+    - name: Install leaderboard plotting dependencies
       run: pip install --no-cache-dir kaggle pandas matplotlib numpy
 
     # Wait for Kaggle to score the submission, then update the README badge and plot
-    - name: Fetch Kaggle Rank and Update Badge
+    - name: Fetch Kaggle rank and update badge
       env:
         KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
         KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
         COMP_ID: "playground-series-s6e7" # Pass it down as a real environment variable
+        SUBMISSION_FILE: data/submission.${{ env.RELEASE_VERSION }}.csv
       run: |
         echo "Waiting for Kaggle to score the new submission..."
         python scripts/update_kaggle_badge.py

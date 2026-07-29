@@ -1,8 +1,8 @@
-# GitHub actions workflows
+# GitHub Actions workflows
 
 This directory manages the continuous integration and deployment pipeline for the Kaggle competition. The setup uses a localized terminal approach, completely eliminating the need for GitHub UI interaction.
 
-## 1. `verify_submission.yml` - Automated formatting verification
+## 1. `verify_submission.yml` - automated formatting verification
 
 Runs instantly on every commit or update pushing directly to the `main` branch that alters the core submission file. It enforces strict compliance checks to protect daily Kaggle submission quotas against corrupted runs.
 
@@ -16,7 +16,7 @@ Runs instantly on every commit or update pushing directly to the `main` branch t
 
 ---
 
-## 2. `submit.yml` - release & kaggle submission
+## 2. `submit.yml` - release and Kaggle submission
 
 Acts as the production pipeline delivery step. It runs on pushed version tags, creates a GitHub Release, uploads a version-stamped immutable copy of the submission file, submits that artifact to Kaggle, and then refreshes the README badge and leaderboard plot.
 

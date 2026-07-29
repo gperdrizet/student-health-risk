@@ -4,6 +4,7 @@ import re
 import subprocess
 import sys
 import time
+from pathlib import Path
 
 import matplotlib
 matplotlib.use('Agg')
@@ -14,6 +15,7 @@ import pandas as pd
 
 COMP_ID = os.environ['COMP_ID']
 KAGGLE_USERNAME = os.environ['KAGGLE_USERNAME'].strip().lower()
+SUBMISSION_FILE = os.environ.get('SUBMISSION_FILE', '').strip()
 MAX_ATTEMPTS = 60
 POLL_SECONDS = 10
 PLOT_DIR = 'docs'
@@ -31,8 +33,38 @@ def run_kaggle_csv(args):
     return pd.read_csv(io.StringIO(result.stdout))
 
 
+def normalize_columns(frame):
+    frame = frame.copy()
+    frame.columns = [str(column).strip() for column in frame.columns]
+    return frame
+
+
+def find_column(frame, candidates):
+    normalized = {str(column).strip().lower(): column for column in frame.columns}
+    for candidate in candidates:
+        if candidate in normalized:
+            return normalized[candidate]
+    return None
+
+
+def submission_is_complete(row, status_column, score_column):
+    if status_column is not None:
+        status_value = str(row.get(status_column, '')).strip().lower()
+        if status_value == 'complete':
+            return True
+
+    if score_column is not None:
+        score_value = pd.to_numeric(pd.Series([row.get(score_column)]), errors='coerce').iloc[0]
+        if pd.notna(score_value):
+            return True
+
+    return False
+
+
 def wait_for_completion():
     latest_submission = None
+    target_file_name = Path(SUBMISSION_FILE).name if SUBMISSION_FILE else None
+
     for attempt in range(1, MAX_ATTEMPTS + 1):
         submissions_df = run_kaggle_csv([
             'kaggle',
@@ -42,25 +74,66 @@ def wait_for_completion():
             COMP_ID,
             '--csv',
         ])
+        leaderboard_df = run_kaggle_csv([
+            'kaggle',
+            'competitions',
+            'leaderboard',
+            '-c',
+            COMP_ID,
+            '--csv',
+        ])
 
         if submissions_df is None or submissions_df.empty:
             print('Kaggle returned no submission data yet.')
         else:
-            latest_submission = submissions_df.iloc[0]
-            current_status = str(latest_submission.get('status', '')).strip().lower()
+            submissions_df = normalize_columns(submissions_df)
+            status_column = find_column(submissions_df, ['status', 'state'])
+            score_column = find_column(submissions_df, ['publicscore', 'public score'])
+            file_column = find_column(submissions_df, ['filename', 'file name', 'file'])
+            date_column = find_column(submissions_df, ['date', 'submitted'])
 
-            if current_status == 'complete':
-                print('Submission scoring complete!')
-                return latest_submission
+            candidate_rows = submissions_df
+            if target_file_name and file_column is not None:
+                file_matches = submissions_df[
+                    submissions_df[file_column].astype(str).str.strip().str.endswith(target_file_name, na=False)
+                ]
+                if not file_matches.empty:
+                    candidate_rows = file_matches
+
+            if date_column is not None:
+                candidate_rows = candidate_rows.sort_values(date_column, ascending=False, na_position='last')
+
+            latest_submission = candidate_rows.iloc[0]
+            current_status = str(latest_submission.get(status_column, '') if status_column is not None else '').strip().lower()
 
             if current_status in {'error', 'failed'}:
                 print('Error: Kaggle scoring failed.')
                 sys.exit(1)
 
+            if submission_is_complete(latest_submission, status_column, score_column):
+                print('Submission scoring complete!')
+                return latest_submission
+
             print(
-                f'Status is currently: {current_status}. '
+                f'Status is currently: {current_status or "unknown"}. '
                 f'Checking again in {POLL_SECONDS} seconds...'
             )
+
+        if leaderboard_df is not None and not leaderboard_df.empty:
+            try:
+                leaderboard_df, score_column, my_rank, my_score = find_leaderboard_row(
+                    leaderboard_df,
+                    latest_submission,
+                )
+            except Exception:
+                leaderboard_df = None
+            else:
+                if my_rank != 'Pending' and pd.notna(my_score):
+                    print('Leaderboard export already shows a completed submission.')
+                    return pd.Series({
+                        'status': 'complete',
+                        'publicScore': my_score,
+                    })
 
         if attempt == MAX_ATTEMPTS:
             print(
