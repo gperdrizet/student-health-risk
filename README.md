@@ -1,6 +1,12 @@
 # student-health-risk
 
+[![Verify submission](https://github.com/gperdrizet/student-health-risk/actions/workflows/verify_submission.yml/badge.svg)](https://github.com/gperdrizet/student-health-risk/actions/workflows/verify_submission.yml)
+
 [![Submit to Kaggle](https://github.com/gperdrizet/student-health-risk/actions/workflows/submit.yml/badge.svg)](https://github.com/gperdrizet/student-health-risk/actions/workflows/submit.yml)
+
+<!-- KAGGLE_BADGE_START -->
+![Kaggle Rank](https://shields.io)
+<!-- KAGGLE_BADGE_END -->
 
 Kaggle Playground Series Season 6 Episode 7 solution. In addition to the S6E7 solution, this repository provides a convenient containerized development environment for Kaggle competitions, and an automated submission workflow using GitHub actions.
 

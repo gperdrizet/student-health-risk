@@ -72,3 +72,66 @@ jobs:
           -c playground-series-s6e7 \
           -f data/submission.${{ env.RELEASE_VERSION }}.csv \
           -m "Submission Version ${{ env.RELEASE_VERSION }}: ${{ steps.release_body.outputs.release_body }}"
+
+    # Wait for evaluation loop, pull the new rank, and update README
+    - name: Fetch Kaggle Rank and Update Badge
+      env:
+        KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+        KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+      run: |
+        COMP_ID="playground-series-s6e7"
+        echo "Waiting for Kaggle to score the new submission..."
+        
+        # 1. Loop and check submission status until it is no longer processing
+        # Grabs the first entry in your submission list (the one we just made)
+        while true; do
+          # Extracts the status column from your most recent submission row
+          SUB_STATUS=$(kaggle competitions submissions -c $COMP_ID --csv | head -n 2 | tail -n 1 | cut -d',' -f4 | tr -d '[:space:]')
+          
+          if [ "$SUB_STATUS" == "complete" ]; then
+            echo "Submission scoring complete!"
+            break
+          elif [ "$SUB_STATUS" == "error" ] || [ "$SUB_STATUS" == "failed" ]; then
+            echo "Error: Kaggle scoring failed or threw an exception."
+            exit 1
+          else
+            echo "Status is '$SUB_STATUS'. Sleeping for 15 seconds before checking again..."
+            sleep 15
+          fi
+        done
+
+        # 2. Add an extra 5-second buffer to let the public leaderboard update calculations
+        sleep 5
+
+        # 3. Fetch your updated user rank
+        RANK_DATA=$(kaggle competitions list --group entered --csv)
+        MY_RANK=$(echo "$RANK_DATA" | grep "$COMP_ID" | cut -d',' -f7 | tr -d '[:space:]')
+        
+        if [ -z "$MY_RANK" ] || [ "$MY_RANK" == "0" ]; then
+          MY_RANK="Pending"
+        fi
+        echo "Verified New Leaderboard Rank: $MY_RANK"
+        
+        # 4. Generate the Shields.io badge text
+        BADGE_MARKDOWN="![Kaggle Rank](https://shields.io{MY_RANK}-blue?logo=kaggle&logoColor=white)"
+        
+        # 5. Overwrite the specific markdown anchor block in the root README.md
+        python -c "
+        import re
+        with open('README.md', 'r') as f:
+            content = f.read()
+            
+        pattern = r'(<!-- KAGGLE_BADGE_START -->)(.*?)(<!-- KAGGLE_BADGE_END -->)'
+        replacement = f'\\\\1\\\\n{BADGE_MARKDOWN}\\\\n\\\\3'
+        updated_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+        
+        with open('README.md', 'w') as f:
+            f.write(updated_content)
+        "
+        
+        # 6. Push the updated file back to the main branch securely
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add README.md
+        git commit -m "chore: automated update of leaderboard rank badge to ${MY_RANK} [skip ci]" || echo "No change in rank detected."
+        git push origin main
