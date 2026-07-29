@@ -76,7 +76,14 @@ jobs:
 
     # Get last PR body for submission message
     - name: Get last PR body for submission message
+
+      # Set environment variable for GitHub token to authenticate with GitHub CLI
+      env:
+        GH_TOKEN: ${{ github.token }}
+
+      # Set an output variable to store the PR body for later use
       id: pr_body
+
       run: |
         # Fetch the last pull request body using GitHub CLI
         pr_body=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
