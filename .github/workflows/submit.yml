@@ -96,17 +96,19 @@ jobs:
       env:
         KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
         KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        COMP_ID: "playground-series-s6e7" # Pass it down as a real environment variable
       run: |
-        COMP_ID="playground-series-s6e7"
         echo "Waiting for Kaggle to score the new submission..."
         
         # Monitor the submission using a resilient inline Python verification loop
         python -c "
-        import subprocess, time, io, pandas as pd
+        import os, subprocess, time, io, pandas as pd
+        
+        comp_id = os.environ['COMP_ID'] # Correctly extract the variable inside Python
         
         while True:
-            # 1. Safely run the command and stream text directly to a data frame
-            result = subprocess.run(['kaggle', 'competitions', 'submissions', '-c', '$COMP_ID', '--csv'], capture_output=True, text=True)
+            # 1. Safely run the command using the extracted variable string
+            result = subprocess.run(['kaggle', 'competitions', 'submissions', '-c', comp_id, '--csv'], capture_output=True, text=True)
             df = pd.read_csv(io.StringIO(result.stdout))
             
             # 2. Extract the first row's 'status' column accurately
@@ -132,7 +134,8 @@ jobs:
           MY_RANK="Pending"
         fi
         
-        BADGE_MARKDOWN="![Kaggle Rank](https://shields.io/badge/Kaggle-Rank%20${MY_RANK}-blue?logo=kaggle&logoColor=white)"
+        # Fixed URL parameter format for Shields.io badge path formatting
+        BADGE_MARKDOWN="![Kaggle Rank](https://shields.io{MY_RANK}-blue?logo=kaggle&logoColor=white)"
         
         python -c "
         import re
