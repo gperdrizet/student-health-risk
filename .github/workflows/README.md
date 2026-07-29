@@ -18,17 +18,16 @@ Runs instantly on every commit or update pushing directly to the `main` branch t
 
 ## 2. `submit.yml` - release & kaggle submission
 
-Acts as the production pipeline delivery step. It creates a formal GitHub Release complete with structured engine logs, archives a version-stamped immutable copy of the artifact, and submits it straight to the competition dashboard.
+Acts as the production pipeline delivery step. It runs on pushed version tags, creates a GitHub Release, uploads a version-stamped immutable copy of the submission file, submits that artifact to Kaggle, and then refreshes the README badge and leaderboard plot.
 
 **Trigger**: Pushing a versioned semantic tag matching the `v*` pattern (e.g., `git push origin v0.1.0`).
 
 **Execution Architecture Steps**:
-1. Extracts target versions natively using runtime environment variables.
-2. Automates a localized GitHub Release using `gh release create --generate-notes`.
-3. Parses `.github/release.yml` configurations to categorize commit prefixes (like `model:` and `feature:`) automatically under clean Markdown headers.
-4. Generates an isolated copy of the prediction matrix labeled `data/submission.vX.X.X.csv`.
-5. Uploads the file directly to the GitHub Release Assets portal utilizing `--clobber` mechanics.
-6. Pulls down structured Markdown summaries and routes the output cleanly to the live Kaggle engine.
+1. Extracts the version tag from `GITHUB_REF`.
+2. Generates release notes from [`.github/release.yml`](../release.yml) using commit-prefix grouping such as `model:` and `feature:`.
+3. Creates a GitHub Release with the generated notes and uploads a versioned copy of `data/submission.csv`.
+4. Submits the versioned artifact to Kaggle with the release notes as the submission message.
+5. Waits for Kaggle scoring, fetches the leaderboard export, writes a score distribution plot, and updates the README badge and plot.
 
 ## Required authentication setup
 
