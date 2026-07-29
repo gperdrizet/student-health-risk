@@ -10,8 +10,8 @@ Kaggle Playground Series Season 6 Episode 7 solution. In addition to the S6E7 so
 1. [`01-EDA.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/01-EDA.ipynb): Data exploration and analysis of features and labels
 2. [`02-gradient-boosting.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/02-gradient-boosting.ipynb): Basic Scikit-learn gradient boosting solution with minimal data preprocessing.
 3. [`03-data-preprocessing.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/03-data-preprocessing.ipynb): Simple optimization of imputation and categorical feature encoding strategies, with Scikit-learn gradient boosting model trained on whole dataset for submission.
-4. [`04-class-weight-tuning.ipynb](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/03-data-preprocessing.ipynb): Optimization of class weighting using a scale factor and cross-validation to prevent data leakage between folds.
-
+4. [`04-class-weight-tuning.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/03-data-preprocessing.ipynb): Optimization of class weighting using a scale factor and cross-validation to prevent data leakage between folds.
+5. [`05-stacking-ensemble.ipynb`]
 
 ## Submissions
 
