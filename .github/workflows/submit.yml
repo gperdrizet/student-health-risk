@@ -1,4 +1,4 @@
-# Work on dev branch -> PR (tests) -> Merge to main -> Submit submission.csv 
+# Work on dev branch -> PR (verify submission) -> Merge to main -> Create release x.x.x -> Submit submission_Vx.x.x.csv 
 name: Submit to Kaggle
 
 # Event trigger for the workflow
@@ -58,14 +58,14 @@ jobs:
     # Copy the submission CSV file with version number
     - name: Version submission CSV
       run: |
-        cp data/submission.csv data/submission_v${{ github.event.inputs.version }}.csv
+        cp data/submission.csv data/submission.${{ github.event.inputs.version }}.csv
 
     # Commit new submission CSV with version number
     - name: Commit new submission CSV
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add data/submission_v${{ github.event.inputs.version }}.csv
+        git add data/submission.${{ github.event.inputs.version }}.csv
         git commit -m "Update submission.csv to version ${{ github.event.inputs.version }}"
 
     # Install Kaggle CLI
@@ -74,22 +74,35 @@ jobs:
       # Run the command to install the Kaggle CLI
       run: pip install --no-cache-dir kaggle
 
+    # Add versioned submission file to GitHub release
+    - name: Upload submission file to release
+
+      # Set environment variable for GitHub token to authenticate with GitHub CLI
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Run the upload command to attach the submission CSV to the GitHub release
+      run: |
+        gh release upload ${{ github.event.inputs.version }} data/submission.${{ github.event.inputs.version }}.csv --clobber
+
     # Get release body from corresponding GitHub release version for submission message
     - name: Get release body for submission message
 
       # Set environment variable for GitHub token to authenticate with GitHub CLI
       env:
-        GH_TOKEN: ${{ github.token }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Set an output variable to store the release body for later use
       id: release_body
 
       run: |
-        # Fetch the release body using GitHub CLI
+        # Fetch the release body
         release_body=$(gh release view ${{ github.event.inputs.version }} --json body --jq '.body')
         echo "Release Body: $release_body"
-        # Set the release body as an output variable for later use
-        echo "release_body=$release_body" >> $GITHUB_OUTPUT
+        # Safely save multi-line string to GITHUB_OUTPUT
+        echo "release_body<<EOF" >> $GITHUB_OUTPUT
+        echo "$release_body" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
 
     # Submit predictions CSV
     - name: Submit to competition
@@ -103,5 +116,5 @@ jobs:
       run: |
         kaggle competitions submit \
           -c playground-series-s6e7 \
-          -f data/submission_v${{ github.event.inputs.version }}.csv \
+          -f data/submission.${{ github.event.inputs.version }}.csv \
           -m "Submission from PR #${{ github.event.pull_request.number }}: ${{ steps.release_body.outputs.release_body }}"
