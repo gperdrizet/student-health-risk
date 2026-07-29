@@ -3,20 +3,38 @@ name: Submit to Kaggle
 
 # Event trigger for the workflow
 on:
-  # Workflow triggers on pull request closed
-  pull_request:
-    types: [closed]
-    branches:
-      - main
-  # And/or can be manually triggered on GitHub
+
+  # Trigger manually via GitHub Actions UI with inputs for version and confirmation
   workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to create and submit (e.g. 1.2.3)"
+        required: true
+      confirm:
+        description: "Type 'submit' to confirm submission"
+        required: true
+        default: ""
 
 # List of jobs to run - we only have one job for submitting predictions
 jobs:
 
+  # A guard job to ensure the user has confirmed the submission
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm intent
+        run: |
+          if [ "${{ github.event.inputs.confirm }}" != "submit" ]; then
+            echo "Confirmation string must be 'submit'. Got: ${{ github.event.inputs.confirm }}"
+            exit 1
+          fi
+
   # The job responsible for submitting predictions to Kaggle
   submit_predictions:
     name: Submit predictions
+
+    # Check that we have cleared submission guard
+    needs: guard
 
     # Define the environment for the job - in this case, it runs on an Ubuntu machine
     runs-on: ubuntu-latest
@@ -37,11 +55,34 @@ jobs:
       with:
         python-version: "3.12"
 
+    # Copy the submission CSV file with version number
+    - name: Version submission CSV
+      run: |
+        cp data/submission.csv data/submission_v${{ github.event.inputs.version }}.csv
+
+    # Commit new submission CSV with version number
+    - name: Commit new submission CSV
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add data/submission_v${{ github.event.inputs.version }}.csv
+        git commit -m "Update submission.csv to version ${{ github.event.inputs.version }}"
+
     # Install Kaggle CLI
     - name: Install Kaggle CLI
 
       # Run the command to install the Kaggle CLI
       run: pip install --no-cache-dir kaggle
+
+    # Get last PR body for submission message
+    - name: Get last PR body for submission message
+      id: pr_body
+      run: |
+        # Fetch the last pull request body using GitHub CLI
+        pr_body=$(gh pr view ${{ github.event.pull_request.number }} --json body --jq '.body')
+        echo "PR Body: $pr_body"
+        # Set the PR body as an output variable for later use
+        echo "pr_body=$pr_body" >> $GITHUB_OUTPUT
 
     # Submit predictions CSV
     - name: Submit to competition
@@ -55,5 +96,5 @@ jobs:
       run: |
         kaggle competitions submit \
           -c playground-series-s6e7 \
-          -f data/submission.csv \
-          -m "Submission from PR #${{ github.event.pull_request.number }}"
+          -f data/submission_v${{ github.event.inputs.version }}.csv \
+          -m "Submission from PR #${{ github.event.pull_request.number }}: ${{ steps.pr_body.outputs.pr_body }}"
