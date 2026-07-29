@@ -81,8 +81,8 @@ jobs:
       env:
         GH_TOKEN: ${{ github.token }}
 
-      # Set an output variable to store the PR body for later use
-      id: pr_body
+      # Set an output variable to store the release body for later use
+      id: release_body
 
       run: |
         # Fetch the release body using GitHub CLI
@@ -104,4 +104,4 @@ jobs:
         kaggle competitions submit \
           -c playground-series-s6e7 \
           -f data/submission_v${{ github.event.inputs.version }}.csv \
-          -m "Submission from PR #${{ github.event.pull_request.number }}: ${{ steps.pr_body.outputs.release_body }}"
+          -m "Submission from PR #${{ github.event.pull_request.number }}: ${{ steps.release_body.outputs.release_body }}"
