@@ -19,12 +19,10 @@ Kaggle Playground Series Season 6 Episode 7 solution. In addition to the S6E7 so
 2. [`02-gradient-boosting.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/02-gradient-boosting.ipynb): Basic Scikit-learn gradient boosting solution with minimal data preprocessing.
 3. [`03-data-preprocessing.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/03-data-preprocessing.ipynb): Simple optimization of imputation and categorical feature encoding strategies, with Scikit-learn gradient boosting model trained on whole dataset for submission.
 4. [`04-class-weight-tuning.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/04-class-weight-tuning.ipynb): Optimization of class weighting using a scale factor and cross-validation to prevent data leakage between folds.
-5. [`05-stacking-ensemble.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/05-stacking-ensemble.ipynb): Legacy baseline stacking experiment on the original preprocessed artifacts.
-6. [`06-stacking-ensemble-random-forest-stage2.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/06-stacking-ensemble-random-forest-stage2.ipynb): Legacy random forest stacking experiment on the original preprocessed artifacts.
-7. [`08-feature-engineering.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/08-feature-engineering.ipynb): Leakage-safe engineered features built from the preprocessed folds.
-8. [`09-gradient-boosting-baseline.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/09-gradient-boosting-baseline.ipynb): Lightly tuned single-model baseline on engineered features.
-9. [`10-stacking-ensemble-engineered.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/10-stacking-ensemble-engineered.ipynb): Baseline stacking ensemble on engineered features.
-10. [`11-stacking-optimization-engineered.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/11-stacking-optimization-engineered.ipynb): Sampled stacking optimization on engineered features.
+5. [`05-feature-engineering.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/05-feature-engineering.ipynb): Leakage-safe engineered features built from the preprocessed fold artifacts.
+6. [`06-gradient-boosting-baseline.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/06-gradient-boosting-baseline.ipynb): Optimized HistGradientBoosting baseline on engineered features with sampled search and full-fold reranking.
+7. [`07-xgboost-baseline-engineered.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/07-xgboost-baseline-engineered.ipynb): GPU-capable sampled XGBoost optimization on engineered features with configurable fold/sampling controls.
+8. [`08-xgboost-hillclimb-ensemble.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/08-xgboost-hillclimb-ensemble.ipynb): Weighted all-XGBoost hill-climbing ensemble with per-model row/feature bootstrapping and checkpoint submissions.
 
 ## Submissions
 
