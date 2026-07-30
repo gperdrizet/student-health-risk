@@ -6,9 +6,40 @@ import pandas as pd
 from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.metrics import balanced_accuracy_score
 
+def canonical_candidate_key(params):
+    """Fix data types for parameter values"""
+
+    key_items = []
+
+    for key, value in sorted(params.items()):
+        if isinstance(value, (float, np.floating)):
+            key_items.append((key, float(value)))
+
+        elif isinstance(value, (int, np.integer)):
+            key_items.append((key, int(value)))
+
+        else:
+            key_items.append((key, value))
+
+    return tuple(key_items)
+
+
+def add_candidate(candidate, parameter_candidates, seen_candidates):
+    """Add a candidate to the list if it is not a duplicate after rounding/clamping."""
+
+    key = canonical_candidate_key(candidate)
+
+    # Avoid duplicate candidate configs after rounding/clamping.
+    if key not in seen_candidates:
+        seen_candidates.add(key)
+        parameter_candidates.append(candidate)
+
+    return parameter_candidates, seen_candidates
+
 
 def build_model(params, seed=315):
     """Build a class-balanced HistGradientBoostingClassifier from params."""
+
     return HistGradientBoostingClassifier(
         **params,
         class_weight='balanced',
@@ -18,6 +49,7 @@ def build_model(params, seed=315):
 
 def sample_fold_split(x_data, y_data, sample_fraction, seed):
     """Return a stratified subsample of one fold split using a row fraction."""
+
     if sample_fraction is None or sample_fraction >= 1.0:
         return x_data, y_data
 
@@ -50,8 +82,14 @@ def sample_fold_split(x_data, y_data, sample_fraction, seed):
 
     if len(sampled_indices) > target_samples:
         sampled_indices = rng.choice(sampled_indices, size=target_samples, replace=False)
+    
     elif len(sampled_indices) < target_samples:
-        remaining = np.setdiff1d(np.arange(len(y_reset)), sampled_indices, assume_unique=False)
+        remaining = np.setdiff1d(
+            np.arange(len(y_reset)),
+            sampled_indices,
+            assume_unique=False
+        )
+
         add_count = min(target_samples - len(sampled_indices), len(remaining))
 
         if add_count > 0:
@@ -59,6 +97,7 @@ def sample_fold_split(x_data, y_data, sample_fraction, seed):
             sampled_indices = np.concatenate([sampled_indices, add_indices])
 
     rng.shuffle(sampled_indices)
+
     return x_reset.iloc[sampled_indices], y_reset.iloc[sampled_indices]
 
 
