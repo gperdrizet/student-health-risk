@@ -183,6 +183,27 @@ def wait_for_completion():
     return latest_submission
 
 
+def _submission_identity_terms(latest_submission):
+    terms = [KAGGLE_USERNAME]
+
+    if latest_submission is not None:
+        for key in ['teamName', 'team name', 'filename', 'fileName', 'file name']:
+            value = latest_submission.get(key)
+            if value is None:
+                continue
+            text = str(value).strip().lower()
+            if text:
+                terms.append(text)
+
+    normalized_terms = []
+    for term in terms:
+        normalized = str(term).strip().lower()
+        if normalized and normalized not in normalized_terms:
+            normalized_terms.append(normalized)
+
+    return normalized_terms
+
+
 def find_leaderboard_row(leaderboard_df, latest_submission):
     leaderboard_df = leaderboard_df.copy()
     leaderboard_df.columns = [str(column).strip() for column in leaderboard_df.columns]
@@ -190,17 +211,30 @@ def find_leaderboard_row(leaderboard_df, latest_submission):
     rank_column = next((c for c in leaderboard_df.columns if 'rank' in c.lower() or 'position' in c.lower()), None)
     name_column = next((c for c in leaderboard_df.columns if any(token in c.lower() for token in ['team', 'user', 'name'])), None)
     score_column = find_score_column(leaderboard_df, excluded_columns=[rank_column] if rank_column is not None else [])
+    identity_terms = _submission_identity_terms(latest_submission)
 
     if score_column is not None:
         leaderboard_df[score_column] = pd.to_numeric(leaderboard_df[score_column], errors='coerce')
         leaderboard_df = leaderboard_df.dropna(subset=[score_column]).reset_index(drop=True)
 
     my_row = None
-    if name_column is not None:
-        name_series = leaderboard_df[name_column].astype(str).str.lower()
-        matches = leaderboard_df[name_series.str.contains(KAGGLE_USERNAME, regex=False, na=False)]
-        if not matches.empty:
-            my_row = matches.iloc[0]
+    text_columns = list(leaderboard_df.select_dtypes(include=['object', 'string']).columns)
+    candidate_text_columns = [name_column] if name_column is not None else []
+    for column in text_columns:
+        if column not in candidate_text_columns:
+            candidate_text_columns.append(column)
+
+    for column in candidate_text_columns:
+        if column is None:
+            continue
+        column_series = leaderboard_df[column].astype(str).str.lower()
+        for term in identity_terms:
+            matches = leaderboard_df[column_series.str.contains(term, regex=False, na=False)]
+            if not matches.empty:
+                my_row = matches.iloc[0]
+                break
+        if my_row is not None:
+            break
 
     if my_row is None and latest_submission is not None and score_column is not None:
         submission_score = pd.to_numeric(
