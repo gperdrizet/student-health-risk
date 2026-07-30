@@ -3,7 +3,7 @@
 [![Verify submission](https://github.com/gperdrizet/student-health-risk/actions/workflows/verify_submission.yml/badge.svg)](https://github.com/gperdrizet/student-health-risk/actions/workflows/verify_submission.yml) [![Submit to Kaggle](https://github.com/gperdrizet/student-health-risk/actions/workflows/submit.yml/badge.svg)](https://github.com/gperdrizet/student-health-risk/actions/workflows/submit.yml)
 
 <!-- KAGGLE_BADGE_START -->
-![Kaggle Rank](https://shields.io)
+![Kaggle Rank](https://img.shields.io/badge/Kaggle%20rank-Pending-blue?logo=kaggle&logoColor=white)
 <!-- KAGGLE_BADGE_END -->
 
 <!-- KAGGLE_RANK_PLOT_START -->
