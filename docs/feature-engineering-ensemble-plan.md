@@ -1,43 +1,75 @@
-# Feature Engineering and Ensemble Plan
+# Feature Engineering and XGBoost Ensemble Plan
 
 ## Scope
-- Leave notebooks 04 and earlier untouched.
-- Add a new engineered-features notebook after notebook 04.
-- Add a lightly tuned gradient boosting baseline on the engineered folds.
-- Add new stacking notebooks that consume the engineered artifacts.
+- Keep notebooks 04 and earlier untouched.
+- Expand feature diversity in notebook 05 and regenerate engineered artifacts.
+- Keep notebook 06 as the refreshed single-model HGB benchmark.
+- Add notebook 07 for optimized single-model XGBoost on engineered features.
+- Add notebook 08 for all-XGBoost hill-climbing ensemble construction.
+
+## Environment notes
+- Devcontainer is being migrated to a CUDA-enabled Kaggle NVIDIA image.
+- Notebook code should be GPU-first for XGBoost, but include CPU fallback for portability and debugging.
+- Use deterministic seeds for fold sampling and candidate generation so CPU/GPU comparisons remain reproducible.
 
 ## Workflow
-1. Load the preprocessed fold pickle and train/test CSVs produced by notebook 03.
-2. Add leakage-safe engineered features using only row-wise transforms or fold-local fitting.
-3. Save versioned engineered artifacts under `data/tmp/`.
-4. Fit and score a compact gradient boosting baseline on the engineered folds.
-5. Build a basic stacking ensemble on the engineered artifacts.
-6. Optimize the stacking ensemble on the same engineered feature set.
+1. Rebuild engineered artifacts from notebook 05 after adding more diverse leakage-safe features.
+2. Re-run notebook 06 to refresh the HGB benchmark and submission baseline.
+3. Run notebook 07 sampled optimization to identify high-performing XGBoost regions quickly.
+4. Use notebook 07 top candidates to define ranges for notebook 08 base learners.
+5. Run notebook 08 hill climbing to build a fixed-size weighted ensemble and emit checkpoint submissions.
+
+## Sampling design
+- Fold-level fast CV sampling:
+	- Used in notebook 07 optimization search and notebook 08 rapid ensemble evaluation.
+	- Sample rows only from each fold split (no feature sampling at this level).
+	- Keep the sampled fold subset and sampled row indices fixed for the duration of a run.
+- Per-model diversity sampling:
+	- Used in notebook 08 candidate training.
+	- Bootstrap sample rows and sample feature subsets per model.
+	- Track row seed, feature seed, and selected feature list per accepted model.
+
+## Notebook contracts
+1. `07-xgboost-baseline-engineered.ipynb`
+	 - Medium-budget sampled search on limited folds.
+	 - Full-fold rerank of top candidates.
+	 - Cross-validation performance estimate with independent fold/sampling controls.
+	 - Persist: stage-1 rows, rerank rows, best params, parameter ranges, CV summary.
+2. `08-xgboost-hillclimb-ensemble.ipynb`
+	 - Weighted-average hill climbing with fixed final size of 24 accepted models.
+	 - Base learners are all XGBoost and differ by hyperparameters, row bootstrap, and feature subset.
+	 - Keep/reject each candidate based on fast CV delta against current ensemble.
+	 - Persist: full hill-climb log, accepted model registry, checkpoints, and final submission.
+
+## Artifacts
+- Inputs:
+	- `data/tmp/05-engineered-cv-folds.pkl`
+	- `data/tmp/05-engineered-train-data.csv`
+	- `data/tmp/05-engineered-test-data.csv`
+	- `data/results/06-gradient-boosting-scores.pkl`
+- Notebook 07 outputs:
+	- `data/results/07-xgboost-search-results.pkl`
+	- `data/results/07-xgboost-scores.pkl`
+- Notebook 08 outputs:
+	- `data/results/08-xgboost-hillclimb-log.pkl`
+	- `data/results/08-xgboost-ensemble.pkl`
+	- `data/submission.csv` (best-known current submission)
+	- Optional checkpoints: `data/submissions/08-xgb-ensemble-step-<n>.csv`
 
 ## Feature engineering rules
-- Do not modify notebook 04 or earlier.
-- Do not fit transforms on the full dataset before splitting.
-- Keep the first feature set small and deterministic.
-- Use sampling for exploratory sweeps and reserve full-fold runs for shortlisted candidates.
-- Favor engineered ratios, bins, and aggregate indicators over large polynomial expansions.
-
-## Proposed artifacts
-- `data/tmp/08-engineered-cv-folds.pkl`
-- `data/tmp/08-engineered-train-data.csv`
-- `data/tmp/08-engineered-test-data.csv`
-- `data/results/09-gradient-boosting-scores.pkl`
-- `data/results/10-stacking-cross-val-scores.pkl`
-- `data/results/11-optimized-stacking-results.pkl`
-
-## Notebook sequence
-1. `08-feature-engineering.ipynb`
-2. `09-gradient-boosting-baseline.ipynb`
-3. `10-stacking-ensemble-engineered.ipynb`
-4. `11-stacking-optimization-engineered.ipynb`
+- No leakage: fit-only-on-train when transforms require fitting.
+- Preserve stable feature ordering across fold/train/test outputs.
+- Allow broad diversity, but keep each feature family deterministic and auditable.
+- Validate no NaN/inf drift after transforms.
 
 ## Verification
-- Confirm the engineered train/test artifacts share the same feature columns.
-- Confirm no NaNs or infinities are introduced.
-- Compare the gradient boosting baseline to the stacking ensemble.
-- Compare the optimized stack to the baseline stack on the same engineered features.
-- Re-run the engineering notebook once to check that output schema and row order are stable.
+- Schema parity:
+	- engineered train/test columns match (except target/id roles).
+	- each fold has identical `x_train` and `x_validation` feature columns/order.
+- Reproducibility:
+	- fixed sampled folds and row indices reproduce identical candidate rankings.
+- Performance checks:
+	- notebook 07 beats or matches notebook 06 under aligned CV protocol.
+	- notebook 08 final weighted ensemble beats notebook 07 single-model median BA.
+- Artifact checks:
+	- all planned result files are written and contain run config metadata.
