@@ -1,10 +1,12 @@
 // For format details, see https://aka.ms/devcontainer.json.
 {
 	"name": "Kaggle Student Health",
-	// "image": "mcr.microsoft.com/devcontainers/python:3.12-trixie",
+	// "image": "mcr.microsoft.com/devcontainers/python:3.12-trixie", # Base image with Python 3.12 and common data science libraries
 	"image": "gperdrizet/kaggle-nvidia:6.0.1",
     "runArgs": [
-		"--network=host",     // Use host network stack directly - no port mapping needed
+		"--network=bridge",   // Explicitly use bridge network for internet access
+		"--gpus",             // Enable the two Tesla P100 GPUs in the container
+		"\"device=1,2\"",
 		"--cpuset-cpus=4-23", // Limit container to CPU cores 8-23 to avoid thrashing the host 
 		                      // system and to allow other processes to run on cores 0-3
 		"--cpus=20",          // Limit container to 20 total CPU cores to avoid thrashing
@@ -12,7 +14,7 @@
 		"--memory-swap=200g", // Limit total memory + swap to 200GB to avoid swapping
 		"--shm-size=4g"       // Limit shared memory to 4GB
 	],
-	"remoteUser": "vscode",           // Use the 'vscode' user provided by the base image
+	"remoteUser": "vscode",   // Use the 'vscode' user provided by the base image
 
 	// Custom configuration options
 	"customizations": {
@@ -23,11 +25,11 @@
 		// Use 'settings' to set default VS Code values on container create
 		"settings": {
 			// Set the default Python interpreter
-			"python.defaultInterpreterPath": "/usr/local/bin/python",
+			"python.defaultInterpreterPath": "/usr/bin/python",
 
 			// Exclude system Python 3.13 environment
 			// Prevents confusion by hiding system Python versions we don't want to use
-			"jupyter.kernels.excludePythonEnvironments": ["/usr/local/bin/python3"],
+			"jupyter.kernels.excludePythonEnvironments": [],
 
 			// Disable automatic port forwarding and restoration of forwarded ports
 			// from prior sessions to give explicit control
