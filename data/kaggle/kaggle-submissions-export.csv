@@ -1,4 +1,8 @@
 ref,fileName,date,description,status,publicScore,privateScore
+55120694,submission.v0.3.8.csv,2026-07-30 22:47:50.173000,"Submission Version v0.3.8: # Release Notes for v0.3.8
+
+## General maintenance
+- workflow: polish Kaggle rank plot and add best BA badge",SubmissionStatus.COMPLETE,0.94947,
 55120534,submission.v0.3.7.csv,2026-07-30 22:32:55.620000,"Submission Version v0.3.7: # Release Notes for v0.3.7
 
 ## Model architecture & tuning
