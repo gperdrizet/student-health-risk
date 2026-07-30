@@ -1,0 +1,101 @@
+ref,fileName,date,description,status,publicScore,privateScore
+55120534,submission.v0.3.7.csv,2026-07-30 22:32:55.620000,"Submission Version v0.3.7: # Release Notes for v0.3.7
+
+## Model architecture & tuning
+- add optuna-tracked hill-climbing runtime module
+
+## General maintenance
+- chore: add hill-climb runtime wrapper script
+- chore: autostart optuna dashboard in devcontainer
+- docs: document hill-climb module and optuna dashboard usage
+- ... and 1 more commit(s)",SubmissionStatus.COMPLETE,0.94947,
+55120422,submission.v0.3.6.csv,2026-07-30 22:22:50.143000,"Submission Version v0.3.6: # Release Notes for v0.3.6
+
+## Model architecture & tuning
+- added optimized XGBoost single model baseline using engineered features
+- re-ran gradient boosting baseline with wider candidate search
+
+## General maintenance
+- Merged new Kaggle leaderboard export
+- chore: updated leaderboard dowload for submission workflow
+- Updated README
+- ... and 1 more commit(s)",SubmissionStatus.COMPLETE,0.94947,
+55118101,submission.v0.3.5.csv,2026-07-30 19:40:31,"Submission Version v0.3.5: # Release Notes for v0.3.5
+
+## General maintenance
+- chore: persist kaggle leaderboard exports",SubmissionStatus.COMPLETE,0.94991,
+55117812,submission.v0.3.4.csv,2026-07-30 19:25:12.300000,"Submission Version v0.3.4: # Release Notes for v0.3.4
+
+## General maintenance
+- Patched leaderboard download
+- Finished merge",SubmissionStatus.COMPLETE,0.94991,
+55117720,submission.v0.3.3.csv,2026-07-30 19:18:14.187000,"Submission Version v0.3.3: # Release Notes for v0.3.3
+
+## General maintenance
+- Fixed rank update bug",SubmissionStatus.COMPLETE,0.94991,
+55117673,submission.v0.3.2.csv,2026-07-30 19:15:02.990000,"Submission Version v0.3.2: # Release Notes for v0.3.2
+
+## Model architecture & tuning
+- updated sklearn gradient boosting hyperparameter optimization space
+- updated gradient boosting baseline with new engineered features
+
+## Feature engineering & data processing
+- added categorical cross features
+- fixed derived feature names and fragmentation
+
+## General maintenance
+- Removed old stacking ensemble notebooks and renumbered
+- Updated notebook artificat numbering
+- Switched to CUDA enabled base image and increased container resources
+- ... and 6 more commit(s)",SubmissionStatus.COMPLETE,0.94991,
+55108156,submission.v0.3.1.csv,2026-07-30 11:56:04.607000,"Submission Version v0.3.1: # Release Notes for v0.3.1
+
+## Model architecture & tuning
+- improved hyperparameter optimization with wide sampled search and then full-fold re-rank
+- clean run of optimized gradient boosting model with engineered features
+
+## Feature engineering & data processing
+- added more engineered features
+- added more engineered features
+
+## General maintenance
+- Updated README
+- Added cross-validation score boxplot
+- Updated workflow scripts
+- ... and 6 more commit(s)",SubmissionStatus.COMPLETE,0.9496,
+55093259,submission.v0.3.0.csv,2026-07-29 22:26:19.443000,"Submission Version v0.3.0: # Release Notes for v0.3.0
+
+## Changes
+- No qualifying commits found.",SubmissionStatus.COMPLETE,0.88799,
+55092173,submission.v0.2.5.csv,2026-07-29 21:06:39.227000,"Submission Version v0.2.5: # Release Notes for v0.2.5
+
+## Changes
+- No qualifying commits found.",SubmissionStatus.COMPLETE,0.88799,
+55092082,submission.v0.2.4.csv,2026-07-29 20:58:41.980000,"Submission Version v0.2.4: # Release Notes for v0.2.4
+
+## Changes
+- No qualifying commits found.",SubmissionStatus.COMPLETE,0.88799,
+55091716,submission.v0.2.3.csv,2026-07-29 20:30:24.357000,Submission Version v0.2.3: Routine model submission for version v0.2.3.,SubmissionStatus.COMPLETE,0.88799,
+55091651,submission.v0.2.2.csv,2026-07-29 20:24:57.047000,Submission Version v0.2.2: Routine model submission for version v0.2.2.,SubmissionStatus.COMPLETE,0.88789,
+55091605,submission.v0.2.1.csv,2026-07-29 20:21:16.880000,Submission Version v0.2.1: Routine model submission for version v0.2.1.,SubmissionStatus.COMPLETE,0.88799,
+55091562,submission.v0.2.1.csv,2026-07-29 20:18:44.200000,Submission Version v0.2.1: Routine model submission for version v0.2.1.,SubmissionStatus.COMPLETE,0.88799,
+55091154,submission.v0.2.0.csv,2026-07-29 19:49:20.247000,"Submission Version v0.2.0
+
+
+
+**Full Changelog**: https://github.com/gperdrizet/student-health-risk/compare/0.1.0...v0.2.0",SubmissionStatus.COMPLETE,0.88799,
+55084064,submission.0.1.0.csv,2026-07-29 14:05:29.640000,"Submission Version 0.1.0: Stacking ensemble with:
+
+- Linear meta-learner
+- All estimators balanced class weighting
+- Feature pass-through to meta-learner",SubmissionStatus.COMPLETE,0.94955,
+55069249,submission.csv,2026-07-29 01:49:38.890000,Submission from PR #18,SubmissionStatus.COMPLETE,0.9491,
+54957354,submission.csv,2026-07-24 18:16:20.363000,Submission from PR #17,SubmissionStatus.COMPLETE,0.94971,
+54915274,submission.csv,2026-07-23 00:33:48.843000,Submission from PR #16,SubmissionStatus.COMPLETE,0.87605,
+54863203,submission.csv,2026-07-20 22:10:40.133000,Submission from PR #15,SubmissionStatus.COMPLETE,0.87628,
+54584636,submission.csv,2026-07-11 20:38:02.027000,Submission from PR #12,SubmissionStatus.COMPLETE,0.86354,
+54584515,submission.csv,2026-07-11 20:32:33.803000,Submission from PR #11,SubmissionStatus.ERROR,,
+54514559,submission.csv,2026-07-10 03:37:15.303000,Submission from PR #10,SubmissionStatus.COMPLETE,0.33333,
+54514369,submission.csv,2026-07-10 03:29:46.070000,Submission from PR #9,SubmissionStatus.COMPLETE,0.33333,
+54514221,submission.csv,2026-07-10 03:22:45.087000,Submission from GitHub Actions,SubmissionStatus.COMPLETE,0.33333,
+54513587,submission.csv,2026-07-10 02:52:16.287000,Submission from GitHub Actions,SubmissionStatus.COMPLETE,0.33333,
