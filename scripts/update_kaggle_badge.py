@@ -22,6 +22,7 @@ POLL_SECONDS = 10
 RATE_LIMIT_MAX_RETRIES = int(os.environ.get('KAGGLE_RATE_LIMIT_MAX_RETRIES', '8'))
 RATE_LIMIT_BASE_DELAY_SECONDS = int(os.environ.get('KAGGLE_RATE_LIMIT_BASE_DELAY_SECONDS', '5'))
 POST_SCORE_COOLDOWN_SECONDS = int(os.environ.get('KAGGLE_POST_SCORE_COOLDOWN_SECONDS', '20'))
+PLOT_SCORE_MIN = float(os.environ.get('KAGGLE_PLOT_SCORE_MIN', '0.8'))
 ARTIFACT_DIR = os.path.join('data', 'kaggle')
 PLOT_PATH = os.path.join(ARTIFACT_DIR, 'kaggle-leaderboard-rank.png')
 SUBMISSIONS_EXPORT_PATH = os.path.join(ARTIFACT_DIR, 'kaggle-submissions-export.csv')
@@ -246,22 +247,32 @@ def wait_for_completion():
     return latest_submission
 
 
-def resolve_latest_submission_score(submissions_df, latest_submission):
+def resolve_best_submission_score(submissions_df):
     score_column = find_column(submissions_df, ['publicscore', 'public score'])
-    latest_row = select_submission_row(submissions_df)
-    my_score = (
-        pd.to_numeric(pd.Series([latest_row.get(score_column)]), errors='coerce').iloc[0]
-        if score_column is not None
-        else np.nan
+    if score_column is None:
+        raise RuntimeError('Could not determine the public score column from Kaggle submissions export.')
+
+    scored_submissions = submissions_df.copy()
+    scored_submissions['_public_score_numeric'] = pd.to_numeric(
+        scored_submissions[score_column],
+        errors='coerce',
     )
+    scored_submissions = scored_submissions.dropna(subset=['_public_score_numeric'])
 
-    if pd.isna(my_score) and latest_submission is not None:
-        my_score = pd.to_numeric(pd.Series([latest_submission.get('publicScore')]), errors='coerce').iloc[0]
+    if scored_submissions.empty:
+        raise RuntimeError('Could not find any numeric public score in Kaggle submissions export.')
 
-    if pd.isna(my_score):
-        raise RuntimeError('Could not determine the public score for the latest submission.')
+    best_submission_index = scored_submissions['_public_score_numeric'].idxmax()
+    best_submission = scored_submissions.loc[best_submission_index]
+    best_score = float(best_submission['_public_score_numeric'])
 
-    return float(my_score)
+    file_column = find_column(submissions_df, ['filename', 'file name', 'file'])
+    date_column = find_column(submissions_df, ['date', 'submitted'])
+    best_file = str(best_submission[file_column]).strip() if file_column is not None else 'unknown'
+    best_date = str(best_submission[date_column]).strip() if date_column is not None else 'unknown'
+    print(f'Using best submission score: {best_score:.6f} (file={best_file}, date={best_date})')
+
+    return best_score
 
 
 def calculate_rank_from_scores(leaderboard_df, my_score):
@@ -293,38 +304,39 @@ def save_kaggle_exports(submissions_df, leaderboard_df):
 
 def write_plot(leaderboard_scores, my_rank, my_score):
     os.makedirs(ARTIFACT_DIR, exist_ok=True)
+    plot_scores = leaderboard_scores[leaderboard_scores >= PLOT_SCORE_MIN]
+    if plot_scores.empty:
+        plot_scores = leaderboard_scores
+
+    marker_score = max(my_score, PLOT_SCORE_MIN)
+    title_fontsize = 14
+    label_fontsize = 12
+    tick_fontsize = 12
+    legend_fontsize = 12
 
     plt.figure(figsize=(10, 5))
-    plt.hist(leaderboard_scores, bins=30, color='#d9d9d9', edgecolor='black')
-    plt.axvline(my_score, color='#d62728', linewidth=3, label=f'Your score: {my_score:.5f}')
-    plt.title('Kaggle leaderboard score distribution')
-    plt.xlabel('Public leaderboard score')
-    plt.ylabel('Submission count')
-    plt.legend(frameon=False)
-
-    annotation = f'Rank: {my_rank}\nScore: {my_score:.5f}'
-    plt.text(
-        my_score,
-        plt.gca().get_ylim()[1] * 0.92,
-        annotation,
-        color='#d62728',
-        fontsize=10,
-        ha='left',
-        va='top',
-        bbox={
-            'facecolor': 'white',
-            'alpha': 0.85,
-            'edgecolor': '#d62728',
-        },
-    )
+    plt.hist(plot_scores, bins=30, color='#d9d9d9', edgecolor='black')
+    plt.axvline(marker_score, color='#d62728', linewidth=3, label='best submission')
+    plt.title('Kaggle leaderboard score distribution', fontsize=title_fontsize)
+    plt.xlabel('Public leaderboard score', fontsize=label_fontsize)
+    plt.ylabel('Submission count', fontsize=label_fontsize)
+    plt.xlim(left=PLOT_SCORE_MIN)
+    plt.xticks(fontsize=tick_fontsize)
+    plt.yticks(fontsize=tick_fontsize)
+    plt.legend(frameon=False, fontsize=legend_fontsize)
 
     plt.tight_layout()
     plt.savefig(PLOT_PATH, dpi=200, bbox_inches='tight')
     plt.close()
 
 
-def update_readme(my_rank):
+def update_readme(my_rank, my_score):
     badge_markdown = f'![Kaggle Rank](https://img.shields.io/badge/Kaggle%20rank-{my_rank}-blue?logo=kaggle&logoColor=white)'
+    score_badge_markdown = (
+        '![Best Leaderboard Balanced Accuracy]('
+        f'https://img.shields.io/badge/Best%20leaderboard%20BA-{my_score:.5f}-blue?logo=kaggle&logoColor=white'
+        ')'
+    )
     plot_markdown = f'![Kaggle leaderboard score distribution]({PLOT_PATH})'
 
     with open(README_PATH, 'r', encoding='utf-8') as handle:
@@ -332,7 +344,7 @@ def update_readme(my_rank):
 
     content, badge_replacements = re.subn(
         r'(<!-- KAGGLE_BADGE_START -->).*?(<!-- KAGGLE_BADGE_END -->)',
-        f'\\1\n{badge_markdown}\n\\2',
+        f'\\1\n{badge_markdown} {score_badge_markdown}\n\\2',
         content,
         flags=re.DOTALL,
     )
@@ -353,7 +365,7 @@ def update_readme(my_rank):
 
 
 def main():
-    latest_submission = wait_for_completion()
+    wait_for_completion()
     submissions_df = fetch_kaggle_submissions(COMP_ID)
 
     try:
@@ -376,12 +388,12 @@ def main():
         sys.exit(1)
 
     save_kaggle_exports(submissions_df, leaderboard_df)
-    my_score = resolve_latest_submission_score(submissions_df, latest_submission)
+    my_score = resolve_best_submission_score(submissions_df)
     leaderboard_scores, my_rank = calculate_rank_from_scores(leaderboard_df, my_score)
     write_plot(leaderboard_scores, my_rank, my_score)
-    update_readme(my_rank)
+    update_readme(my_rank, my_score)
 
-    print(f'Updated README badge to rank {my_rank}')
+    print(f'Updated README badges: rank={my_rank}, best_leaderboard_ba={my_score:.5f}')
     print(f'Wrote leaderboard plot to {PLOT_PATH}')
 
 
