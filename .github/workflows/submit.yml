@@ -5,7 +5,7 @@ name: Submit to Kaggle
 # 2. Creates a version-tagged submission file from the current contents of data/submission.csv
 # 3. Adds the version-tagged submission file to the release
 # 4. Submits the version-tagged submission file to the Kaggle competition
-# 5. Updates the leaderboard rank badge in the README file
+# 5. Updates the leaderboard rank badge and plot in the README file
 
 on:
   push:
@@ -108,4 +108,4 @@ jobs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add README.md docs/kaggle-leaderboard-rank.png
         git commit -m "chore: automated update of leaderboard rank badge [skip ci]" || echo "No change in rank."
-        git push origin main
+        git push origin HEAD:${{ github.event.repository.default_branch }}
