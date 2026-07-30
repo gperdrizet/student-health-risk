@@ -20,6 +20,8 @@ MAX_ATTEMPTS = 60
 POLL_SECONDS = 10
 PLOT_DIR = 'docs'
 PLOT_PATH = os.path.join(PLOT_DIR, 'kaggle-leaderboard-rank.png')
+SUBMISSIONS_EXPORT_PATH = os.path.join(PLOT_DIR, 'kaggle-submissions-export.csv')
+LEADERBOARD_EXPORT_PATH = os.path.join(PLOT_DIR, 'kaggle-leaderboard-export.csv')
 README_PATH = 'README.md'
 
 
@@ -123,6 +125,10 @@ def wait_for_completion():
             print('Kaggle returned no submission data yet.')
         else:
             submissions_df = normalize_columns(submissions_df)
+            os.makedirs(PLOT_DIR, exist_ok=True)
+            submissions_df.to_csv(SUBMISSIONS_EXPORT_PATH, index=False)
+            print(f'Saved Kaggle submissions export to {SUBMISSIONS_EXPORT_PATH}')
+            print(f'Submissions export columns: {list(submissions_df.columns)}')
             status_column = find_column(submissions_df, ['status', 'state'])
             score_column = find_column(submissions_df, ['publicscore', 'public score'])
             file_column = find_column(submissions_df, ['filename', 'file name', 'file'])
@@ -156,6 +162,11 @@ def wait_for_completion():
             )
 
         if leaderboard_df is not None and not leaderboard_df.empty:
+            leaderboard_df = normalize_columns(leaderboard_df)
+            os.makedirs(PLOT_DIR, exist_ok=True)
+            leaderboard_df.to_csv(LEADERBOARD_EXPORT_PATH, index=False)
+            print(f'Saved Kaggle leaderboard export to {LEADERBOARD_EXPORT_PATH}')
+            print(f'Leaderboard export columns: {list(leaderboard_df.columns)}')
             try:
                 leaderboard_df, score_column, my_rank, my_score = find_leaderboard_row(
                     leaderboard_df,
@@ -367,6 +378,12 @@ leaderboard_df = run_kaggle_csv([
 if leaderboard_df is None or leaderboard_df.empty:
     print('Kaggle leaderboard export is empty.')
     sys.exit(1)
+
+leaderboard_df = normalize_columns(leaderboard_df)
+os.makedirs(PLOT_DIR, exist_ok=True)
+leaderboard_df.to_csv(LEADERBOARD_EXPORT_PATH, index=False)
+print(f'Saved Kaggle leaderboard export to {LEADERBOARD_EXPORT_PATH}')
+print(f'Leaderboard export columns: {list(leaderboard_df.columns)}')
 
 leaderboard_df, score_column, my_rank, my_score = find_leaderboard_row(leaderboard_df, latest_submission)
 write_plot(leaderboard_df, score_column, my_rank, my_score)
