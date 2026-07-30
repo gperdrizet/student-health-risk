@@ -47,6 +47,41 @@ def find_column(frame, candidates):
     return None
 
 
+def find_score_column(frame, excluded_columns=None):
+    excluded_columns = {str(column).strip().lower() for column in (excluded_columns or [])}
+
+    normalized_columns = [str(column).strip() for column in frame.columns]
+    normalized_lookup = {column.lower(): column for column in normalized_columns}
+
+    preferred_candidates = [
+        'publicscore',
+        'public score',
+        'score',
+        'public_score',
+        'public leaderboard score',
+        'public leaderboard score (%)',
+    ]
+
+    for candidate in preferred_candidates:
+        if candidate in normalized_lookup and candidate not in excluded_columns:
+            return normalized_lookup[candidate]
+
+    for column in normalized_columns:
+        normalized = column.lower()
+        if normalized in excluded_columns:
+            continue
+        if 'score' in normalized:
+            return normalized_lookup[normalized]
+
+    numeric_columns = frame.select_dtypes(include=[np.number]).columns
+    for column in numeric_columns:
+        if str(column).strip().lower() in excluded_columns:
+            continue
+        return column
+
+    return None
+
+
 def submission_is_complete(row, status_column, score_column):
     if status_column is not None:
         status_value = str(row.get(status_column, '')).strip().lower()
@@ -152,15 +187,13 @@ def find_leaderboard_row(leaderboard_df, latest_submission):
     leaderboard_df = leaderboard_df.copy()
     leaderboard_df.columns = [str(column).strip() for column in leaderboard_df.columns]
 
-    score_column = next((c for c in leaderboard_df.columns if 'score' in c.lower()), None)
     rank_column = next((c for c in leaderboard_df.columns if 'rank' in c.lower() or 'position' in c.lower()), None)
     name_column = next((c for c in leaderboard_df.columns if any(token in c.lower() for token in ['team', 'user', 'name'])), None)
+    score_column = find_score_column(leaderboard_df, excluded_columns=[rank_column] if rank_column is not None else [])
 
-    if score_column is None:
-        raise RuntimeError('Could not find a score column in the leaderboard export.')
-
-    leaderboard_df[score_column] = pd.to_numeric(leaderboard_df[score_column], errors='coerce')
-    leaderboard_df = leaderboard_df.dropna(subset=[score_column]).reset_index(drop=True)
+    if score_column is not None:
+        leaderboard_df[score_column] = pd.to_numeric(leaderboard_df[score_column], errors='coerce')
+        leaderboard_df = leaderboard_df.dropna(subset=[score_column]).reset_index(drop=True)
 
     my_row = None
     if name_column is not None:
@@ -169,7 +202,7 @@ def find_leaderboard_row(leaderboard_df, latest_submission):
         if not matches.empty:
             my_row = matches.iloc[0]
 
-    if my_row is None and latest_submission is not None:
+    if my_row is None and latest_submission is not None and score_column is not None:
         submission_score = pd.to_numeric(
             pd.Series([latest_submission.get('publicScore')]),
             errors='coerce',
@@ -183,52 +216,79 @@ def find_leaderboard_row(leaderboard_df, latest_submission):
 
     if my_row is None:
         my_rank = 'Pending'
-        my_score = float(
-            pd.to_numeric(
-                pd.Series([latest_submission.get('publicScore') if latest_submission is not None else np.nan]),
-                errors='coerce',
-            ).iloc[0]
-        )
+        my_score = float(pd.to_numeric(pd.Series([latest_submission.get('publicScore') if latest_submission is not None else np.nan]), errors='coerce').iloc[0])
     else:
         if rank_column is not None and pd.notna(my_row.get(rank_column)):
             my_rank = str(my_row[rank_column]).strip()
         else:
             my_rank = str(int(my_row.name) + 1)
-        my_score = float(my_row[score_column])
+        if score_column is not None:
+            my_score = float(my_row[score_column])
+        else:
+            my_score = float(pd.to_numeric(pd.Series([latest_submission.get('publicScore') if latest_submission is not None else np.nan]), errors='coerce').iloc[0])
 
     return leaderboard_df, score_column, my_rank, my_score
 
 
 def write_plot(leaderboard_df, score_column, my_rank, my_score):
-    public_scores = leaderboard_df[score_column].dropna().astype(float)
     os.makedirs(PLOT_DIR, exist_ok=True)
 
     plt.figure(figsize=(10, 5))
-    plt.hist(public_scores, bins=30, color='#d9d9d9', edgecolor='black')
-    plt.axvline(my_score, color='#d62728', linewidth=3, label=f'Your score: {my_score:.4f}')
+    if score_column is not None:
+        public_scores = leaderboard_df[score_column].dropna().astype(float)
+        plt.hist(public_scores, bins=30, color='#d9d9d9', edgecolor='black')
+        plt.axvline(my_score, color='#d62728', linewidth=3, label=f'Your score: {my_score:.4f}')
+    else:
+        plt.text(
+            0.5,
+            0.5,
+            'Leaderboard export did not include a score column.\nBadge updated from rank information only.',
+            ha='center',
+            va='center',
+            transform=plt.gca().transAxes,
+            fontsize=11,
+        )
     plt.title('Kaggle leaderboard score distribution')
     plt.xlabel('Public leaderboard score')
     plt.ylabel('Submission count')
-    plt.legend(frameon=False)
+    if score_column is not None:
+        plt.legend(frameon=False)
 
     annotation = f'Rank: {my_rank}'
     if pd.notna(my_score):
         annotation = f'{annotation}\nScore: {my_score:.4f}'
 
-    plt.text(
-        my_score,
-        plt.gca().get_ylim()[1] * 0.92,
-        annotation,
-        color='#d62728',
-        fontsize=10,
-        ha='left',
-        va='top',
-        bbox={
-            'facecolor': 'white',
-            'alpha': 0.85,
-            'edgecolor': '#d62728',
-        },
-    )
+    if score_column is not None and pd.notna(my_score):
+        plt.text(
+            my_score,
+            plt.gca().get_ylim()[1] * 0.92,
+            annotation,
+            color='#d62728',
+            fontsize=10,
+            ha='left',
+            va='top',
+            bbox={
+                'facecolor': 'white',
+                'alpha': 0.85,
+                'edgecolor': '#d62728',
+            },
+        )
+    else:
+        plt.text(
+            0.98,
+            0.92,
+            annotation,
+            transform=plt.gca().transAxes,
+            color='#d62728',
+            fontsize=10,
+            ha='right',
+            va='top',
+            bbox={
+                'facecolor': 'white',
+                'alpha': 0.85,
+                'edgecolor': '#d62728',
+            },
+        )
 
     plt.tight_layout()
     plt.savefig(PLOT_PATH, dpi=200, bbox_inches='tight')
