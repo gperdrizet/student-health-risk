@@ -5,3 +5,5 @@ seaborn
 matplotlib==3.10
 ipykernel
 xgboost==2.1.1
+optuna==4.0.0
+optuna-dashboard
