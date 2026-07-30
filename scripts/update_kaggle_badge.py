@@ -315,7 +315,7 @@ def write_plot(leaderboard_scores, my_rank, my_score):
     legend_fontsize = 12
 
     plt.figure(figsize=(10, 5))
-    plt.hist(plot_scores, bins=30, color='#d9d9d9', edgecolor='black')
+    plt.hist(plot_scores, bins=100, color='#d9d9d9', edgecolor='black')
     plt.axvline(marker_score, color='#d62728', linewidth=3, label='best submission')
     plt.title('Kaggle leaderboard score distribution', fontsize=title_fontsize)
     plt.xlabel('Public leaderboard score', fontsize=label_fontsize)
