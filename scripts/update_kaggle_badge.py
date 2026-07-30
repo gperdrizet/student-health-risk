@@ -1,5 +1,6 @@
 import io
 import os
+import random
 import re
 import subprocess
 import sys
@@ -18,6 +19,9 @@ COMP_ID = os.environ['COMP_ID']
 SUBMISSION_FILE = os.environ.get('SUBMISSION_FILE', '').strip()
 MAX_ATTEMPTS = 60
 POLL_SECONDS = 10
+RATE_LIMIT_MAX_RETRIES = int(os.environ.get('KAGGLE_RATE_LIMIT_MAX_RETRIES', '8'))
+RATE_LIMIT_BASE_DELAY_SECONDS = int(os.environ.get('KAGGLE_RATE_LIMIT_BASE_DELAY_SECONDS', '5'))
+POST_SCORE_COOLDOWN_SECONDS = int(os.environ.get('KAGGLE_POST_SCORE_COOLDOWN_SECONDS', '20'))
 ARTIFACT_DIR = os.path.join('data', 'kaggle')
 PLOT_PATH = os.path.join(ARTIFACT_DIR, 'kaggle-leaderboard-rank.png')
 SUBMISSIONS_EXPORT_PATH = os.path.join(ARTIFACT_DIR, 'kaggle-submissions-export.csv')
@@ -25,12 +29,49 @@ LEADERBOARD_EXPORT_PATH = os.path.join(ARTIFACT_DIR, 'kaggle-leaderboard-export.
 README_PATH = 'README.md'
 
 
+class KaggleRateLimitError(RuntimeError):
+    """Raised when Kaggle CLI repeatedly returns 429 errors."""
+
+
 def run_kaggle_command(args):
-    result = subprocess.run(args, capture_output=True, text=True)
-    if result.returncode != 0:
-        print(result.stderr.strip() or f'Kaggle command failed: {" ".join(args)}')
+    delay_seconds = RATE_LIMIT_BASE_DELAY_SECONDS
+
+    for attempt in range(1, RATE_LIMIT_MAX_RETRIES + 1):
+        result = subprocess.run(args, capture_output=True, text=True)
+
+        if result.returncode == 0:
+            return result.stdout.strip()
+
+        stderr_text = (result.stderr or '').strip()
+        stdout_text = (result.stdout or '').strip()
+        combined_error_text = f'{stderr_text}\n{stdout_text}'.strip()
+        is_rate_limited = '429' in combined_error_text and 'Too Many Requests' in combined_error_text
+
+        if is_rate_limited and attempt < RATE_LIMIT_MAX_RETRIES:
+            jitter_seconds = random.uniform(0.0, 1.0)
+            sleep_seconds = delay_seconds + jitter_seconds
+            print(
+                'Kaggle API rate limited (429). '
+                f'Retrying command in {sleep_seconds:.1f}s '
+                f'(attempt {attempt}/{RATE_LIMIT_MAX_RETRIES})...'
+            )
+            time.sleep(sleep_seconds)
+            delay_seconds = min(delay_seconds * 2, 120)
+            continue
+
+        if is_rate_limited:
+            raise KaggleRateLimitError(
+                f'Kaggle API rate limited after {RATE_LIMIT_MAX_RETRIES} attempts for command: '
+                f'{" ".join(args)}'
+            )
+
+        print(stderr_text or stdout_text or f'Kaggle command failed: {" ".join(args)}')
         sys.exit(result.returncode)
-    return result.stdout.strip()
+
+    raise KaggleRateLimitError(
+        f'Kaggle API rate limited after {RATE_LIMIT_MAX_RETRIES} attempts for command: '
+        f'{" ".join(args)}'
+    )
 
 
 def run_kaggle_csv(args):
@@ -148,7 +189,14 @@ def wait_for_completion():
     latest_submission = None
 
     for attempt in range(1, MAX_ATTEMPTS + 1):
-        submissions_df = fetch_kaggle_submissions(COMP_ID)
+        try:
+            submissions_df = fetch_kaggle_submissions(COMP_ID)
+        except KaggleRateLimitError:
+            print(
+                'Kaggle submissions endpoint is currently rate limited (429). '
+                f'Will retry in {POLL_SECONDS} seconds...'
+            )
+            submissions_df = None
 
         if submissions_df is None or submissions_df.empty:
             print('Kaggle returned no submission data yet.')
@@ -173,6 +221,12 @@ def wait_for_completion():
 
             if current_status == 'complete' or pd.notna(score_value):
                 print('Submission scoring complete!')
+                if POST_SCORE_COOLDOWN_SECONDS > 0:
+                    print(
+                        'Waiting briefly before leaderboard fetch to reduce immediate rate-limit risk: '
+                        f'{POST_SCORE_COOLDOWN_SECONDS}s'
+                    )
+                    time.sleep(POST_SCORE_COOLDOWN_SECONDS)
                 return latest_submission
 
             print(
@@ -301,7 +355,17 @@ def update_readme(my_rank):
 def main():
     latest_submission = wait_for_completion()
     submissions_df = fetch_kaggle_submissions(COMP_ID)
-    leaderboard_df = fetch_kaggle_leaderboard_pages(COMP_ID)
+
+    try:
+        leaderboard_df = fetch_kaggle_leaderboard_pages(COMP_ID)
+    except KaggleRateLimitError as error:
+        print(
+            'Warning: leaderboard fetch is still rate limited by Kaggle (429). '
+            'Skipping README rank/plot update for this run so the workflow can complete. '
+            f'Detail: {error}'
+        )
+        # Keep submission workflow green; rank update will occur on next successful run.
+        sys.exit(0)
 
     if submissions_df is None or submissions_df.empty:
         print('Kaggle submissions export is empty.')

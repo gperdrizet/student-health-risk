@@ -100,6 +100,9 @@ jobs:
         KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
         COMP_ID: "playground-series-s6e7" # Pass it down as a real environment variable
         SUBMISSION_FILE: data/submission.${{ env.RELEASE_VERSION }}.csv
+        KAGGLE_RATE_LIMIT_MAX_RETRIES: "10"
+        KAGGLE_RATE_LIMIT_BASE_DELAY_SECONDS: "8"
+        KAGGLE_POST_SCORE_COOLDOWN_SECONDS: "25"
       run: |
         echo "Waiting for Kaggle to score the new submission..."
         python scripts/update_kaggle_badge.py
