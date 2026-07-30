@@ -24,6 +24,35 @@ Kaggle Playground Series Season 6 Episode 7 solution. In addition to the S6E7 so
 7. [`07-xgboost-baseline-engineered.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/07-xgboost-baseline-engineered.ipynb): GPU-capable sampled XGBoost optimization on engineered features with configurable fold/sampling controls.
 8. [`08-xgboost-hillclimb-ensemble.ipynb`](https://github.com/gperdrizet/student-health-risk/blob/main/notebooks/08-xgboost-hillclimb-ensemble.ipynb): Weighted all-XGBoost hill-climbing ensemble with per-model row/feature bootstrapping and checkpoint submissions.
 
+## Hill-climb runtime module
+
+The hill-climbing search execution has been moved out of notebook 08 into a root package: [`hill_climbing_ensemble/`](hill_climbing_ensemble). The package provides a resumable Optuna-tracked search runtime with automatic checkpointing and run logs, while notebook 08 focuses on analysis and visualization of run artifacts.
+
+Primary entrypoints:
+
+- CLI module: `python -m hill_climbing_ensemble.cli`
+- Wrapper script: [`scripts/run_hill_climb_ensemble.sh`](scripts/run_hill_climb_ensemble.sh)
+
+Quick start:
+
+```bash
+# Safe smoke test with git actions disabled
+./scripts/run_hill_climb_ensemble.sh --max-proposals 5 --target-accepted-models 2 --dry-run-git
+
+# Full run with automatic submission/tag/push on accepted improvements
+./scripts/run_hill_climb_ensemble.sh
+
+# Optuna dashboard (after the run starts)
+optuna-dashboard sqlite:///data/results/08-xgboost-hillclimb-optuna.db --host 0.0.0.0 --port 8081
+```
+
+Key artifacts:
+
+- Optuna study DB: `data/results/08-xgboost-hillclimb-optuna.db`
+- Runtime log: `logs/08-xgboost-hillclimb-runtime.log`
+- Ensemble payload: `data/results/08-xgboost-ensemble.pkl`
+- Final submission CSV: `data/submission.csv`
+
 ## Submissions
 
 | Submission                 | Pull request | Estimated balanced accuracy | Leaderboard balanced accuracy | Leaderboard rank              |
