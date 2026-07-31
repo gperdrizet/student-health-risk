@@ -55,7 +55,7 @@ class HillClimbConfig:
     final_cv_validation_sample_frac: float = 1.0
 
     model_row_fraction_range: tuple[float, float] = (0.60, 0.90)
-    model_feature_fraction_range: tuple[float, float] = (0.40, 0.90)
+    model_feature_fraction_range: tuple[float, float] = (0.25, 0.65)
 
     random_seed: int = 315
     study_name: str = "hillclimb_08"

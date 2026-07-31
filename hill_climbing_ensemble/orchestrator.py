@@ -200,6 +200,25 @@ def run_hill_climb(config: HillClimbConfig):
                 float(current_summary['std']),
             )
 
+            accepted_feature_counts = np.array(
+                [len(spec['feature_columns']) for spec in accepted_specs],
+                dtype=float,
+            )
+            unique_features = set()
+            for spec in accepted_specs:
+                unique_features.update(spec['feature_columns'])
+
+            logger.info(
+                'retained_feature_diversity proposal=%03d feature_count_min=%d feature_count_median=%.1f '
+                'feature_count_max=%d unique_features=%d/%d',
+                proposal_index,
+                int(accepted_feature_counts.min()),
+                float(np.median(accepted_feature_counts)),
+                int(accepted_feature_counts.max()),
+                len(unique_features),
+                len(all_feature_columns),
+            )
+
         if accepted and len(accepted_specs) % config.checkpoint_every_accepts == 0:
             checkpoint_path = config.checkpoint_submission_dir / (
                 f"08-xgb-ensemble-step-{len(accepted_specs):02d}.csv"
