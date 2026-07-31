@@ -87,6 +87,31 @@ def _next_semver_tag() -> str:
     return f"v{major}.{minor}.{patch + 1}"
 
 
+def _try_get_upstream_branch(dry_run: bool) -> str | None:
+    if dry_run:
+        return "origin/main"
+
+    result = subprocess.run(
+        ["git", "rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}"],
+        check=False,
+        capture_output=True,
+        text=True,
+        cwd=REPO_ROOT,
+    )
+    if result.returncode != 0:
+        return None
+
+    upstream = result.stdout.strip()
+    return upstream or None
+
+
+def _sync_with_upstream(dry_run: bool) -> None:
+    _run_git(["fetch", "origin", "--tags"], dry_run=dry_run)
+    upstream = _try_get_upstream_branch(dry_run=dry_run)
+    if upstream:
+        _run_git(["rebase", upstream], dry_run=dry_run)
+
+
 @contextmanager
 def _git_lock(lock_file: Path):
     lock_file.parent.mkdir(parents=True, exist_ok=True)
@@ -113,13 +138,15 @@ def auto_commit_tag_push(
     proposal_index: int,
     dry_run: bool = False,
 ):
-    tag = _next_semver_tag()
     message = (
         f"model: hill-climb accepted model {accepted_count} "
         f"(median BA={median_score:.5f})"
     )
 
     with _git_lock(lock_file):
+        # Keep branch aligned with upstream before staging and committing.
+        _sync_with_upstream(dry_run=dry_run)
+
         _run_git(["add", *commit_paths], dry_run=dry_run)
 
         # Create a commit only if any staged changes exist.
@@ -132,8 +159,15 @@ def auto_commit_tag_push(
         if staged_has_changes:
             _run_git(["commit", "-m", message], dry_run=dry_run)
 
-        _run_git(["tag", tag], dry_run=dry_run)
+        # Re-sync to absorb any remote updates from concurrent CI badge commits.
+        _sync_with_upstream(dry_run=dry_run)
+
         _run_git(["push"], dry_run=dry_run)
+
+        # Compute the next tag from freshly fetched tags to avoid stale increments.
+        _run_git(["fetch", "origin", "--tags"], dry_run=dry_run)
+        tag = _next_semver_tag()
+        _run_git(["tag", tag], dry_run=dry_run)
         _run_git(["push", "origin", tag], dry_run=dry_run)
 
     return tag
