@@ -5,6 +5,8 @@
 	"image": "gperdrizet/kaggle-nvidia:6.0.1",
     "runArgs": [
 		"--network=bridge",   // Explicitly use bridge network for internet access
+				"-p",                 // Publish Optuna dashboard port to host for LAN access
+				"8081:8081",
 		"--gpus",             // Enable the two Tesla P100 GPUs in the container
 		"\"device=1,2\"",
 		"--cpuset-cpus=4-23", // Limit container to CPU cores 8-23 to avoid thrashing the host 
