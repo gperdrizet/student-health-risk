@@ -41,6 +41,32 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Print git operations without mutating repository state.",
     )
+    parser.add_argument(
+        "--sampler",
+        default="tpe",
+        choices=["tpe", "random"],
+        help="Optuna sampler: 'tpe' (default) or 'random' for uniform exploration.",
+    )
+    parser.add_argument(
+        "--wide-search",
+        action="store_true",
+        help="Replace notebook-07-derived parameter bounds with broad XGBoost-wide ranges.",
+    )
+    parser.add_argument(
+        "--inherit-ensemble",
+        action="store_true",
+        help="Seed the new run from existing accepted models but reset the proposal counter.",
+    )
+    parser.add_argument(
+        "--feature-fraction-range",
+        default=None,
+        help="Override ensemble feature bootstrap range as 'min,max' (e.g. 0.1,0.9).",
+    )
+    parser.add_argument(
+        "--row-fraction-range",
+        default=None,
+        help="Override ensemble row bootstrap range as 'min,max' (e.g. 0.1,0.9).",
+    )
 
     return parser
 
@@ -63,6 +89,16 @@ def main() -> None:
     )
     config.git_automation.enabled = not args.disable_auto_submit
     config.git_automation.dry_run = args.dry_run_git
+    config.sampler_name = args.sampler
+    config.wide_parameter_search = args.wide_search
+    config.inherit_ensemble = args.inherit_ensemble
+
+    if args.feature_fraction_range:
+        lo, hi = (float(v.strip()) for v in args.feature_fraction_range.split(','))
+        config.model_feature_fraction_range = (lo, hi)
+    if args.row_fraction_range:
+        lo, hi = (float(v.strip()) for v in args.row_fraction_range.split(','))
+        config.model_row_fraction_range = (lo, hi)
 
     result = run_hill_climb(config)
     print("Run complete")

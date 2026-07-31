@@ -14,6 +14,7 @@ from sklearn.preprocessing import LabelEncoder
 from .ml_utils import FoldSamplingConfig, summarize_scores, summarize_with_ci
 from .candidate_generator import derive_parameter_ranges, draw_candidate_spec, limited_folds
 from .config import HillClimbConfig
+from .config import WIDE_PARAMETER_RANGES
 from .persistence import build_run_state, load_pickle, save_pickle
 from .scoring import build_submission_from_specs, evaluate_ensemble_specs
 from .submission_ops import auto_commit_tag_push, save_submission_csv, validate_submission_df
@@ -62,7 +63,10 @@ def _load_artifacts(config: HillClimbConfig):
 
 
 def _build_or_load_study(config: HillClimbConfig):
-    sampler = optuna.samplers.TPESampler(seed=config.random_seed)
+    if config.sampler_name == 'random':
+        sampler = optuna.samplers.RandomSampler(seed=config.random_seed)
+    else:
+        sampler = optuna.samplers.TPESampler(seed=config.random_seed)
     return optuna.create_study(
         study_name=config.study_name,
         storage=config.optuna_storage_url,
@@ -77,7 +81,7 @@ def run_hill_climb(config: HillClimbConfig):
     logger = _configure_logger(config)
 
     engineered_folds, search_payload, train_df, test_df, label_encoder = _load_artifacts(config)
-    parameter_ranges = derive_parameter_ranges(search_payload)
+    parameter_ranges = WIDE_PARAMETER_RANGES if config.wide_parameter_search else derive_parameter_ranges(search_payload)
 
     fast_folds = limited_folds(engineered_folds, config.fast_cv_fold_limit)
     fast_sampling = FoldSamplingConfig(
@@ -90,7 +94,14 @@ def run_hill_climb(config: HillClimbConfig):
     all_feature_columns = [column for column in train_df.columns if column != "health_condition"]
 
     run_state = load_pickle(config.run_state_file, default=None)
-    if run_state:
+    if run_state and config.inherit_ensemble:
+        # Keep accepted models + baseline score; discard proposal history so the new study starts fresh.
+        accepted_specs = run_state.get("accepted_specs", [])
+        current_scores = run_state.get("current_scores", [])
+        current_summary = run_state.get("current_summary", {"median": 0.0})
+        hill_log = []
+        start_index = 1
+    elif run_state:
         accepted_specs = run_state.get("accepted_specs", [])
         hill_log = run_state.get("hill_log", [])
         current_scores = run_state.get("current_scores", [])
@@ -106,13 +117,15 @@ def run_hill_climb(config: HillClimbConfig):
     study = _build_or_load_study(config)
 
     logger.info(
-        'run_start target_accepted=%d max_proposals=%d resume_proposal=%d study=%s storage=%s gpu_ids=%s',
+        'run_start target_accepted=%d max_proposals=%d resume_proposal=%d study=%s storage=%s gpu_ids=%s inherit_ensemble=%s wide_search=%s',
         config.target_accepted_models,
         config.max_proposals,
         start_index,
         config.study_name,
         config.optuna_storage_url,
         config.parallel_gpu_ids,
+        config.inherit_ensemble,
+        config.wide_parameter_search,
     )
 
     for proposal_index in range(start_index, config.max_proposals + 1):

@@ -5,6 +5,19 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
+# Broad XGBoost ranges used when --wide-search bypasses the notebook-07-derived bounds.
+WIDE_PARAMETER_RANGES: dict[str, list] = {
+    "max_depth":        [2,      12],
+    "learning_rate":    [0.003,  0.5],
+    "n_estimators":     [50,     2000],
+    "subsample":        [0.4,    1.0],
+    "colsample_bytree": [0.3,    1.0],
+    "reg_lambda":       [0.001,  100.0],
+    "reg_alpha":        [0.0001, 50.0],
+    "min_child_weight": [1.0,    100.0],
+    "n_jobs":           [2,      2],
+}
+
 
 @dataclass
 class GitAutomationConfig:
@@ -18,7 +31,7 @@ class GitAutomationConfig:
         "data/results/08-xgboost-hillclimb-log.pkl",
         "data/results/08-xgboost-ensemble.pkl",
         "data/results/08-xgboost-hillclimb-run-state.pkl",
-        "data/results/08-xgboost-hillclimb-optuna.db",
+        "data/results/optuna-studies.db",
     )
 
 
@@ -34,7 +47,7 @@ class HillClimbConfig:
     ensemble_log_file: Path = Path("data/results/08-xgboost-hillclimb-log.pkl")
     ensemble_model_file: Path = Path("data/results/08-xgboost-ensemble.pkl")
     run_state_file: Path = Path("data/results/08-xgboost-hillclimb-run-state.pkl")
-    optuna_storage_file: Path = Path("data/results/08-xgboost-hillclimb-optuna.db")
+    optuna_storage_file: Path = Path("data/results/optuna-studies.db")
     runtime_log_file: Path = Path("logs/08-xgboost-hillclimb-runtime.log")
 
     final_submission_file: Path = Path("data/submission.csv")
@@ -60,6 +73,9 @@ class HillClimbConfig:
 
     random_seed: int = 315
     study_name: str = "hillclimb_08"
+    sampler_name: str = "tpe"  # 'tpe' or 'random'
+    wide_parameter_search: bool = False
+    inherit_ensemble: bool = False  # seed fresh run from existing accepted models, reset proposal counter
     run_final_cv_estimate: bool = True
 
     git_automation: GitAutomationConfig = field(default_factory=GitAutomationConfig)
