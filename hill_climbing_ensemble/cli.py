@@ -27,6 +27,11 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--random-seed", type=int, default=315)
     parser.add_argument(
+        "--gpu-ids",
+        default="0,1",
+        help="Comma-separated GPU IDs used in parallel for fold scoring (e.g. 0,1).",
+    )
+    parser.add_argument(
         "--disable-auto-submit",
         action="store_true",
         help="Disable git tag/push automation on accepted improvements.",
@@ -44,12 +49,17 @@ def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
 
+    gpu_ids = tuple(int(value.strip()) for value in args.gpu_ids.split(",") if value.strip())
+    if not gpu_ids:
+        raise ValueError("--gpu-ids must include at least one GPU id.")
+
     config = HillClimbConfig(
         study_name=args.study_name,
         max_proposals=args.max_proposals,
         target_accepted_models=args.target_accepted_models,
         checkpoint_every_accepts=args.checkpoint_every_accepts,
         random_seed=args.random_seed,
+        parallel_gpu_ids=gpu_ids,
     )
     config.git_automation.enabled = not args.disable_auto_submit
     config.git_automation.dry_run = args.dry_run_git

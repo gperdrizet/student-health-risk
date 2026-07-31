@@ -106,12 +106,13 @@ def run_hill_climb(config: HillClimbConfig):
     study = _build_or_load_study(config)
 
     logger.info(
-        'run_start target_accepted=%d max_proposals=%d resume_proposal=%d study=%s storage=%s',
+        'run_start target_accepted=%d max_proposals=%d resume_proposal=%d study=%s storage=%s gpu_ids=%s',
         config.target_accepted_models,
         config.max_proposals,
         start_index,
         config.study_name,
         config.optuna_storage_url,
+        config.parallel_gpu_ids,
     )
 
     for proposal_index in range(start_index, config.max_proposals + 1):
@@ -133,6 +134,7 @@ def run_hill_climb(config: HillClimbConfig):
             candidate_specs,
             sampling_config=fast_sampling,
             seed=config.random_seed + 500,
+            gpu_ids=config.parallel_gpu_ids,
         )
 
         proposed_summary = summarize_scores(proposed_scores)
@@ -269,6 +271,7 @@ def run_hill_climb(config: HillClimbConfig):
                 accepted_specs,
                 sampling_config=final_sampling,
                 seed=config.random_seed + 1200,
+                gpu_ids=config.parallel_gpu_ids,
             )
             final_summary = summarize_scores(final_scores)
             final_summary["fold_count_used"] = len(final_folds)

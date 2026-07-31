@@ -48,6 +48,7 @@ class HillClimbConfig:
     fast_cv_use_sampling: bool = True
     fast_cv_train_sample_frac: float = 0.3
     fast_cv_validation_sample_frac: float = 0.3
+    parallel_gpu_ids: tuple[int, ...] = (0, 1)
 
     final_cv_fold_limit: int | None = None
     final_cv_use_sampling: bool = False
