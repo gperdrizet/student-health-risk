@@ -1,4 +1,4 @@
-"""XGBoost helpers for sampled optimization and hill-climbing ensemble notebooks."""
+"""Runtime-local ML helpers for hill-climbing ensemble workflows."""
 
 from __future__ import annotations
 
@@ -8,8 +8,6 @@ import numpy as np
 import pandas as pd
 
 from sklearn.metrics import balanced_accuracy_score
-
-from helper_functions.gradient_boosting_baseline import sample_fold_split
 
 try:
     from xgboost import XGBClassifier
@@ -29,7 +27,7 @@ class FoldSamplingConfig:
     sample_seed: int = 315
 
 
-def _ensure_xgboost_available():
+def _ensure_xgboost_available() -> None:
     if XGBClassifier is None:
         raise ImportError(
             'xgboost is not installed. Install it with `pip install xgboost` or via requirements.txt.'
@@ -49,7 +47,6 @@ def build_xgb_model(params, seed=315, prefer_gpu=True):
     model_params.setdefault('n_jobs', -1)
 
     if prefer_gpu:
-        # XGBoost 2.x prefers device='cuda' with hist tree method.
         model_params.setdefault('tree_method', 'hist')
         model_params.setdefault('device', 'cuda')
     else:
@@ -59,32 +56,60 @@ def build_xgb_model(params, seed=315, prefer_gpu=True):
     return XGBClassifier(**model_params)
 
 
-def fit_predict_with_fallback(
-    params,
-    x_train,
-    y_train,
-    x_validation,
-    seed,
-    prefer_gpu=True,
-):
-    """Fit and predict with automatic GPU-to-CPU fallback if CUDA is unavailable."""
+def sample_fold_split(x_data, y_data, sample_fraction, seed):
+    """Return a stratified subsample of one fold split using a row fraction."""
 
-    model = build_xgb_model(params, seed=seed, prefer_gpu=prefer_gpu)
+    if sample_fraction is None or sample_fraction >= 1.0:
+        return x_data, y_data
 
-    try:
-        model.fit(x_train, y_train)
-    except XGBoostError:
-        model = build_xgb_model(params, seed=seed, prefer_gpu=False)
-        model.fit(x_train, y_train)
+    if sample_fraction <= 0.0:
+        raise ValueError('sample_fraction must be in the range (0, 1].')
 
-    predictions = model.predict(x_validation)
-    return predictions
+    x_reset = x_data.reset_index(drop=True)
+    y_reset = pd.Series(y_data).reset_index(drop=True)
+    rng = np.random.default_rng(seed)
+
+    target_samples = max(1, int(round(len(y_reset) * sample_fraction)))
+    class_counts = y_reset.value_counts()
+    class_proportions = class_counts / len(y_reset)
+    class_targets = (class_proportions * target_samples).round().astype(int).clip(lower=1)
+
+    selected_indices = []
+    y_values = y_reset.to_numpy()
+
+    for class_value, target_size in class_targets.items():
+        class_indices = np.flatnonzero(y_values == class_value)
+        take = min(int(target_size), len(class_indices))
+
+        if take > 0:
+            selected_indices.append(rng.choice(class_indices, size=take, replace=False))
+
+    if not selected_indices:
+        return x_data, y_data
+
+    sampled_indices = np.concatenate(selected_indices)
+
+    if len(sampled_indices) > target_samples:
+        sampled_indices = rng.choice(sampled_indices, size=target_samples, replace=False)
+    elif len(sampled_indices) < target_samples:
+        remaining = np.setdiff1d(
+            np.arange(len(y_reset)),
+            sampled_indices,
+            assume_unique=False,
+        )
+
+        add_count = min(target_samples - len(sampled_indices), len(remaining))
+
+        if add_count > 0:
+            add_indices = rng.choice(remaining, size=add_count, replace=False)
+            sampled_indices = np.concatenate([sampled_indices, add_indices])
+
+    rng.shuffle(sampled_indices)
+
+    return x_reset.iloc[sampled_indices], y_reset.iloc[sampled_indices]
 
 
-def make_fixed_sampled_folds(
-    folds,
-    sampling: FoldSamplingConfig,
-):
+def make_fixed_sampled_folds(folds, sampling: FoldSamplingConfig):
     """Create a fixed sampled view of folds for fair candidate comparisons within one run."""
 
     if not sampling.use_sampling:
@@ -117,35 +142,6 @@ def make_fixed_sampled_folds(
         sampled_folds.append(sampled_fold)
 
     return sampled_folds
-
-
-def score_xgb_on_folds(
-    folds,
-    params,
-    sampling: FoldSamplingConfig | None = None,
-    seed=315,
-    prefer_gpu=True,
-):
-    """Evaluate one XGBoost parameter set across folds using balanced accuracy."""
-
-    if sampling is None:
-        sampling = FoldSamplingConfig()
-
-    evaluation_folds = make_fixed_sampled_folds(folds, sampling)
-    fold_scores = []
-
-    for fold_index, fold in enumerate(evaluation_folds, start=1):
-        y_pred = fit_predict_with_fallback(
-            params,
-            x_train=fold['x_train'],
-            y_train=fold['y_train'],
-            x_validation=fold['x_validation'],
-            seed=seed + fold_index,
-            prefer_gpu=prefer_gpu,
-        )
-        fold_scores.append(balanced_accuracy_score(fold['y_validation'], y_pred))
-
-    return fold_scores
 
 
 def bootstrap_rows_and_features(
@@ -214,4 +210,59 @@ def summarize_scores(fold_scores):
         'median': float(np.median(fold_scores)),
         'std': float(np.std(fold_scores)),
         'fold_scores': list(map(float, fold_scores)),
+    }
+
+
+def bootstrap_stat_ci(scores, stat='mean', n_bootstrap=2000, alpha=0.05, seed=315):
+    """Estimate a confidence interval for mean or median using bootstrap resampling."""
+
+    values = np.asarray(scores, dtype=float)
+    if values.size == 0:
+        raise ValueError('scores must contain at least one value.')
+
+    if stat == 'mean':
+        stat_fn = np.mean
+    elif stat == 'median':
+        stat_fn = np.median
+    else:
+        raise ValueError("stat must be either 'mean' or 'median'.")
+
+    rng = np.random.default_rng(seed)
+    boot_stats = np.empty(n_bootstrap, dtype=float)
+
+    for idx in range(n_bootstrap):
+        sample = rng.choice(values, size=values.size, replace=True)
+        boot_stats[idx] = float(stat_fn(sample))
+
+    lower = float(np.percentile(boot_stats, 100 * (alpha / 2)))
+    upper = float(np.percentile(boot_stats, 100 * (1 - alpha / 2)))
+
+    return {
+        'value': float(stat_fn(values)),
+        'ci_lower': lower,
+        'ci_upper': upper,
+    }
+
+
+def summarize_with_ci(scores, n_bootstrap=2000, alpha=0.05, seed=315):
+    """Return mean and median with bootstrap confidence intervals."""
+
+    mean_summary = bootstrap_stat_ci(
+        scores,
+        stat='mean',
+        n_bootstrap=n_bootstrap,
+        alpha=alpha,
+        seed=seed,
+    )
+    median_summary = bootstrap_stat_ci(
+        scores,
+        stat='median',
+        n_bootstrap=n_bootstrap,
+        alpha=alpha,
+        seed=seed + 1,
+    )
+
+    return {
+        'mean': mean_summary,
+        'median': median_summary,
     }

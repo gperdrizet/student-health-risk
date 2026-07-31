@@ -9,8 +9,9 @@ import pickle
 import numpy as np
 import optuna
 import pandas as pd
+from sklearn.preprocessing import LabelEncoder
 
-from ._compat import FoldSamplingConfig, summarize_scores, summarize_with_ci
+from .ml_utils import FoldSamplingConfig, summarize_scores, summarize_with_ci
 from .candidate_generator import derive_parameter_ranges, draw_candidate_spec, limited_folds
 from .config import HillClimbConfig
 from .persistence import build_run_state, load_pickle, save_pickle
@@ -54,15 +55,8 @@ def _load_artifacts(config: HillClimbConfig):
         "refs/heads/main/data/student-health-risk-train.csv"
     )
 
-    from ._compat import NOTEBOOKS_DIR  # local import to avoid circular reference
-    import sys
-
-    if str(NOTEBOOKS_DIR) not in sys.path:
-        sys.path.insert(0, str(NOTEBOOKS_DIR))
-
-    from helper_functions.data_preprocessing import encode_label  # noqa: WPS433,E402
-
-    _, label_encoder = encode_label(raw_train["health_condition"])
+    label_encoder = LabelEncoder()
+    label_encoder.fit(raw_train["health_condition"])
 
     return engineered_folds, search_payload, train_df, test_df, label_encoder
 
