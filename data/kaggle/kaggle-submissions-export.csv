@@ -1,4 +1,14 @@
 ref,fileName,date,description,status,publicScore,privateScore
+55134495,submission.v0.4.5.csv,2026-07-31 10:20:03.340000,"Submission Version v0.4.5: # Release Notes for v0.4.5
+
+## Model architecture & tuning
+- hill-climb accepted model 3 (median BA=0.94939)
+- 11 member XGBoost hill climbing ensemble (201 candidates evaluated)
+
+## General maintenance
+- Updated leaderboard
+- Published Optuna port
+- fix: sync with upstream before hill-climb auto-push",SubmissionStatus.COMPLETE,0.94963,
 55127615,submission.v0.4.3.csv,2026-07-31 05:02:26.230000,"Submission Version v0.4.3: # Release Notes for v0.4.3
 
 ## Model architecture & tuning
