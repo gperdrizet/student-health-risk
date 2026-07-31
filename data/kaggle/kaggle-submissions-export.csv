@@ -1,4 +1,23 @@
 ref,fileName,date,description,status,publicScore,privateScore
+55126847,submission.v0.4.1.csv,2026-07-31 04:22:50.117000,"Submission Version v0.4.1: # Release Notes for v0.4.1
+
+## General maintenance
+- workflow: make leaderboard badge push resilient",SubmissionStatus.COMPLETE,0.87429,
+55126762,submission.v-hc-20260731-041717-a01-p001.csv,2026-07-31 04:17:40.333000,"Submission Version v-hc-20260731-041717-a01-p001: # Release Notes for v-hc-20260731-041717-a01-p001
+
+## Model architecture & tuning
+- hill-climb accepted model 1 (median BA=0.87391)",SubmissionStatus.COMPLETE,0.87429,
+55126702,submission.v0.4.0.csv,2026-07-31 04:14:43.337000,"Submission Version v0.4.0: # Release Notes for v0.4.0
+
+## Model architecture & tuning
+- added balanced class weighting to XGBoost baseline model
+- single model XGBoost baseline
+
+## General maintenance
+- Increased number of bins on historgram plot
+- Updated submission results
+- refactor: add shared xgboost helper modules
+- ... and 1 more commit(s)",SubmissionStatus.COMPLETE,0.94961,
 55120694,submission.v0.3.8.csv,2026-07-30 22:47:50.173000,"Submission Version v0.3.8: # Release Notes for v0.3.8
 
 ## General maintenance
