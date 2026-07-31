@@ -5,6 +5,7 @@ from __future__ import annotations
 from contextlib import contextmanager
 from datetime import datetime, UTC
 from pathlib import Path
+import re
 import subprocess
 
 
@@ -18,6 +19,9 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 
 class GitAutomationError(RuntimeError):
     pass
+
+
+SEMVER_TAG_PATTERN = re.compile(r"^v(\d+)\.(\d+)\.(\d+)$")
 
 
 def validate_submission_df(df) -> None:
@@ -56,6 +60,33 @@ def _run_git(args: list[str], dry_run: bool) -> str:
     return result.stdout.strip()
 
 
+def _next_semver_tag() -> str:
+    result = subprocess.run(
+        ["git", "tag", "--list"],
+        check=False,
+        capture_output=True,
+        text=True,
+        cwd=REPO_ROOT,
+    )
+    if result.returncode != 0:
+        raise GitAutomationError(result.stderr.strip() or result.stdout.strip())
+
+    versions = []
+    for raw_tag in result.stdout.splitlines():
+        tag = raw_tag.strip()
+        match = SEMVER_TAG_PATTERN.match(tag)
+        if not match:
+            continue
+        major, minor, patch = map(int, match.groups())
+        versions.append((major, minor, patch))
+
+    if not versions:
+        return "v0.1.0"
+
+    major, minor, patch = max(versions)
+    return f"v{major}.{minor}.{patch + 1}"
+
+
 @contextmanager
 def _git_lock(lock_file: Path):
     lock_file.parent.mkdir(parents=True, exist_ok=True)
@@ -82,7 +113,7 @@ def auto_commit_tag_push(
     proposal_index: int,
     dry_run: bool = False,
 ):
-    tag = f"v-hc-{datetime.now(UTC):%Y%m%d-%H%M%S}-a{accepted_count:02d}-p{proposal_index:03d}"
+    tag = _next_semver_tag()
     message = (
         f"model: hill-climb accepted model {accepted_count} "
         f"(median BA={median_score:.5f})"
