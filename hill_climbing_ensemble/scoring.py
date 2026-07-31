@@ -8,6 +8,7 @@ from multiprocessing import get_context
 import pandas as pd
 
 from sklearn.metrics import balanced_accuracy_score
+from sklearn.utils.class_weight import compute_sample_weight
 
 from .ml_utils import (
     XGBoostError,
@@ -30,12 +31,13 @@ def fit_model_from_spec(spec, x_train, y_train, fold_seed, prefer_gpu=True):
     )
 
     model = build_xgb_model(spec["params"], seed=row_seed, prefer_gpu=prefer_gpu)
+    sample_weight = compute_sample_weight(class_weight='balanced', y=y_bootstrap.to_numpy())
 
     try:
-        model.fit(x_bootstrap, y_bootstrap)
+        model.fit(x_bootstrap, y_bootstrap, sample_weight=sample_weight)
     except XGBoostError:
         model = build_xgb_model(spec["params"], seed=row_seed, prefer_gpu=False)
-        model.fit(x_bootstrap, y_bootstrap)
+        model.fit(x_bootstrap, y_bootstrap, sample_weight=sample_weight)
 
     return model
 
