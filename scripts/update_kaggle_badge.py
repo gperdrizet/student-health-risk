@@ -337,7 +337,8 @@ def update_readme(my_rank, my_score):
         f'https://img.shields.io/badge/Best%20leaderboard%20BA-{my_score:.5f}-blue?logo=kaggle&logoColor=white'
         ')'
     )
-    plot_markdown = f'![Kaggle leaderboard score distribution]({PLOT_PATH})'
+    cache_key = f'r{my_rank}-s{my_score:.5f}'.replace('.', '_')
+    plot_markdown = f'![Kaggle leaderboard score distribution]({PLOT_PATH}?v={cache_key})'
 
     with open(README_PATH, 'r', encoding='utf-8') as handle:
         content = handle.read()
