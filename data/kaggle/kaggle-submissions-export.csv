@@ -1,4 +1,12 @@
 ref,fileName,date,description,status,publicScore,privateScore
+55146510,submission.v0.4.6.csv,2026-07-31 20:32:26.040000,"Submission Version v0.4.6: # Release Notes for v0.4.6
+
+## Model architecture & tuning
+- Finished ensemble member search with 11 XGBoost models
+
+## General maintenance
+- feat: wide-search hill climb, --inherit-ensemble, dual-GPU metalearner notebook
+- config: shared optuna-studies.db, LAN dashboard on port 8081",SubmissionStatus.COMPLETE,0.94963,
 55134495,submission.v0.4.5.csv,2026-07-31 10:20:03.340000,"Submission Version v0.4.5: # Release Notes for v0.4.5
 
 ## Model architecture & tuning

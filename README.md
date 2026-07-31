@@ -3,11 +3,11 @@
 [![Verify submission](https://github.com/gperdrizet/student-health-risk/actions/workflows/verify_submission.yml/badge.svg)](https://github.com/gperdrizet/student-health-risk/actions/workflows/verify_submission.yml) [![Submit to Kaggle](https://github.com/gperdrizet/student-health-risk/actions/workflows/submit.yml/badge.svg)](https://github.com/gperdrizet/student-health-risk/actions/workflows/submit.yml)
 
 <!-- KAGGLE_BADGE_START -->
-![Kaggle Rank](https://img.shields.io/badge/Kaggle%20rank-1020-blue?logo=kaggle&logoColor=white) ![Best Leaderboard Balanced Accuracy](https://img.shields.io/badge/Best%20leaderboard%20BA-0.94999-blue?logo=kaggle&logoColor=white)
+![Kaggle Rank](https://img.shields.io/badge/Kaggle%20rank-1040-blue?logo=kaggle&logoColor=white) ![Best Leaderboard Balanced Accuracy](https://img.shields.io/badge/Best%20leaderboard%20BA-0.94999-blue?logo=kaggle&logoColor=white)
 <!-- KAGGLE_BADGE_END -->
 
 <!-- KAGGLE_RANK_PLOT_START -->
-![Kaggle leaderboard score distribution](data/kaggle/kaggle-leaderboard-rank.png?v=r1020-s0_94999)
+![Kaggle leaderboard score distribution](data/kaggle/kaggle-leaderboard-rank.png?v=r1040-s0_94999)
 <!-- KAGGLE_RANK_PLOT_END -->
 
 Kaggle Playground Series Season 6 Episode 7 solution. In addition to the S6E7 solution, this repository provides a convenient containerized development environment for Kaggle competitions, and an automated tag-driven submission workflow using GitHub Actions.
