@@ -106,9 +106,23 @@ jobs:
       run: |
         echo "Waiting for Kaggle to score the new submission..."
         python scripts/update_kaggle_badge.py
-        
+
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add README.md data/kaggle/kaggle-leaderboard-rank.png data/kaggle/kaggle-submissions-export.csv data/kaggle/kaggle-leaderboard-export.csv
-        git commit -m "chore: automated update of leaderboard rank badge [skip ci]" || echo "No change in rank."
-        git push origin HEAD:${{ github.event.repository.default_branch }}
+
+        if git diff --cached --quiet; then
+          echo "No leaderboard badge/plot changes to commit."
+          exit 0
+        fi
+
+        git commit -m "chore: automated update of leaderboard rank badge [skip ci]"
+        BADGE_COMMIT_SHA=$(git rev-parse HEAD)
+        DEFAULT_BRANCH="${{ github.event.repository.default_branch }}"
+
+        # Reapply the automated commit on top of the latest default branch,
+        # then push. This avoids non-fast-forward failures on long-running jobs.
+        git fetch origin "$DEFAULT_BRANCH"
+        git checkout -B badge-update "origin/$DEFAULT_BRANCH"
+        git cherry-pick "$BADGE_COMMIT_SHA"
+        git push origin HEAD:"$DEFAULT_BRANCH"
