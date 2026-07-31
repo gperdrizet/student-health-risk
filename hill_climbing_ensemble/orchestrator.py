@@ -235,9 +235,19 @@ def run_hill_climb(config: HillClimbConfig):
             logger.info('checkpoint_saved path=%s', checkpoint_path)
 
         if accepted:
+            logger.info(
+                'submission_rebuild_start proposal=%03d accepted_count=%d',
+                proposal_index,
+                len(accepted_specs),
+            )
             submission_df = build_submission_from_specs(accepted_specs, train_df, test_df, label_encoder)
             validate_submission_df(submission_df)
             save_submission_csv(submission_df, config.final_submission_file)
+            logger.info(
+                'submission_rebuild_complete proposal=%03d path=%s',
+                proposal_index,
+                config.final_submission_file,
+            )
 
         save_pickle(config.ensemble_log_file, hill_log)
 
@@ -257,30 +267,6 @@ def run_hill_climb(config: HillClimbConfig):
                 "study_name": config.study_name,
             },
         }
-
-        if config.run_final_cv_estimate and accepted_specs:
-            final_folds = limited_folds(engineered_folds, config.final_cv_fold_limit)
-            final_sampling = FoldSamplingConfig(
-                use_sampling=config.final_cv_use_sampling,
-                train_sample_fraction=config.final_cv_train_sample_frac,
-                validation_sample_fraction=config.final_cv_validation_sample_frac,
-                sample_seed=config.random_seed + 900,
-            )
-            final_scores = evaluate_ensemble_specs(
-                final_folds,
-                accepted_specs,
-                sampling_config=final_sampling,
-                seed=config.random_seed + 1200,
-                gpu_ids=config.parallel_gpu_ids,
-            )
-            final_summary = summarize_scores(final_scores)
-            final_summary["fold_count_used"] = len(final_folds)
-            final_summary["fold_count_available"] = len(engineered_folds)
-            final_summary["accepted_model_count"] = len(accepted_specs)
-            final_summary["use_sampling"] = config.final_cv_use_sampling
-            final_summary["mean_ci_95"] = summarize_with_ci(final_scores)["mean"]
-            final_summary["median_ci_95"] = summarize_with_ci(final_scores)["median"]
-            ensemble_payload["final_cv_summary"] = final_summary
 
         save_pickle(config.ensemble_model_file, ensemble_payload)
 
@@ -314,6 +300,43 @@ def run_hill_climb(config: HillClimbConfig):
         len(hill_log),
         float(current_summary.get('median', 0.0)),
     )
+
+    if config.run_final_cv_estimate and accepted_specs:
+        logger.info(
+            'final_cv_start accepted_models=%d fold_limit=%s sampling=%s gpu_ids=%s',
+            len(accepted_specs),
+            config.final_cv_fold_limit,
+            config.final_cv_use_sampling,
+            config.parallel_gpu_ids,
+        )
+        final_folds = limited_folds(engineered_folds, config.final_cv_fold_limit)
+        final_sampling = FoldSamplingConfig(
+            use_sampling=config.final_cv_use_sampling,
+            train_sample_fraction=config.final_cv_train_sample_frac,
+            validation_sample_fraction=config.final_cv_validation_sample_frac,
+            sample_seed=config.random_seed + 900,
+        )
+        final_scores = evaluate_ensemble_specs(
+            final_folds,
+            accepted_specs,
+            sampling_config=final_sampling,
+            seed=config.random_seed + 1200,
+            gpu_ids=config.parallel_gpu_ids,
+        )
+        final_summary = summarize_scores(final_scores)
+        final_summary["fold_count_used"] = len(final_folds)
+        final_summary["fold_count_available"] = len(engineered_folds)
+        final_summary["accepted_model_count"] = len(accepted_specs)
+        final_summary["use_sampling"] = config.final_cv_use_sampling
+        final_summary["mean_ci_95"] = summarize_with_ci(final_scores)["mean"]
+        final_summary["median_ci_95"] = summarize_with_ci(final_scores)["median"]
+
+        ensemble_payload = load_pickle(config.ensemble_model_file, default={})
+        if not isinstance(ensemble_payload, dict):
+            ensemble_payload = {}
+        ensemble_payload["final_cv_summary"] = final_summary
+        save_pickle(config.ensemble_model_file, ensemble_payload)
+        logger.info('final_cv_complete median=%.5f mean=%.5f', final_summary['median'], final_summary['mean'])
 
     return {
         "accepted_models": len(accepted_specs),

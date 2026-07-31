@@ -2,8 +2,11 @@
 
 from __future__ import annotations
 
+import logging
 import os
 from multiprocessing import get_context
+from queue import Empty
+import traceback
 
 import pandas as pd
 
@@ -17,6 +20,9 @@ from .ml_utils import (
     build_xgb_model,
     make_fixed_sampled_folds,
 )
+
+
+LOGGER = logging.getLogger('hill_climbing_ensemble.run')
 
 
 def fit_model_from_spec(spec, x_train, y_train, fold_seed, prefer_gpu=True):
@@ -72,27 +78,38 @@ def _partition_round_robin(items, worker_count):
 
 
 def _evaluate_fold_batch(worker_index, gpu_id, fold_batch, specs, seed, output_queue):
-    # Pin this worker process to one visible GPU.
-    os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu_id)
-    batch_rows = []
+    try:
+        # Pin this worker process to one visible GPU.
+        os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu_id)
+        batch_rows = []
 
-    for fold_index, fold in fold_batch:
-        score = _evaluate_one_fold(
-            fold_index=fold_index,
-            fold=fold,
-            specs=specs,
-            seed=seed,
-        )
-        batch_rows.append(
+        for fold_index, fold in fold_batch:
+            score = _evaluate_one_fold(
+                fold_index=fold_index,
+                fold=fold,
+                specs=specs,
+                seed=seed,
+            )
+            batch_rows.append(
+                {
+                    "fold_index": fold_index,
+                    "score": score,
+                    "worker_index": worker_index,
+                    "gpu_id": gpu_id,
+                }
+            )
+
+        output_queue.put({"ok": True, "rows": batch_rows, "worker_index": worker_index, "gpu_id": gpu_id})
+    except Exception as exc:  # pragma: no cover - defensive against worker process failures
+        output_queue.put(
             {
-                "fold_index": fold_index,
-                "score": score,
+                "ok": False,
                 "worker_index": worker_index,
                 "gpu_id": gpu_id,
+                "error": f"{type(exc).__name__}: {exc}",
+                "traceback": traceback.format_exc(),
             }
         )
-
-    output_queue.put(batch_rows)
 
 
 def evaluate_ensemble_specs(folds, specs, sampling_config, seed, gpu_ids=(0, 1)):
@@ -110,7 +127,8 @@ def evaluate_ensemble_specs(folds, specs, sampling_config, seed, gpu_ids=(0, 1))
     fold_pairs = list(enumerate(evaluation_folds, start=1))
     fold_batches = _partition_round_robin(fold_pairs, len(gpu_ids))
 
-    ctx = get_context("fork")
+    # CUDA + fork can deadlock or silently fail in subprocesses; spawn is safer.
+    ctx = get_context("spawn")
     output_queue = ctx.Queue()
     processes = []
 
@@ -126,11 +144,37 @@ def evaluate_ensemble_specs(folds, specs, sampling_config, seed, gpu_ids=(0, 1))
         processes.append(process)
 
     collected_rows = []
-    for _ in processes:
-        collected_rows.extend(output_queue.get())
+    try:
+        for _ in processes:
+            message = output_queue.get(timeout=1800)
+            if not message.get("ok", False):
+                raise RuntimeError(
+                    "Parallel fold worker failed "
+                    f"(worker={message.get('worker_index')}, gpu={message.get('gpu_id')}): "
+                    f"{message.get('error')}\n{message.get('traceback', '')}"
+                )
+            collected_rows.extend(message["rows"])
 
-    for process in processes:
-        process.join()
+        for process in processes:
+            process.join()
+            if process.exitcode not in (0, None):
+                raise RuntimeError(f"Parallel fold worker exited with code {process.exitcode}")
+    except (Empty, RuntimeError) as exc:
+        # Avoid deadlocks if a worker crashes or never reports back.
+        for process in processes:
+            if process.is_alive():
+                process.terminate()
+            process.join(timeout=5)
+
+        LOGGER.warning(
+            "parallel_fold_eval_fallback reason=%s; switching to sequential evaluation",
+            exc,
+        )
+
+        return [
+            _evaluate_one_fold(fold_index, fold, specs=specs, seed=seed)
+            for fold_index, fold in enumerate(evaluation_folds, start=1)
+        ]
 
     rows = sorted(collected_rows, key=lambda row: row["fold_index"])
     return [row["score"] for row in rows]
