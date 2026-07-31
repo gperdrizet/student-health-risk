@@ -64,5 +64,5 @@
 	"postCreateCommand": "",
 
 	// Use 'postAttachCommand' to run commands each time a user connects to the container
-	"postAttachCommand": "bash -lc 'mkdir -p data/results && if ! pgrep -f optuna-dashboard >/dev/null; then nohup optuna-dashboard sqlite:///data/results/08-xgboost-hillclimb-optuna.db --host 0.0.0.0 --port 8081 > data/results/optuna-dashboard.log 2>&1 & fi'"
+	"postAttachCommand": "bash -lc 'mkdir -p data/results && if ! pgrep -f optuna-dashboard >/dev/null; then nohup optuna-dashboard sqlite:///data/results/optuna-studies.db --host 0.0.0.0 --port 8081 > data/results/optuna-dashboard.log 2>&1 & fi'"
 }
