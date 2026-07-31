@@ -144,7 +144,7 @@ id,health_condition
 690230,unhealthy
 690231,at-risk
 690232,fit
-690233,unhealthy
+690233,at-risk
 690234,at-risk
 690235,at-risk
 690236,at-risk
@@ -345,7 +345,7 @@ id,health_condition
 690431,at-risk
 690432,at-risk
 690433,at-risk
-690434,at-risk
+690434,unhealthy
 690435,at-risk
 690436,at-risk
 690437,at-risk
@@ -500,7 +500,7 @@ id,health_condition
 690586,unhealthy
 690587,at-risk
 690588,fit
-690589,at-risk
+690589,unhealthy
 690590,at-risk
 690591,unhealthy
 690592,at-risk
@@ -519,7 +519,7 @@ id,health_condition
 690605,at-risk
 690606,at-risk
 690607,at-risk
-690608,at-risk
+690608,unhealthy
 690609,at-risk
 690610,at-risk
 690611,at-risk
@@ -1167,7 +1167,7 @@ id,health_condition
 691253,at-risk
 691254,unhealthy
 691255,at-risk
-691256,unhealthy
+691256,fit
 691257,at-risk
 691258,at-risk
 691259,at-risk
@@ -1499,7 +1499,7 @@ id,health_condition
 691585,at-risk
 691586,fit
 691587,at-risk
-691588,at-risk
+691588,unhealthy
 691589,at-risk
 691590,at-risk
 691591,at-risk
@@ -1858,7 +1858,7 @@ id,health_condition
 691944,at-risk
 691945,at-risk
 691946,at-risk
-691947,at-risk
+691947,unhealthy
 691948,at-risk
 691949,at-risk
 691950,at-risk
@@ -2024,7 +2024,7 @@ id,health_condition
 692110,at-risk
 692111,at-risk
 692112,at-risk
-692113,at-risk
+692113,unhealthy
 692114,at-risk
 692115,unhealthy
 692116,at-risk
@@ -2577,7 +2577,7 @@ id,health_condition
 692663,at-risk
 692664,at-risk
 692665,at-risk
-692666,at-risk
+692666,fit
 692667,at-risk
 692668,at-risk
 692669,at-risk
@@ -2591,7 +2591,7 @@ id,health_condition
 692677,at-risk
 692678,at-risk
 692679,at-risk
-692680,at-risk
+692680,unhealthy
 692681,at-risk
 692682,at-risk
 692683,at-risk
@@ -2893,7 +2893,7 @@ id,health_condition
 692979,unhealthy
 692980,at-risk
 692981,at-risk
-692982,at-risk
+692982,unhealthy
 692983,at-risk
 692984,unhealthy
 692985,unhealthy
@@ -3049,7 +3049,7 @@ id,health_condition
 693135,at-risk
 693136,at-risk
 693137,fit
-693138,fit
+693138,at-risk
 693139,at-risk
 693140,at-risk
 693141,at-risk
@@ -3500,7 +3500,7 @@ id,health_condition
 693586,at-risk
 693587,fit
 693588,at-risk
-693589,at-risk
+693589,fit
 693590,at-risk
 693591,at-risk
 693592,at-risk
@@ -3628,7 +3628,7 @@ id,health_condition
 693714,at-risk
 693715,unhealthy
 693716,fit
-693717,at-risk
+693717,fit
 693718,fit
 693719,at-risk
 693720,fit
@@ -4049,7 +4049,7 @@ id,health_condition
 694135,at-risk
 694136,at-risk
 694137,unhealthy
-694138,at-risk
+694138,unhealthy
 694139,at-risk
 694140,at-risk
 694141,unhealthy
@@ -4475,7 +4475,7 @@ id,health_condition
 694561,at-risk
 694562,at-risk
 694563,at-risk
-694564,at-risk
+694564,unhealthy
 694565,at-risk
 694566,at-risk
 694567,fit
@@ -4901,7 +4901,7 @@ id,health_condition
 694987,at-risk
 694988,at-risk
 694989,at-risk
-694990,at-risk
+694990,unhealthy
 694991,at-risk
 694992,unhealthy
 694993,unhealthy
@@ -4923,7 +4923,7 @@ id,health_condition
 695009,at-risk
 695010,fit
 695011,at-risk
-695012,at-risk
+695012,fit
 695013,at-risk
 695014,at-risk
 695015,unhealthy
@@ -5487,7 +5487,7 @@ id,health_condition
 695573,at-risk
 695574,unhealthy
 695575,at-risk
-695576,at-risk
+695576,unhealthy
 695577,at-risk
 695578,at-risk
 695579,at-risk
@@ -5568,7 +5568,7 @@ id,health_condition
 695654,at-risk
 695655,unhealthy
 695656,at-risk
-695657,unhealthy
+695657,at-risk
 695658,at-risk
 695659,unhealthy
 695660,unhealthy
@@ -6327,7 +6327,7 @@ id,health_condition
 696413,fit
 696414,at-risk
 696415,at-risk
-696416,at-risk
+696416,unhealthy
 696417,at-risk
 696418,at-risk
 696419,at-risk
@@ -6690,7 +6690,7 @@ id,health_condition
 696776,at-risk
 696777,fit
 696778,at-risk
-696779,at-risk
+696779,unhealthy
 696780,at-risk
 696781,at-risk
 696782,at-risk
@@ -7309,7 +7309,7 @@ id,health_condition
 697395,at-risk
 697396,unhealthy
 697397,at-risk
-697398,at-risk
+697398,unhealthy
 697399,at-risk
 697400,unhealthy
 697401,at-risk
@@ -7781,7 +7781,7 @@ id,health_condition
 697867,at-risk
 697868,at-risk
 697869,at-risk
-697870,fit
+697870,at-risk
 697871,at-risk
 697872,at-risk
 697873,at-risk
@@ -8023,7 +8023,7 @@ id,health_condition
 698109,unhealthy
 698110,at-risk
 698111,at-risk
-698112,at-risk
+698112,unhealthy
 698113,at-risk
 698114,at-risk
 698115,at-risk
@@ -8184,7 +8184,7 @@ id,health_condition
 698270,at-risk
 698271,fit
 698272,at-risk
-698273,at-risk
+698273,unhealthy
 698274,at-risk
 698275,at-risk
 698276,at-risk
@@ -8476,7 +8476,7 @@ id,health_condition
 698562,at-risk
 698563,unhealthy
 698564,unhealthy
-698565,unhealthy
+698565,fit
 698566,at-risk
 698567,at-risk
 698568,at-risk
@@ -8917,7 +8917,7 @@ id,health_condition
 699003,at-risk
 699004,at-risk
 699005,fit
-699006,unhealthy
+699006,at-risk
 699007,fit
 699008,at-risk
 699009,at-risk
@@ -9527,14 +9527,14 @@ id,health_condition
 699613,fit
 699614,fit
 699615,at-risk
-699616,at-risk
+699616,unhealthy
 699617,fit
 699618,unhealthy
 699619,at-risk
 699620,at-risk
 699621,at-risk
 699622,at-risk
-699623,at-risk
+699623,unhealthy
 699624,fit
 699625,at-risk
 699626,at-risk
@@ -9695,7 +9695,7 @@ id,health_condition
 699781,at-risk
 699782,at-risk
 699783,at-risk
-699784,at-risk
+699784,unhealthy
 699785,at-risk
 699786,at-risk
 699787,at-risk
@@ -9769,7 +9769,7 @@ id,health_condition
 699855,at-risk
 699856,at-risk
 699857,at-risk
-699858,fit
+699858,at-risk
 699859,at-risk
 699860,fit
 699861,at-risk
@@ -10654,7 +10654,7 @@ id,health_condition
 700740,at-risk
 700741,unhealthy
 700742,at-risk
-700743,unhealthy
+700743,at-risk
 700744,fit
 700745,at-risk
 700746,fit
@@ -10776,7 +10776,7 @@ id,health_condition
 700862,at-risk
 700863,at-risk
 700864,at-risk
-700865,fit
+700865,at-risk
 700866,at-risk
 700867,at-risk
 700868,at-risk
@@ -11101,7 +11101,7 @@ id,health_condition
 701187,at-risk
 701188,at-risk
 701189,unhealthy
-701190,unhealthy
+701190,at-risk
 701191,at-risk
 701192,at-risk
 701193,at-risk
@@ -11216,7 +11216,7 @@ id,health_condition
 701302,at-risk
 701303,at-risk
 701304,unhealthy
-701305,at-risk
+701305,unhealthy
 701306,at-risk
 701307,at-risk
 701308,at-risk
@@ -11917,7 +11917,7 @@ id,health_condition
 702003,at-risk
 702004,at-risk
 702005,at-risk
-702006,at-risk
+702006,unhealthy
 702007,fit
 702008,at-risk
 702009,at-risk
@@ -12101,7 +12101,7 @@ id,health_condition
 702187,at-risk
 702188,at-risk
 702189,unhealthy
-702190,at-risk
+702190,unhealthy
 702191,at-risk
 702192,at-risk
 702193,at-risk
@@ -12542,7 +12542,7 @@ id,health_condition
 702628,at-risk
 702629,at-risk
 702630,at-risk
-702631,at-risk
+702631,unhealthy
 702632,at-risk
 702633,at-risk
 702634,fit
@@ -12735,7 +12735,7 @@ id,health_condition
 702821,at-risk
 702822,at-risk
 702823,unhealthy
-702824,at-risk
+702824,unhealthy
 702825,at-risk
 702826,unhealthy
 702827,unhealthy
@@ -13047,7 +13047,7 @@ id,health_condition
 703133,at-risk
 703134,at-risk
 703135,at-risk
-703136,at-risk
+703136,unhealthy
 703137,fit
 703138,at-risk
 703139,at-risk
@@ -13554,7 +13554,7 @@ id,health_condition
 703640,at-risk
 703641,at-risk
 703642,unhealthy
-703643,at-risk
+703643,unhealthy
 703644,at-risk
 703645,fit
 703646,at-risk
@@ -14277,7 +14277,7 @@ id,health_condition
 704363,at-risk
 704364,at-risk
 704365,at-risk
-704366,at-risk
+704366,unhealthy
 704367,at-risk
 704368,at-risk
 704369,at-risk
@@ -14302,7 +14302,7 @@ id,health_condition
 704388,at-risk
 704389,at-risk
 704390,unhealthy
-704391,unhealthy
+704391,fit
 704392,fit
 704393,unhealthy
 704394,at-risk
@@ -15704,7 +15704,7 @@ id,health_condition
 705790,at-risk
 705791,unhealthy
 705792,at-risk
-705793,at-risk
+705793,unhealthy
 705794,at-risk
 705795,at-risk
 705796,at-risk
@@ -16396,7 +16396,7 @@ id,health_condition
 706482,at-risk
 706483,at-risk
 706484,at-risk
-706485,at-risk
+706485,unhealthy
 706486,at-risk
 706487,at-risk
 706488,at-risk
@@ -18577,7 +18577,7 @@ id,health_condition
 708663,at-risk
 708664,unhealthy
 708665,at-risk
-708666,at-risk
+708666,unhealthy
 708667,at-risk
 708668,at-risk
 708669,at-risk
@@ -18676,7 +18676,7 @@ id,health_condition
 708762,at-risk
 708763,fit
 708764,at-risk
-708765,at-risk
+708765,unhealthy
 708766,at-risk
 708767,unhealthy
 708768,at-risk
@@ -18753,7 +18753,7 @@ id,health_condition
 708839,at-risk
 708840,at-risk
 708841,at-risk
-708842,at-risk
+708842,unhealthy
 708843,at-risk
 708844,at-risk
 708845,at-risk
@@ -18848,7 +18848,7 @@ id,health_condition
 708934,at-risk
 708935,at-risk
 708936,at-risk
-708937,at-risk
+708937,unhealthy
 708938,at-risk
 708939,at-risk
 708940,at-risk
@@ -18939,7 +18939,7 @@ id,health_condition
 709025,at-risk
 709026,fit
 709027,at-risk
-709028,at-risk
+709028,unhealthy
 709029,at-risk
 709030,at-risk
 709031,unhealthy
@@ -18975,7 +18975,7 @@ id,health_condition
 709061,at-risk
 709062,unhealthy
 709063,at-risk
-709064,at-risk
+709064,unhealthy
 709065,at-risk
 709066,at-risk
 709067,unhealthy
@@ -19186,7 +19186,7 @@ id,health_condition
 709272,at-risk
 709273,at-risk
 709274,unhealthy
-709275,at-risk
+709275,unhealthy
 709276,at-risk
 709277,at-risk
 709278,fit
@@ -19312,7 +19312,7 @@ id,health_condition
 709398,at-risk
 709399,at-risk
 709400,at-risk
-709401,fit
+709401,at-risk
 709402,at-risk
 709403,fit
 709404,unhealthy
@@ -19524,7 +19524,7 @@ id,health_condition
 709610,at-risk
 709611,at-risk
 709612,at-risk
-709613,at-risk
+709613,unhealthy
 709614,at-risk
 709615,at-risk
 709616,at-risk
@@ -20250,14 +20250,14 @@ id,health_condition
 710336,at-risk
 710337,at-risk
 710338,at-risk
-710339,at-risk
+710339,unhealthy
 710340,at-risk
 710341,at-risk
 710342,at-risk
 710343,at-risk
 710344,unhealthy
 710345,at-risk
-710346,fit
+710346,at-risk
 710347,at-risk
 710348,fit
 710349,at-risk
@@ -20302,7 +20302,7 @@ id,health_condition
 710388,at-risk
 710389,unhealthy
 710390,at-risk
-710391,at-risk
+710391,unhealthy
 710392,at-risk
 710393,at-risk
 710394,at-risk
@@ -20592,7 +20592,7 @@ id,health_condition
 710678,at-risk
 710679,at-risk
 710680,at-risk
-710681,unhealthy
+710681,at-risk
 710682,fit
 710683,at-risk
 710684,unhealthy
@@ -20994,7 +20994,7 @@ id,health_condition
 711080,fit
 711081,at-risk
 711082,at-risk
-711083,at-risk
+711083,unhealthy
 711084,unhealthy
 711085,at-risk
 711086,at-risk
@@ -21036,7 +21036,7 @@ id,health_condition
 711122,fit
 711123,at-risk
 711124,at-risk
-711125,at-risk
+711125,unhealthy
 711126,at-risk
 711127,fit
 711128,at-risk
@@ -21470,7 +21470,7 @@ id,health_condition
 711556,at-risk
 711557,at-risk
 711558,at-risk
-711559,at-risk
+711559,unhealthy
 711560,at-risk
 711561,unhealthy
 711562,at-risk
@@ -21707,7 +21707,7 @@ id,health_condition
 711793,fit
 711794,at-risk
 711795,at-risk
-711796,at-risk
+711796,unhealthy
 711797,at-risk
 711798,at-risk
 711799,at-risk
@@ -22697,7 +22697,7 @@ id,health_condition
 712783,at-risk
 712784,at-risk
 712785,at-risk
-712786,at-risk
+712786,unhealthy
 712787,fit
 712788,fit
 712789,at-risk
@@ -22916,7 +22916,7 @@ id,health_condition
 713002,fit
 713003,at-risk
 713004,at-risk
-713005,at-risk
+713005,unhealthy
 713006,at-risk
 713007,at-risk
 713008,at-risk
@@ -23135,7 +23135,7 @@ id,health_condition
 713221,at-risk
 713222,at-risk
 713223,at-risk
-713224,at-risk
+713224,unhealthy
 713225,at-risk
 713226,unhealthy
 713227,at-risk
@@ -23658,14 +23658,14 @@ id,health_condition
 713744,at-risk
 713745,at-risk
 713746,at-risk
-713747,at-risk
+713747,unhealthy
 713748,at-risk
 713749,at-risk
 713750,at-risk
 713751,at-risk
 713752,at-risk
 713753,at-risk
-713754,at-risk
+713754,unhealthy
 713755,at-risk
 713756,at-risk
 713757,at-risk
@@ -23676,7 +23676,7 @@ id,health_condition
 713762,at-risk
 713763,at-risk
 713764,at-risk
-713765,at-risk
+713765,unhealthy
 713766,at-risk
 713767,at-risk
 713768,unhealthy
@@ -24189,7 +24189,7 @@ id,health_condition
 714275,at-risk
 714276,at-risk
 714277,unhealthy
-714278,at-risk
+714278,unhealthy
 714279,at-risk
 714280,at-risk
 714281,at-risk
@@ -24213,7 +24213,7 @@ id,health_condition
 714299,at-risk
 714300,at-risk
 714301,at-risk
-714302,at-risk
+714302,unhealthy
 714303,at-risk
 714304,at-risk
 714305,at-risk
@@ -24460,7 +24460,7 @@ id,health_condition
 714546,at-risk
 714547,unhealthy
 714548,at-risk
-714549,unhealthy
+714549,at-risk
 714550,at-risk
 714551,at-risk
 714552,at-risk
@@ -24892,7 +24892,7 @@ id,health_condition
 714978,at-risk
 714979,at-risk
 714980,at-risk
-714981,at-risk
+714981,unhealthy
 714982,at-risk
 714983,at-risk
 714984,at-risk
@@ -25001,7 +25001,7 @@ id,health_condition
 715087,at-risk
 715088,at-risk
 715089,at-risk
-715090,fit
+715090,at-risk
 715091,at-risk
 715092,fit
 715093,at-risk
@@ -25195,7 +25195,7 @@ id,health_condition
 715281,at-risk
 715282,at-risk
 715283,at-risk
-715284,at-risk
+715284,unhealthy
 715285,at-risk
 715286,unhealthy
 715287,at-risk
@@ -25795,7 +25795,7 @@ id,health_condition
 715881,at-risk
 715882,at-risk
 715883,at-risk
-715884,unhealthy
+715884,at-risk
 715885,at-risk
 715886,at-risk
 715887,at-risk
@@ -25956,7 +25956,7 @@ id,health_condition
 716042,at-risk
 716043,unhealthy
 716044,at-risk
-716045,unhealthy
+716045,at-risk
 716046,at-risk
 716047,at-risk
 716048,at-risk
@@ -26133,7 +26133,7 @@ id,health_condition
 716219,at-risk
 716220,at-risk
 716221,at-risk
-716222,at-risk
+716222,unhealthy
 716223,fit
 716224,unhealthy
 716225,unhealthy
@@ -26588,7 +26588,7 @@ id,health_condition
 716674,at-risk
 716675,unhealthy
 716676,at-risk
-716677,at-risk
+716677,unhealthy
 716678,unhealthy
 716679,at-risk
 716680,at-risk
@@ -26948,7 +26948,7 @@ id,health_condition
 717034,at-risk
 717035,at-risk
 717036,at-risk
-717037,at-risk
+717037,unhealthy
 717038,at-risk
 717039,at-risk
 717040,at-risk
@@ -27130,7 +27130,7 @@ id,health_condition
 717216,at-risk
 717217,at-risk
 717218,at-risk
-717219,at-risk
+717219,unhealthy
 717220,at-risk
 717221,at-risk
 717222,at-risk
@@ -27424,7 +27424,7 @@ id,health_condition
 717510,unhealthy
 717511,unhealthy
 717512,unhealthy
-717513,at-risk
+717513,unhealthy
 717514,at-risk
 717515,unhealthy
 717516,unhealthy
@@ -27508,7 +27508,7 @@ id,health_condition
 717594,at-risk
 717595,at-risk
 717596,at-risk
-717597,fit
+717597,at-risk
 717598,at-risk
 717599,at-risk
 717600,at-risk
@@ -27811,7 +27811,7 @@ id,health_condition
 717897,at-risk
 717898,at-risk
 717899,fit
-717900,at-risk
+717900,unhealthy
 717901,at-risk
 717902,unhealthy
 717903,unhealthy
@@ -27824,7 +27824,7 @@ id,health_condition
 717910,fit
 717911,at-risk
 717912,at-risk
-717913,at-risk
+717913,fit
 717914,at-risk
 717915,at-risk
 717916,at-risk
@@ -27878,7 +27878,7 @@ id,health_condition
 717964,unhealthy
 717965,at-risk
 717966,at-risk
-717967,at-risk
+717967,unhealthy
 717968,at-risk
 717969,at-risk
 717970,at-risk
@@ -28431,13 +28431,13 @@ id,health_condition
 718517,unhealthy
 718518,at-risk
 718519,at-risk
-718520,at-risk
+718520,unhealthy
 718521,fit
 718522,unhealthy
 718523,fit
 718524,at-risk
 718525,at-risk
-718526,at-risk
+718526,unhealthy
 718527,at-risk
 718528,fit
 718529,at-risk
@@ -28694,7 +28694,7 @@ id,health_condition
 718780,at-risk
 718781,at-risk
 718782,at-risk
-718783,at-risk
+718783,unhealthy
 718784,at-risk
 718785,at-risk
 718786,at-risk
@@ -29185,7 +29185,7 @@ id,health_condition
 719271,at-risk
 719272,at-risk
 719273,at-risk
-719274,at-risk
+719274,unhealthy
 719275,at-risk
 719276,unhealthy
 719277,at-risk
@@ -29410,7 +29410,7 @@ id,health_condition
 719496,at-risk
 719497,at-risk
 719498,at-risk
-719499,unhealthy
+719499,at-risk
 719500,at-risk
 719501,at-risk
 719502,at-risk
@@ -29483,7 +29483,7 @@ id,health_condition
 719569,at-risk
 719570,at-risk
 719571,at-risk
-719572,at-risk
+719572,unhealthy
 719573,at-risk
 719574,at-risk
 719575,at-risk
@@ -29515,7 +29515,7 @@ id,health_condition
 719601,at-risk
 719602,unhealthy
 719603,at-risk
-719604,at-risk
+719604,unhealthy
 719605,unhealthy
 719606,at-risk
 719607,at-risk
@@ -29799,7 +29799,7 @@ id,health_condition
 719885,at-risk
 719886,at-risk
 719887,at-risk
-719888,fit
+719888,at-risk
 719889,at-risk
 719890,at-risk
 719891,at-risk
@@ -30684,7 +30684,7 @@ id,health_condition
 720770,at-risk
 720771,at-risk
 720772,unhealthy
-720773,unhealthy
+720773,at-risk
 720774,at-risk
 720775,at-risk
 720776,at-risk
@@ -30760,7 +30760,7 @@ id,health_condition
 720846,at-risk
 720847,at-risk
 720848,at-risk
-720849,at-risk
+720849,unhealthy
 720850,at-risk
 720851,at-risk
 720852,at-risk
@@ -31422,7 +31422,7 @@ id,health_condition
 721508,at-risk
 721509,at-risk
 721510,at-risk
-721511,fit
+721511,at-risk
 721512,at-risk
 721513,at-risk
 721514,fit
@@ -31532,7 +31532,7 @@ id,health_condition
 721618,at-risk
 721619,at-risk
 721620,at-risk
-721621,at-risk
+721621,unhealthy
 721622,at-risk
 721623,at-risk
 721624,at-risk
@@ -32406,7 +32406,7 @@ id,health_condition
 722492,at-risk
 722493,at-risk
 722494,unhealthy
-722495,at-risk
+722495,unhealthy
 722496,at-risk
 722497,at-risk
 722498,at-risk
@@ -32768,7 +32768,7 @@ id,health_condition
 722854,fit
 722855,unhealthy
 722856,at-risk
-722857,at-risk
+722857,unhealthy
 722858,at-risk
 722859,at-risk
 722860,at-risk
@@ -32865,7 +32865,7 @@ id,health_condition
 722951,fit
 722952,at-risk
 722953,at-risk
-722954,fit
+722954,at-risk
 722955,at-risk
 722956,at-risk
 722957,at-risk
@@ -33391,7 +33391,7 @@ id,health_condition
 723477,at-risk
 723478,at-risk
 723479,at-risk
-723480,at-risk
+723480,unhealthy
 723481,unhealthy
 723482,at-risk
 723483,at-risk
@@ -34776,7 +34776,7 @@ id,health_condition
 724862,unhealthy
 724863,at-risk
 724864,at-risk
-724865,unhealthy
+724865,fit
 724866,unhealthy
 724867,unhealthy
 724868,at-risk
@@ -35541,7 +35541,7 @@ id,health_condition
 725627,at-risk
 725628,at-risk
 725629,fit
-725630,at-risk
+725630,unhealthy
 725631,at-risk
 725632,at-risk
 725633,at-risk
@@ -36169,7 +36169,7 @@ id,health_condition
 726255,at-risk
 726256,at-risk
 726257,unhealthy
-726258,at-risk
+726258,fit
 726259,at-risk
 726260,fit
 726261,fit
@@ -36694,7 +36694,7 @@ id,health_condition
 726780,unhealthy
 726781,at-risk
 726782,at-risk
-726783,at-risk
+726783,fit
 726784,fit
 726785,at-risk
 726786,at-risk
@@ -36978,13 +36978,13 @@ id,health_condition
 727064,at-risk
 727065,at-risk
 727066,fit
-727067,at-risk
+727067,unhealthy
 727068,unhealthy
 727069,at-risk
 727070,at-risk
 727071,at-risk
 727072,at-risk
-727073,at-risk
+727073,unhealthy
 727074,at-risk
 727075,at-risk
 727076,at-risk
@@ -37124,7 +37124,7 @@ id,health_condition
 727210,at-risk
 727211,at-risk
 727212,at-risk
-727213,at-risk
+727213,unhealthy
 727214,at-risk
 727215,unhealthy
 727216,at-risk
@@ -37190,7 +37190,7 @@ id,health_condition
 727276,at-risk
 727277,at-risk
 727278,at-risk
-727279,at-risk
+727279,unhealthy
 727280,at-risk
 727281,at-risk
 727282,unhealthy
@@ -37493,7 +37493,7 @@ id,health_condition
 727579,unhealthy
 727580,at-risk
 727581,at-risk
-727582,at-risk
+727582,unhealthy
 727583,at-risk
 727584,at-risk
 727585,at-risk
@@ -37524,7 +37524,7 @@ id,health_condition
 727610,at-risk
 727611,fit
 727612,at-risk
-727613,fit
+727613,unhealthy
 727614,at-risk
 727615,fit
 727616,at-risk
@@ -38002,7 +38002,7 @@ id,health_condition
 728088,at-risk
 728089,at-risk
 728090,at-risk
-728091,at-risk
+728091,unhealthy
 728092,at-risk
 728093,unhealthy
 728094,at-risk
@@ -38027,7 +38027,7 @@ id,health_condition
 728113,unhealthy
 728114,at-risk
 728115,at-risk
-728116,at-risk
+728116,unhealthy
 728117,at-risk
 728118,unhealthy
 728119,at-risk
@@ -38036,7 +38036,7 @@ id,health_condition
 728122,at-risk
 728123,at-risk
 728124,at-risk
-728125,at-risk
+728125,unhealthy
 728126,at-risk
 728127,at-risk
 728128,unhealthy
@@ -38280,7 +38280,7 @@ id,health_condition
 728366,at-risk
 728367,at-risk
 728368,at-risk
-728369,at-risk
+728369,unhealthy
 728370,at-risk
 728371,at-risk
 728372,at-risk
@@ -38416,7 +38416,7 @@ id,health_condition
 728502,unhealthy
 728503,at-risk
 728504,at-risk
-728505,at-risk
+728505,unhealthy
 728506,at-risk
 728507,at-risk
 728508,at-risk
@@ -38616,7 +38616,7 @@ id,health_condition
 728702,at-risk
 728703,at-risk
 728704,at-risk
-728705,at-risk
+728705,unhealthy
 728706,at-risk
 728707,at-risk
 728708,at-risk
@@ -38991,7 +38991,7 @@ id,health_condition
 729077,at-risk
 729078,at-risk
 729079,at-risk
-729080,at-risk
+729080,unhealthy
 729081,at-risk
 729082,at-risk
 729083,at-risk
@@ -39414,7 +39414,7 @@ id,health_condition
 729500,at-risk
 729501,at-risk
 729502,at-risk
-729503,at-risk
+729503,unhealthy
 729504,at-risk
 729505,at-risk
 729506,at-risk
@@ -39940,7 +39940,7 @@ id,health_condition
 730026,at-risk
 730027,at-risk
 730028,at-risk
-730029,at-risk
+730029,unhealthy
 730030,at-risk
 730031,at-risk
 730032,at-risk
@@ -40089,7 +40089,7 @@ id,health_condition
 730175,at-risk
 730176,at-risk
 730177,at-risk
-730178,fit
+730178,at-risk
 730179,at-risk
 730180,at-risk
 730181,at-risk
@@ -40253,7 +40253,7 @@ id,health_condition
 730339,at-risk
 730340,at-risk
 730341,at-risk
-730342,at-risk
+730342,unhealthy
 730343,at-risk
 730344,at-risk
 730345,at-risk
@@ -40507,7 +40507,7 @@ id,health_condition
 730593,at-risk
 730594,at-risk
 730595,at-risk
-730596,unhealthy
+730596,fit
 730597,at-risk
 730598,unhealthy
 730599,at-risk
@@ -40658,9 +40658,9 @@ id,health_condition
 730744,at-risk
 730745,at-risk
 730746,at-risk
-730747,at-risk
+730747,unhealthy
 730748,at-risk
-730749,at-risk
+730749,unhealthy
 730750,at-risk
 730751,at-risk
 730752,unhealthy
@@ -40777,7 +40777,7 @@ id,health_condition
 730863,unhealthy
 730864,at-risk
 730865,unhealthy
-730866,at-risk
+730866,unhealthy
 730867,at-risk
 730868,at-risk
 730869,unhealthy
@@ -41057,7 +41057,7 @@ id,health_condition
 731143,at-risk
 731144,at-risk
 731145,at-risk
-731146,at-risk
+731146,unhealthy
 731147,unhealthy
 731148,at-risk
 731149,at-risk
@@ -41744,7 +41744,7 @@ id,health_condition
 731830,at-risk
 731831,unhealthy
 731832,unhealthy
-731833,fit
+731833,at-risk
 731834,unhealthy
 731835,at-risk
 731836,at-risk
@@ -42136,7 +42136,7 @@ id,health_condition
 732222,at-risk
 732223,at-risk
 732224,at-risk
-732225,at-risk
+732225,unhealthy
 732226,at-risk
 732227,at-risk
 732228,at-risk
@@ -42858,7 +42858,7 @@ id,health_condition
 732944,at-risk
 732945,at-risk
 732946,at-risk
-732947,fit
+732947,unhealthy
 732948,at-risk
 732949,at-risk
 732950,at-risk
@@ -43243,7 +43243,7 @@ id,health_condition
 733329,at-risk
 733330,at-risk
 733331,at-risk
-733332,at-risk
+733332,unhealthy
 733333,at-risk
 733334,fit
 733335,at-risk
@@ -44141,7 +44141,7 @@ id,health_condition
 734227,at-risk
 734228,fit
 734229,at-risk
-734230,unhealthy
+734230,at-risk
 734231,at-risk
 734232,at-risk
 734233,at-risk
@@ -44528,7 +44528,7 @@ id,health_condition
 734614,at-risk
 734615,at-risk
 734616,fit
-734617,unhealthy
+734617,at-risk
 734618,at-risk
 734619,at-risk
 734620,at-risk
@@ -44745,7 +44745,7 @@ id,health_condition
 734831,fit
 734832,at-risk
 734833,unhealthy
-734834,fit
+734834,at-risk
 734835,at-risk
 734836,at-risk
 734837,at-risk
@@ -44896,8 +44896,8 @@ id,health_condition
 734982,at-risk
 734983,at-risk
 734984,at-risk
-734985,at-risk
-734986,at-risk
+734985,unhealthy
+734986,unhealthy
 734987,at-risk
 734988,at-risk
 734989,at-risk
@@ -45120,7 +45120,7 @@ id,health_condition
 735206,fit
 735207,at-risk
 735208,at-risk
-735209,at-risk
+735209,unhealthy
 735210,at-risk
 735211,at-risk
 735212,at-risk
@@ -45567,7 +45567,7 @@ id,health_condition
 735653,at-risk
 735654,at-risk
 735655,at-risk
-735656,at-risk
+735656,unhealthy
 735657,fit
 735658,at-risk
 735659,fit
@@ -45632,7 +45632,7 @@ id,health_condition
 735718,at-risk
 735719,at-risk
 735720,unhealthy
-735721,at-risk
+735721,unhealthy
 735722,unhealthy
 735723,at-risk
 735724,at-risk
@@ -45868,7 +45868,7 @@ id,health_condition
 735954,at-risk
 735955,unhealthy
 735956,unhealthy
-735957,at-risk
+735957,unhealthy
 735958,at-risk
 735959,at-risk
 735960,at-risk
@@ -45966,7 +45966,7 @@ id,health_condition
 736052,at-risk
 736053,at-risk
 736054,at-risk
-736055,at-risk
+736055,unhealthy
 736056,at-risk
 736057,at-risk
 736058,at-risk
@@ -46025,7 +46025,7 @@ id,health_condition
 736111,fit
 736112,at-risk
 736113,at-risk
-736114,at-risk
+736114,unhealthy
 736115,at-risk
 736116,at-risk
 736117,at-risk
@@ -46289,7 +46289,7 @@ id,health_condition
 736375,at-risk
 736376,at-risk
 736377,fit
-736378,at-risk
+736378,unhealthy
 736379,at-risk
 736380,at-risk
 736381,at-risk
@@ -46634,7 +46634,7 @@ id,health_condition
 736720,at-risk
 736721,at-risk
 736722,at-risk
-736723,fit
+736723,at-risk
 736724,at-risk
 736725,fit
 736726,at-risk
@@ -46825,7 +46825,7 @@ id,health_condition
 736911,at-risk
 736912,unhealthy
 736913,at-risk
-736914,fit
+736914,at-risk
 736915,at-risk
 736916,unhealthy
 736917,at-risk
@@ -46904,7 +46904,7 @@ id,health_condition
 736990,at-risk
 736991,unhealthy
 736992,at-risk
-736993,fit
+736993,at-risk
 736994,at-risk
 736995,at-risk
 736996,unhealthy
@@ -46948,7 +46948,7 @@ id,health_condition
 737034,fit
 737035,at-risk
 737036,unhealthy
-737037,at-risk
+737037,unhealthy
 737038,at-risk
 737039,at-risk
 737040,at-risk
@@ -47116,7 +47116,7 @@ id,health_condition
 737202,at-risk
 737203,at-risk
 737204,unhealthy
-737205,at-risk
+737205,unhealthy
 737206,unhealthy
 737207,at-risk
 737208,fit
@@ -47743,7 +47743,7 @@ id,health_condition
 737829,at-risk
 737830,at-risk
 737831,at-risk
-737832,at-risk
+737832,unhealthy
 737833,at-risk
 737834,at-risk
 737835,at-risk
@@ -48135,7 +48135,7 @@ id,health_condition
 738221,at-risk
 738222,at-risk
 738223,at-risk
-738224,at-risk
+738224,unhealthy
 738225,at-risk
 738226,at-risk
 738227,at-risk
@@ -48145,7 +48145,7 @@ id,health_condition
 738231,unhealthy
 738232,at-risk
 738233,at-risk
-738234,fit
+738234,at-risk
 738235,at-risk
 738236,at-risk
 738237,at-risk
@@ -48254,7 +48254,7 @@ id,health_condition
 738340,at-risk
 738341,at-risk
 738342,at-risk
-738343,at-risk
+738343,unhealthy
 738344,at-risk
 738345,unhealthy
 738346,at-risk
@@ -48945,7 +48945,7 @@ id,health_condition
 739031,at-risk
 739032,at-risk
 739033,at-risk
-739034,at-risk
+739034,unhealthy
 739035,fit
 739036,at-risk
 739037,at-risk
@@ -49296,7 +49296,7 @@ id,health_condition
 739382,at-risk
 739383,unhealthy
 739384,fit
-739385,at-risk
+739385,unhealthy
 739386,at-risk
 739387,at-risk
 739388,at-risk
@@ -49625,7 +49625,7 @@ id,health_condition
 739711,at-risk
 739712,fit
 739713,fit
-739714,at-risk
+739714,unhealthy
 739715,fit
 739716,at-risk
 739717,at-risk
@@ -50028,7 +50028,7 @@ id,health_condition
 740114,at-risk
 740115,at-risk
 740116,unhealthy
-740117,at-risk
+740117,unhealthy
 740118,at-risk
 740119,at-risk
 740120,at-risk
@@ -50679,7 +50679,7 @@ id,health_condition
 740765,at-risk
 740766,at-risk
 740767,at-risk
-740768,fit
+740768,at-risk
 740769,at-risk
 740770,at-risk
 740771,unhealthy
@@ -50927,7 +50927,7 @@ id,health_condition
 741013,fit
 741014,at-risk
 741015,fit
-741016,fit
+741016,at-risk
 741017,at-risk
 741018,at-risk
 741019,at-risk
@@ -52586,7 +52586,7 @@ id,health_condition
 742672,unhealthy
 742673,unhealthy
 742674,at-risk
-742675,at-risk
+742675,unhealthy
 742676,at-risk
 742677,at-risk
 742678,fit
@@ -53682,7 +53682,7 @@ id,health_condition
 743768,at-risk
 743769,at-risk
 743770,at-risk
-743771,at-risk
+743771,unhealthy
 743772,at-risk
 743773,at-risk
 743774,at-risk
@@ -53772,7 +53772,7 @@ id,health_condition
 743858,fit
 743859,at-risk
 743860,at-risk
-743861,unhealthy
+743861,at-risk
 743862,at-risk
 743863,at-risk
 743864,at-risk
@@ -53810,7 +53810,7 @@ id,health_condition
 743896,at-risk
 743897,at-risk
 743898,unhealthy
-743899,at-risk
+743899,unhealthy
 743900,at-risk
 743901,at-risk
 743902,at-risk
@@ -54460,7 +54460,7 @@ id,health_condition
 744546,at-risk
 744547,at-risk
 744548,at-risk
-744549,at-risk
+744549,unhealthy
 744550,at-risk
 744551,at-risk
 744552,at-risk
@@ -54613,7 +54613,7 @@ id,health_condition
 744699,at-risk
 744700,at-risk
 744701,at-risk
-744702,at-risk
+744702,unhealthy
 744703,unhealthy
 744704,unhealthy
 744705,at-risk
@@ -54924,7 +54924,7 @@ id,health_condition
 745010,at-risk
 745011,fit
 745012,at-risk
-745013,at-risk
+745013,unhealthy
 745014,at-risk
 745015,unhealthy
 745016,at-risk
@@ -55590,7 +55590,7 @@ id,health_condition
 745676,at-risk
 745677,at-risk
 745678,at-risk
-745679,at-risk
+745679,unhealthy
 745680,at-risk
 745681,at-risk
 745682,at-risk
@@ -55879,7 +55879,7 @@ id,health_condition
 745965,at-risk
 745966,at-risk
 745967,at-risk
-745968,at-risk
+745968,unhealthy
 745969,fit
 745970,unhealthy
 745971,at-risk
@@ -57101,7 +57101,7 @@ id,health_condition
 747187,at-risk
 747188,fit
 747189,at-risk
-747190,at-risk
+747190,fit
 747191,at-risk
 747192,at-risk
 747193,at-risk
@@ -57154,7 +57154,7 @@ id,health_condition
 747240,at-risk
 747241,unhealthy
 747242,at-risk
-747243,unhealthy
+747243,fit
 747244,at-risk
 747245,at-risk
 747246,at-risk
@@ -57566,8 +57566,8 @@ id,health_condition
 747652,at-risk
 747653,at-risk
 747654,unhealthy
-747655,at-risk
-747656,at-risk
+747655,unhealthy
+747656,unhealthy
 747657,at-risk
 747658,unhealthy
 747659,at-risk
@@ -57957,7 +57957,7 @@ id,health_condition
 748043,at-risk
 748044,at-risk
 748045,at-risk
-748046,at-risk
+748046,unhealthy
 748047,fit
 748048,at-risk
 748049,at-risk
@@ -58046,7 +58046,7 @@ id,health_condition
 748132,at-risk
 748133,unhealthy
 748134,at-risk
-748135,at-risk
+748135,unhealthy
 748136,at-risk
 748137,at-risk
 748138,at-risk
@@ -58386,7 +58386,7 @@ id,health_condition
 748472,unhealthy
 748473,at-risk
 748474,at-risk
-748475,at-risk
+748475,unhealthy
 748476,at-risk
 748477,at-risk
 748478,fit
@@ -58544,7 +58544,7 @@ id,health_condition
 748630,unhealthy
 748631,fit
 748632,at-risk
-748633,at-risk
+748633,unhealthy
 748634,at-risk
 748635,at-risk
 748636,at-risk
@@ -58560,7 +58560,7 @@ id,health_condition
 748646,at-risk
 748647,at-risk
 748648,at-risk
-748649,at-risk
+748649,fit
 748650,unhealthy
 748651,at-risk
 748652,at-risk
@@ -58592,7 +58592,7 @@ id,health_condition
 748678,at-risk
 748679,fit
 748680,at-risk
-748681,at-risk
+748681,unhealthy
 748682,fit
 748683,at-risk
 748684,at-risk
@@ -58940,7 +58940,7 @@ id,health_condition
 749026,at-risk
 749027,at-risk
 749028,at-risk
-749029,fit
+749029,at-risk
 749030,at-risk
 749031,fit
 749032,at-risk
@@ -59366,7 +59366,7 @@ id,health_condition
 749452,at-risk
 749453,at-risk
 749454,at-risk
-749455,at-risk
+749455,unhealthy
 749456,at-risk
 749457,at-risk
 749458,unhealthy
@@ -60113,7 +60113,7 @@ id,health_condition
 750199,fit
 750200,at-risk
 750201,unhealthy
-750202,at-risk
+750202,unhealthy
 750203,at-risk
 750204,at-risk
 750205,at-risk
@@ -60525,7 +60525,7 @@ id,health_condition
 750611,at-risk
 750612,at-risk
 750613,at-risk
-750614,at-risk
+750614,unhealthy
 750615,at-risk
 750616,at-risk
 750617,at-risk
@@ -61036,7 +61036,7 @@ id,health_condition
 751122,unhealthy
 751123,fit
 751124,at-risk
-751125,at-risk
+751125,unhealthy
 751126,at-risk
 751127,at-risk
 751128,at-risk
@@ -61070,7 +61070,7 @@ id,health_condition
 751156,at-risk
 751157,at-risk
 751158,fit
-751159,fit
+751159,at-risk
 751160,at-risk
 751161,at-risk
 751162,fit
@@ -61096,7 +61096,7 @@ id,health_condition
 751182,at-risk
 751183,unhealthy
 751184,at-risk
-751185,at-risk
+751185,unhealthy
 751186,at-risk
 751187,at-risk
 751188,fit
@@ -61299,7 +61299,7 @@ id,health_condition
 751385,at-risk
 751386,at-risk
 751387,at-risk
-751388,at-risk
+751388,unhealthy
 751389,at-risk
 751390,at-risk
 751391,at-risk
@@ -61414,7 +61414,7 @@ id,health_condition
 751500,at-risk
 751501,at-risk
 751502,unhealthy
-751503,at-risk
+751503,unhealthy
 751504,at-risk
 751505,at-risk
 751506,at-risk
@@ -61528,7 +61528,7 @@ id,health_condition
 751614,at-risk
 751615,at-risk
 751616,at-risk
-751617,unhealthy
+751617,at-risk
 751618,at-risk
 751619,at-risk
 751620,at-risk
@@ -61854,7 +61854,7 @@ id,health_condition
 751940,at-risk
 751941,at-risk
 751942,unhealthy
-751943,at-risk
+751943,unhealthy
 751944,at-risk
 751945,at-risk
 751946,at-risk
@@ -61956,7 +61956,7 @@ id,health_condition
 752042,at-risk
 752043,at-risk
 752044,unhealthy
-752045,at-risk
+752045,unhealthy
 752046,at-risk
 752047,at-risk
 752048,at-risk
@@ -62237,7 +62237,7 @@ id,health_condition
 752323,at-risk
 752324,at-risk
 752325,at-risk
-752326,at-risk
+752326,unhealthy
 752327,at-risk
 752328,at-risk
 752329,fit
@@ -62249,7 +62249,7 @@ id,health_condition
 752335,at-risk
 752336,at-risk
 752337,at-risk
-752338,at-risk
+752338,unhealthy
 752339,at-risk
 752340,at-risk
 752341,at-risk
@@ -62937,7 +62937,7 @@ id,health_condition
 753023,at-risk
 753024,at-risk
 753025,at-risk
-753026,at-risk
+753026,unhealthy
 753027,at-risk
 753028,unhealthy
 753029,at-risk
@@ -63291,7 +63291,7 @@ id,health_condition
 753377,at-risk
 753378,at-risk
 753379,at-risk
-753380,at-risk
+753380,unhealthy
 753381,unhealthy
 753382,unhealthy
 753383,at-risk
@@ -63659,7 +63659,7 @@ id,health_condition
 753745,at-risk
 753746,at-risk
 753747,fit
-753748,at-risk
+753748,unhealthy
 753749,at-risk
 753750,at-risk
 753751,at-risk
@@ -64475,7 +64475,7 @@ id,health_condition
 754561,at-risk
 754562,at-risk
 754563,at-risk
-754564,at-risk
+754564,unhealthy
 754565,at-risk
 754566,at-risk
 754567,unhealthy
@@ -65019,7 +65019,7 @@ id,health_condition
 755105,unhealthy
 755106,at-risk
 755107,at-risk
-755108,fit
+755108,at-risk
 755109,at-risk
 755110,at-risk
 755111,at-risk
@@ -65086,7 +65086,7 @@ id,health_condition
 755172,at-risk
 755173,at-risk
 755174,at-risk
-755175,at-risk
+755175,unhealthy
 755176,at-risk
 755177,at-risk
 755178,at-risk
@@ -65155,7 +65155,7 @@ id,health_condition
 755241,at-risk
 755242,unhealthy
 755243,at-risk
-755244,at-risk
+755244,unhealthy
 755245,at-risk
 755246,at-risk
 755247,at-risk
@@ -65169,7 +65169,7 @@ id,health_condition
 755255,at-risk
 755256,at-risk
 755257,at-risk
-755258,fit
+755258,at-risk
 755259,at-risk
 755260,at-risk
 755261,at-risk
@@ -65279,7 +65279,7 @@ id,health_condition
 755365,at-risk
 755366,at-risk
 755367,at-risk
-755368,at-risk
+755368,unhealthy
 755369,at-risk
 755370,at-risk
 755371,at-risk
@@ -65427,7 +65427,7 @@ id,health_condition
 755513,at-risk
 755514,at-risk
 755515,fit
-755516,fit
+755516,at-risk
 755517,fit
 755518,at-risk
 755519,at-risk
@@ -66343,7 +66343,7 @@ id,health_condition
 756429,at-risk
 756430,at-risk
 756431,at-risk
-756432,unhealthy
+756432,at-risk
 756433,at-risk
 756434,at-risk
 756435,at-risk
@@ -66761,7 +66761,7 @@ id,health_condition
 756847,at-risk
 756848,unhealthy
 756849,at-risk
-756850,unhealthy
+756850,at-risk
 756851,fit
 756852,unhealthy
 756853,unhealthy
@@ -67235,7 +67235,7 @@ id,health_condition
 757321,at-risk
 757322,at-risk
 757323,at-risk
-757324,at-risk
+757324,unhealthy
 757325,at-risk
 757326,at-risk
 757327,at-risk
@@ -67598,7 +67598,7 @@ id,health_condition
 757684,at-risk
 757685,at-risk
 757686,at-risk
-757687,at-risk
+757687,unhealthy
 757688,unhealthy
 757689,at-risk
 757690,at-risk
@@ -68361,7 +68361,7 @@ id,health_condition
 758447,at-risk
 758448,unhealthy
 758449,at-risk
-758450,at-risk
+758450,unhealthy
 758451,at-risk
 758452,at-risk
 758453,at-risk
@@ -68611,7 +68611,7 @@ id,health_condition
 758697,at-risk
 758698,at-risk
 758699,unhealthy
-758700,at-risk
+758700,fit
 758701,at-risk
 758702,at-risk
 758703,at-risk
@@ -68709,7 +68709,7 @@ id,health_condition
 758795,at-risk
 758796,unhealthy
 758797,at-risk
-758798,at-risk
+758798,unhealthy
 758799,at-risk
 758800,at-risk
 758801,at-risk
@@ -68947,7 +68947,7 @@ id,health_condition
 759033,at-risk
 759034,unhealthy
 759035,unhealthy
-759036,at-risk
+759036,unhealthy
 759037,at-risk
 759038,unhealthy
 759039,at-risk
@@ -69063,7 +69063,7 @@ id,health_condition
 759149,at-risk
 759150,at-risk
 759151,at-risk
-759152,at-risk
+759152,unhealthy
 759153,at-risk
 759154,at-risk
 759155,at-risk
@@ -69315,7 +69315,7 @@ id,health_condition
 759401,at-risk
 759402,fit
 759403,at-risk
-759404,at-risk
+759404,unhealthy
 759405,at-risk
 759406,at-risk
 759407,at-risk
@@ -69639,7 +69639,7 @@ id,health_condition
 759725,at-risk
 759726,at-risk
 759727,at-risk
-759728,at-risk
+759728,unhealthy
 759729,at-risk
 759730,at-risk
 759731,at-risk
@@ -70112,7 +70112,7 @@ id,health_condition
 760198,at-risk
 760199,at-risk
 760200,fit
-760201,at-risk
+760201,unhealthy
 760202,at-risk
 760203,at-risk
 760204,at-risk
@@ -70146,7 +70146,7 @@ id,health_condition
 760232,at-risk
 760233,at-risk
 760234,unhealthy
-760235,at-risk
+760235,unhealthy
 760236,at-risk
 760237,at-risk
 760238,at-risk
@@ -70302,7 +70302,7 @@ id,health_condition
 760388,at-risk
 760389,at-risk
 760390,at-risk
-760391,at-risk
+760391,unhealthy
 760392,at-risk
 760393,at-risk
 760394,at-risk
@@ -71383,7 +71383,7 @@ id,health_condition
 761469,at-risk
 761470,at-risk
 761471,at-risk
-761472,at-risk
+761472,unhealthy
 761473,at-risk
 761474,at-risk
 761475,at-risk
@@ -71434,7 +71434,7 @@ id,health_condition
 761520,at-risk
 761521,at-risk
 761522,at-risk
-761523,at-risk
+761523,unhealthy
 761524,fit
 761525,unhealthy
 761526,at-risk
@@ -71567,7 +71567,7 @@ id,health_condition
 761653,at-risk
 761654,at-risk
 761655,at-risk
-761656,at-risk
+761656,unhealthy
 761657,at-risk
 761658,at-risk
 761659,at-risk
@@ -71685,7 +71685,7 @@ id,health_condition
 761771,at-risk
 761772,unhealthy
 761773,at-risk
-761774,unhealthy
+761774,at-risk
 761775,at-risk
 761776,at-risk
 761777,at-risk
@@ -72720,7 +72720,7 @@ id,health_condition
 762806,at-risk
 762807,at-risk
 762808,at-risk
-762809,unhealthy
+762809,fit
 762810,at-risk
 762811,at-risk
 762812,at-risk
@@ -73265,7 +73265,7 @@ id,health_condition
 763351,at-risk
 763352,at-risk
 763353,at-risk
-763354,at-risk
+763354,unhealthy
 763355,at-risk
 763356,unhealthy
 763357,at-risk
@@ -73292,7 +73292,7 @@ id,health_condition
 763378,at-risk
 763379,at-risk
 763380,at-risk
-763381,fit
+763381,at-risk
 763382,at-risk
 763383,at-risk
 763384,at-risk
@@ -73971,7 +73971,7 @@ id,health_condition
 764057,unhealthy
 764058,at-risk
 764059,at-risk
-764060,at-risk
+764060,unhealthy
 764061,at-risk
 764062,at-risk
 764063,at-risk
@@ -75043,7 +75043,7 @@ id,health_condition
 765129,at-risk
 765130,at-risk
 765131,at-risk
-765132,fit
+765132,at-risk
 765133,at-risk
 765134,at-risk
 765135,at-risk
@@ -75343,7 +75343,7 @@ id,health_condition
 765429,at-risk
 765430,at-risk
 765431,at-risk
-765432,at-risk
+765432,unhealthy
 765433,at-risk
 765434,at-risk
 765435,at-risk
@@ -75740,7 +75740,7 @@ id,health_condition
 765826,at-risk
 765827,unhealthy
 765828,at-risk
-765829,at-risk
+765829,unhealthy
 765830,at-risk
 765831,at-risk
 765832,fit
@@ -77130,7 +77130,7 @@ id,health_condition
 767216,unhealthy
 767217,at-risk
 767218,at-risk
-767219,at-risk
+767219,unhealthy
 767220,at-risk
 767221,at-risk
 767222,at-risk
@@ -77138,7 +77138,7 @@ id,health_condition
 767224,at-risk
 767225,at-risk
 767226,fit
-767227,at-risk
+767227,unhealthy
 767228,at-risk
 767229,at-risk
 767230,at-risk
@@ -77208,7 +77208,7 @@ id,health_condition
 767294,at-risk
 767295,at-risk
 767296,at-risk
-767297,at-risk
+767297,unhealthy
 767298,at-risk
 767299,at-risk
 767300,at-risk
@@ -77424,7 +77424,7 @@ id,health_condition
 767510,at-risk
 767511,at-risk
 767512,at-risk
-767513,at-risk
+767513,fit
 767514,at-risk
 767515,at-risk
 767516,at-risk
@@ -78835,7 +78835,7 @@ id,health_condition
 768921,at-risk
 768922,at-risk
 768923,at-risk
-768924,fit
+768924,at-risk
 768925,at-risk
 768926,at-risk
 768927,unhealthy
@@ -79500,7 +79500,7 @@ id,health_condition
 769586,at-risk
 769587,unhealthy
 769588,unhealthy
-769589,at-risk
+769589,unhealthy
 769590,unhealthy
 769591,at-risk
 769592,at-risk
@@ -79725,7 +79725,7 @@ id,health_condition
 769811,at-risk
 769812,at-risk
 769813,at-risk
-769814,fit
+769814,at-risk
 769815,fit
 769816,at-risk
 769817,at-risk
@@ -79984,7 +79984,7 @@ id,health_condition
 770070,unhealthy
 770071,at-risk
 770072,at-risk
-770073,at-risk
+770073,unhealthy
 770074,unhealthy
 770075,at-risk
 770076,fit
@@ -80090,7 +80090,7 @@ id,health_condition
 770176,at-risk
 770177,at-risk
 770178,at-risk
-770179,at-risk
+770179,unhealthy
 770180,at-risk
 770181,at-risk
 770182,at-risk
@@ -80106,7 +80106,7 @@ id,health_condition
 770192,at-risk
 770193,at-risk
 770194,at-risk
-770195,at-risk
+770195,unhealthy
 770196,at-risk
 770197,at-risk
 770198,at-risk
@@ -80242,7 +80242,7 @@ id,health_condition
 770328,fit
 770329,unhealthy
 770330,unhealthy
-770331,at-risk
+770331,unhealthy
 770332,at-risk
 770333,at-risk
 770334,unhealthy
@@ -80639,7 +80639,7 @@ id,health_condition
 770725,at-risk
 770726,at-risk
 770727,at-risk
-770728,at-risk
+770728,unhealthy
 770729,at-risk
 770730,unhealthy
 770731,at-risk
@@ -80746,7 +80746,7 @@ id,health_condition
 770832,at-risk
 770833,at-risk
 770834,at-risk
-770835,at-risk
+770835,unhealthy
 770836,at-risk
 770837,unhealthy
 770838,at-risk
@@ -81603,7 +81603,7 @@ id,health_condition
 771689,at-risk
 771690,at-risk
 771691,at-risk
-771692,fit
+771692,at-risk
 771693,at-risk
 771694,at-risk
 771695,at-risk
@@ -81733,7 +81733,7 @@ id,health_condition
 771819,at-risk
 771820,unhealthy
 771821,at-risk
-771822,at-risk
+771822,unhealthy
 771823,at-risk
 771824,at-risk
 771825,fit
@@ -82208,7 +82208,7 @@ id,health_condition
 772294,unhealthy
 772295,at-risk
 772296,at-risk
-772297,at-risk
+772297,unhealthy
 772298,at-risk
 772299,at-risk
 772300,at-risk
@@ -82424,7 +82424,7 @@ id,health_condition
 772510,at-risk
 772511,at-risk
 772512,at-risk
-772513,at-risk
+772513,unhealthy
 772514,at-risk
 772515,unhealthy
 772516,at-risk
@@ -82443,7 +82443,7 @@ id,health_condition
 772529,unhealthy
 772530,at-risk
 772531,at-risk
-772532,at-risk
+772532,unhealthy
 772533,at-risk
 772534,at-risk
 772535,at-risk
@@ -82580,7 +82580,7 @@ id,health_condition
 772666,fit
 772667,at-risk
 772668,at-risk
-772669,at-risk
+772669,unhealthy
 772670,at-risk
 772671,at-risk
 772672,at-risk
@@ -82903,7 +82903,7 @@ id,health_condition
 772989,at-risk
 772990,at-risk
 772991,at-risk
-772992,at-risk
+772992,unhealthy
 772993,at-risk
 772994,at-risk
 772995,at-risk
@@ -83911,7 +83911,7 @@ id,health_condition
 773997,at-risk
 773998,at-risk
 773999,at-risk
-774000,fit
+774000,at-risk
 774001,at-risk
 774002,at-risk
 774003,fit
@@ -83923,7 +83923,7 @@ id,health_condition
 774009,at-risk
 774010,at-risk
 774011,at-risk
-774012,unhealthy
+774012,at-risk
 774013,at-risk
 774014,at-risk
 774015,at-risk
@@ -84078,7 +84078,7 @@ id,health_condition
 774164,at-risk
 774165,at-risk
 774166,at-risk
-774167,at-risk
+774167,unhealthy
 774168,at-risk
 774169,at-risk
 774170,at-risk
@@ -84105,7 +84105,7 @@ id,health_condition
 774191,at-risk
 774192,unhealthy
 774193,at-risk
-774194,fit
+774194,at-risk
 774195,unhealthy
 774196,at-risk
 774197,at-risk
@@ -84727,7 +84727,7 @@ id,health_condition
 774813,at-risk
 774814,unhealthy
 774815,at-risk
-774816,at-risk
+774816,unhealthy
 774817,at-risk
 774818,unhealthy
 774819,at-risk
@@ -85013,7 +85013,7 @@ id,health_condition
 775099,unhealthy
 775100,at-risk
 775101,at-risk
-775102,at-risk
+775102,unhealthy
 775103,at-risk
 775104,unhealthy
 775105,at-risk
@@ -85026,7 +85026,7 @@ id,health_condition
 775112,unhealthy
 775113,at-risk
 775114,at-risk
-775115,at-risk
+775115,unhealthy
 775116,at-risk
 775117,at-risk
 775118,at-risk
@@ -85166,7 +85166,7 @@ id,health_condition
 775252,at-risk
 775253,unhealthy
 775254,unhealthy
-775255,at-risk
+775255,unhealthy
 775256,unhealthy
 775257,at-risk
 775258,at-risk
@@ -85428,7 +85428,7 @@ id,health_condition
 775514,at-risk
 775515,at-risk
 775516,at-risk
-775517,unhealthy
+775517,at-risk
 775518,at-risk
 775519,at-risk
 775520,at-risk
@@ -85560,7 +85560,7 @@ id,health_condition
 775646,at-risk
 775647,at-risk
 775648,at-risk
-775649,at-risk
+775649,unhealthy
 775650,at-risk
 775651,at-risk
 775652,at-risk
@@ -85782,7 +85782,7 @@ id,health_condition
 775868,at-risk
 775869,at-risk
 775870,at-risk
-775871,at-risk
+775871,unhealthy
 775872,at-risk
 775873,at-risk
 775874,at-risk
@@ -85803,7 +85803,7 @@ id,health_condition
 775889,at-risk
 775890,at-risk
 775891,fit
-775892,at-risk
+775892,unhealthy
 775893,at-risk
 775894,at-risk
 775895,at-risk
@@ -85970,7 +85970,7 @@ id,health_condition
 776056,at-risk
 776057,at-risk
 776058,at-risk
-776059,at-risk
+776059,unhealthy
 776060,at-risk
 776061,at-risk
 776062,at-risk
@@ -86327,7 +86327,7 @@ id,health_condition
 776413,at-risk
 776414,at-risk
 776415,unhealthy
-776416,fit
+776416,at-risk
 776417,at-risk
 776418,at-risk
 776419,at-risk
@@ -86620,7 +86620,7 @@ id,health_condition
 776706,at-risk
 776707,at-risk
 776708,unhealthy
-776709,at-risk
+776709,unhealthy
 776710,at-risk
 776711,at-risk
 776712,at-risk
@@ -86757,7 +86757,7 @@ id,health_condition
 776843,at-risk
 776844,unhealthy
 776845,at-risk
-776846,fit
+776846,at-risk
 776847,unhealthy
 776848,at-risk
 776849,at-risk
@@ -87153,7 +87153,7 @@ id,health_condition
 777239,at-risk
 777240,at-risk
 777241,unhealthy
-777242,at-risk
+777242,unhealthy
 777243,at-risk
 777244,at-risk
 777245,unhealthy
@@ -87252,7 +87252,7 @@ id,health_condition
 777338,at-risk
 777339,at-risk
 777340,at-risk
-777341,fit
+777341,at-risk
 777342,at-risk
 777343,at-risk
 777344,at-risk
@@ -87401,7 +87401,7 @@ id,health_condition
 777487,at-risk
 777488,at-risk
 777489,at-risk
-777490,unhealthy
+777490,at-risk
 777491,at-risk
 777492,at-risk
 777493,at-risk
@@ -87498,7 +87498,7 @@ id,health_condition
 777584,at-risk
 777585,at-risk
 777586,at-risk
-777587,at-risk
+777587,unhealthy
 777588,at-risk
 777589,fit
 777590,at-risk
@@ -87802,7 +87802,7 @@ id,health_condition
 777888,at-risk
 777889,at-risk
 777890,at-risk
-777891,at-risk
+777891,unhealthy
 777892,at-risk
 777893,at-risk
 777894,fit
@@ -88202,7 +88202,7 @@ id,health_condition
 778288,at-risk
 778289,at-risk
 778290,at-risk
-778291,at-risk
+778291,unhealthy
 778292,at-risk
 778293,at-risk
 778294,at-risk
@@ -88454,7 +88454,7 @@ id,health_condition
 778540,at-risk
 778541,at-risk
 778542,at-risk
-778543,at-risk
+778543,unhealthy
 778544,at-risk
 778545,at-risk
 778546,unhealthy
@@ -88510,7 +88510,7 @@ id,health_condition
 778596,at-risk
 778597,at-risk
 778598,fit
-778599,at-risk
+778599,unhealthy
 778600,at-risk
 778601,at-risk
 778602,at-risk
@@ -88773,7 +88773,7 @@ id,health_condition
 778859,at-risk
 778860,at-risk
 778861,at-risk
-778862,at-risk
+778862,unhealthy
 778863,at-risk
 778864,at-risk
 778865,at-risk
@@ -89420,7 +89420,7 @@ id,health_condition
 779506,fit
 779507,at-risk
 779508,unhealthy
-779509,at-risk
+779509,unhealthy
 779510,at-risk
 779511,at-risk
 779512,fit
@@ -89776,7 +89776,7 @@ id,health_condition
 779862,at-risk
 779863,at-risk
 779864,at-risk
-779865,unhealthy
+779865,at-risk
 779866,at-risk
 779867,unhealthy
 779868,at-risk
@@ -90815,7 +90815,7 @@ id,health_condition
 780901,at-risk
 780902,at-risk
 780903,at-risk
-780904,at-risk
+780904,unhealthy
 780905,at-risk
 780906,at-risk
 780907,unhealthy
@@ -91114,7 +91114,7 @@ id,health_condition
 781200,at-risk
 781201,at-risk
 781202,at-risk
-781203,at-risk
+781203,unhealthy
 781204,unhealthy
 781205,at-risk
 781206,fit
@@ -91215,7 +91215,7 @@ id,health_condition
 781301,at-risk
 781302,at-risk
 781303,at-risk
-781304,at-risk
+781304,unhealthy
 781305,fit
 781306,at-risk
 781307,at-risk
@@ -91581,7 +91581,7 @@ id,health_condition
 781667,at-risk
 781668,at-risk
 781669,at-risk
-781670,at-risk
+781670,unhealthy
 781671,at-risk
 781672,at-risk
 781673,at-risk
@@ -91629,7 +91629,7 @@ id,health_condition
 781715,at-risk
 781716,at-risk
 781717,at-risk
-781718,at-risk
+781718,fit
 781719,at-risk
 781720,at-risk
 781721,unhealthy
@@ -91726,7 +91726,7 @@ id,health_condition
 781812,at-risk
 781813,unhealthy
 781814,at-risk
-781815,fit
+781815,at-risk
 781816,unhealthy
 781817,at-risk
 781818,at-risk
@@ -92655,7 +92655,7 @@ id,health_condition
 782741,at-risk
 782742,at-risk
 782743,at-risk
-782744,at-risk
+782744,unhealthy
 782745,fit
 782746,at-risk
 782747,at-risk
@@ -92865,7 +92865,7 @@ id,health_condition
 782951,at-risk
 782952,at-risk
 782953,at-risk
-782954,fit
+782954,at-risk
 782955,at-risk
 782956,at-risk
 782957,at-risk
@@ -92885,7 +92885,7 @@ id,health_condition
 782971,at-risk
 782972,unhealthy
 782973,at-risk
-782974,at-risk
+782974,unhealthy
 782975,at-risk
 782976,at-risk
 782977,at-risk
@@ -92906,7 +92906,7 @@ id,health_condition
 782992,at-risk
 782993,at-risk
 782994,at-risk
-782995,fit
+782995,unhealthy
 782996,at-risk
 782997,at-risk
 782998,at-risk
@@ -92922,7 +92922,7 @@ id,health_condition
 783008,at-risk
 783009,at-risk
 783010,unhealthy
-783011,at-risk
+783011,unhealthy
 783012,at-risk
 783013,at-risk
 783014,at-risk
@@ -92950,7 +92950,7 @@ id,health_condition
 783036,at-risk
 783037,fit
 783038,at-risk
-783039,at-risk
+783039,unhealthy
 783040,unhealthy
 783041,at-risk
 783042,at-risk
@@ -93176,7 +93176,7 @@ id,health_condition
 783262,at-risk
 783263,at-risk
 783264,unhealthy
-783265,at-risk
+783265,unhealthy
 783266,at-risk
 783267,at-risk
 783268,at-risk
@@ -93209,7 +93209,7 @@ id,health_condition
 783295,at-risk
 783296,at-risk
 783297,at-risk
-783298,at-risk
+783298,unhealthy
 783299,at-risk
 783300,at-risk
 783301,at-risk
@@ -94196,7 +94196,7 @@ id,health_condition
 784282,at-risk
 784283,at-risk
 784284,at-risk
-784285,fit
+784285,at-risk
 784286,at-risk
 784287,at-risk
 784288,at-risk
@@ -94748,7 +94748,7 @@ id,health_condition
 784834,at-risk
 784835,fit
 784836,fit
-784837,at-risk
+784837,unhealthy
 784838,at-risk
 784839,at-risk
 784840,at-risk
@@ -95425,7 +95425,7 @@ id,health_condition
 785511,at-risk
 785512,at-risk
 785513,at-risk
-785514,at-risk
+785514,unhealthy
 785515,at-risk
 785516,at-risk
 785517,at-risk
@@ -95688,7 +95688,7 @@ id,health_condition
 785774,at-risk
 785775,at-risk
 785776,fit
-785777,at-risk
+785777,unhealthy
 785778,at-risk
 785779,fit
 785780,at-risk
@@ -96211,7 +96211,7 @@ id,health_condition
 786297,at-risk
 786298,at-risk
 786299,at-risk
-786300,unhealthy
+786300,at-risk
 786301,at-risk
 786302,at-risk
 786303,at-risk
@@ -96944,7 +96944,7 @@ id,health_condition
 787030,fit
 787031,at-risk
 787032,at-risk
-787033,at-risk
+787033,unhealthy
 787034,at-risk
 787035,at-risk
 787036,at-risk
@@ -96963,7 +96963,7 @@ id,health_condition
 787049,at-risk
 787050,at-risk
 787051,unhealthy
-787052,at-risk
+787052,unhealthy
 787053,at-risk
 787054,at-risk
 787055,at-risk
@@ -97119,7 +97119,7 @@ id,health_condition
 787205,at-risk
 787206,fit
 787207,at-risk
-787208,fit
+787208,at-risk
 787209,at-risk
 787210,at-risk
 787211,at-risk
@@ -98459,7 +98459,7 @@ id,health_condition
 788545,at-risk
 788546,at-risk
 788547,at-risk
-788548,fit
+788548,at-risk
 788549,at-risk
 788550,at-risk
 788551,at-risk
@@ -98920,7 +98920,7 @@ id,health_condition
 789006,at-risk
 789007,at-risk
 789008,at-risk
-789009,fit
+789009,at-risk
 789010,at-risk
 789011,at-risk
 789012,at-risk
@@ -99817,7 +99817,7 @@ id,health_condition
 789903,at-risk
 789904,at-risk
 789905,at-risk
-789906,unhealthy
+789906,at-risk
 789907,unhealthy
 789908,at-risk
 789909,at-risk
@@ -99827,7 +99827,7 @@ id,health_condition
 789913,at-risk
 789914,at-risk
 789915,unhealthy
-789916,at-risk
+789916,unhealthy
 789917,at-risk
 789918,at-risk
 789919,fit
@@ -100350,14 +100350,14 @@ id,health_condition
 790436,at-risk
 790437,at-risk
 790438,at-risk
-790439,at-risk
+790439,unhealthy
 790440,at-risk
 790441,at-risk
 790442,at-risk
 790443,at-risk
 790444,at-risk
 790445,at-risk
-790446,at-risk
+790446,unhealthy
 790447,fit
 790448,at-risk
 790449,at-risk
@@ -101726,7 +101726,7 @@ id,health_condition
 791812,at-risk
 791813,at-risk
 791814,at-risk
-791815,fit
+791815,at-risk
 791816,fit
 791817,at-risk
 791818,at-risk
@@ -101784,7 +101784,7 @@ id,health_condition
 791870,unhealthy
 791871,unhealthy
 791872,at-risk
-791873,at-risk
+791873,unhealthy
 791874,at-risk
 791875,at-risk
 791876,at-risk
@@ -102142,7 +102142,7 @@ id,health_condition
 792228,fit
 792229,at-risk
 792230,fit
-792231,at-risk
+792231,unhealthy
 792232,at-risk
 792233,at-risk
 792234,at-risk
@@ -102893,7 +102893,7 @@ id,health_condition
 792979,at-risk
 792980,at-risk
 792981,fit
-792982,at-risk
+792982,unhealthy
 792983,at-risk
 792984,at-risk
 792985,at-risk
@@ -103796,7 +103796,7 @@ id,health_condition
 793882,unhealthy
 793883,at-risk
 793884,fit
-793885,at-risk
+793885,unhealthy
 793886,unhealthy
 793887,unhealthy
 793888,at-risk
@@ -104880,7 +104880,7 @@ id,health_condition
 794966,at-risk
 794967,at-risk
 794968,at-risk
-794969,at-risk
+794969,unhealthy
 794970,at-risk
 794971,at-risk
 794972,at-risk
@@ -105376,7 +105376,7 @@ id,health_condition
 795462,at-risk
 795463,fit
 795464,at-risk
-795465,at-risk
+795465,unhealthy
 795466,at-risk
 795467,at-risk
 795468,at-risk
@@ -105945,7 +105945,7 @@ id,health_condition
 796031,at-risk
 796032,unhealthy
 796033,at-risk
-796034,at-risk
+796034,unhealthy
 796035,at-risk
 796036,at-risk
 796037,at-risk
@@ -106292,7 +106292,7 @@ id,health_condition
 796378,fit
 796379,unhealthy
 796380,at-risk
-796381,at-risk
+796381,unhealthy
 796382,at-risk
 796383,at-risk
 796384,at-risk
@@ -106392,7 +106392,7 @@ id,health_condition
 796478,fit
 796479,fit
 796480,at-risk
-796481,unhealthy
+796481,at-risk
 796482,at-risk
 796483,at-risk
 796484,at-risk
@@ -106662,7 +106662,7 @@ id,health_condition
 796748,at-risk
 796749,at-risk
 796750,unhealthy
-796751,at-risk
+796751,unhealthy
 796752,fit
 796753,at-risk
 796754,at-risk
@@ -107102,7 +107102,7 @@ id,health_condition
 797188,fit
 797189,at-risk
 797190,fit
-797191,at-risk
+797191,unhealthy
 797192,at-risk
 797193,at-risk
 797194,at-risk
@@ -107545,7 +107545,7 @@ id,health_condition
 797631,at-risk
 797632,at-risk
 797633,at-risk
-797634,at-risk
+797634,unhealthy
 797635,at-risk
 797636,at-risk
 797637,at-risk
@@ -108603,7 +108603,7 @@ id,health_condition
 798689,at-risk
 798690,at-risk
 798691,at-risk
-798692,fit
+798692,at-risk
 798693,at-risk
 798694,unhealthy
 798695,at-risk
@@ -109475,7 +109475,7 @@ id,health_condition
 799561,at-risk
 799562,at-risk
 799563,at-risk
-799564,at-risk
+799564,unhealthy
 799565,at-risk
 799566,at-risk
 799567,at-risk
@@ -109895,7 +109895,7 @@ id,health_condition
 799981,at-risk
 799982,at-risk
 799983,at-risk
-799984,at-risk
+799984,unhealthy
 799985,at-risk
 799986,at-risk
 799987,at-risk
@@ -110164,7 +110164,7 @@ id,health_condition
 800250,at-risk
 800251,at-risk
 800252,at-risk
-800253,at-risk
+800253,unhealthy
 800254,at-risk
 800255,at-risk
 800256,at-risk
@@ -110532,7 +110532,7 @@ id,health_condition
 800618,at-risk
 800619,unhealthy
 800620,at-risk
-800621,unhealthy
+800621,at-risk
 800622,at-risk
 800623,at-risk
 800624,at-risk
@@ -110866,7 +110866,7 @@ id,health_condition
 800952,at-risk
 800953,at-risk
 800954,at-risk
-800955,at-risk
+800955,unhealthy
 800956,unhealthy
 800957,at-risk
 800958,at-risk
@@ -111079,7 +111079,7 @@ id,health_condition
 801165,fit
 801166,at-risk
 801167,at-risk
-801168,at-risk
+801168,unhealthy
 801169,unhealthy
 801170,at-risk
 801171,at-risk
@@ -111113,7 +111113,7 @@ id,health_condition
 801199,at-risk
 801200,at-risk
 801201,at-risk
-801202,at-risk
+801202,unhealthy
 801203,at-risk
 801204,at-risk
 801205,at-risk
@@ -111209,7 +111209,7 @@ id,health_condition
 801295,at-risk
 801296,at-risk
 801297,fit
-801298,fit
+801298,at-risk
 801299,at-risk
 801300,at-risk
 801301,at-risk
@@ -111400,7 +111400,7 @@ id,health_condition
 801486,at-risk
 801487,at-risk
 801488,unhealthy
-801489,at-risk
+801489,unhealthy
 801490,at-risk
 801491,fit
 801492,at-risk
@@ -112102,7 +112102,7 @@ id,health_condition
 802188,at-risk
 802189,unhealthy
 802190,at-risk
-802191,unhealthy
+802191,at-risk
 802192,at-risk
 802193,fit
 802194,at-risk
@@ -112538,7 +112538,7 @@ id,health_condition
 802624,at-risk
 802625,at-risk
 802626,at-risk
-802627,at-risk
+802627,unhealthy
 802628,fit
 802629,at-risk
 802630,unhealthy
@@ -112846,7 +112846,7 @@ id,health_condition
 802932,unhealthy
 802933,at-risk
 802934,fit
-802935,fit
+802935,at-risk
 802936,at-risk
 802937,at-risk
 802938,at-risk
@@ -112898,7 +112898,7 @@ id,health_condition
 802984,at-risk
 802985,fit
 802986,at-risk
-802987,unhealthy
+802987,at-risk
 802988,fit
 802989,unhealthy
 802990,at-risk
@@ -113010,7 +113010,7 @@ id,health_condition
 803096,at-risk
 803097,at-risk
 803098,at-risk
-803099,at-risk
+803099,fit
 803100,at-risk
 803101,at-risk
 803102,at-risk
@@ -113282,7 +113282,7 @@ id,health_condition
 803368,at-risk
 803369,at-risk
 803370,unhealthy
-803371,fit
+803371,at-risk
 803372,at-risk
 803373,at-risk
 803374,unhealthy
@@ -113574,7 +113574,7 @@ id,health_condition
 803660,at-risk
 803661,fit
 803662,at-risk
-803663,fit
+803663,unhealthy
 803664,at-risk
 803665,at-risk
 803666,at-risk
@@ -114280,7 +114280,7 @@ id,health_condition
 804366,at-risk
 804367,at-risk
 804368,at-risk
-804369,at-risk
+804369,unhealthy
 804370,at-risk
 804371,at-risk
 804372,at-risk
@@ -114380,7 +114380,7 @@ id,health_condition
 804466,fit
 804467,at-risk
 804468,at-risk
-804469,at-risk
+804469,unhealthy
 804470,at-risk
 804471,unhealthy
 804472,at-risk
@@ -114464,7 +114464,7 @@ id,health_condition
 804550,at-risk
 804551,at-risk
 804552,at-risk
-804553,fit
+804553,at-risk
 804554,at-risk
 804555,at-risk
 804556,at-risk
@@ -114662,7 +114662,7 @@ id,health_condition
 804748,at-risk
 804749,at-risk
 804750,at-risk
-804751,fit
+804751,unhealthy
 804752,at-risk
 804753,unhealthy
 804754,at-risk
@@ -115090,7 +115090,7 @@ id,health_condition
 805176,at-risk
 805177,unhealthy
 805178,at-risk
-805179,at-risk
+805179,unhealthy
 805180,at-risk
 805181,at-risk
 805182,at-risk
@@ -115246,7 +115246,7 @@ id,health_condition
 805332,at-risk
 805333,at-risk
 805334,at-risk
-805335,fit
+805335,at-risk
 805336,at-risk
 805337,at-risk
 805338,fit
@@ -115386,7 +115386,7 @@ id,health_condition
 805472,unhealthy
 805473,at-risk
 805474,at-risk
-805475,at-risk
+805475,unhealthy
 805476,at-risk
 805477,unhealthy
 805478,unhealthy
@@ -115882,7 +115882,7 @@ id,health_condition
 805968,at-risk
 805969,at-risk
 805970,at-risk
-805971,at-risk
+805971,unhealthy
 805972,at-risk
 805973,unhealthy
 805974,at-risk
@@ -116384,7 +116384,7 @@ id,health_condition
 806470,at-risk
 806471,unhealthy
 806472,at-risk
-806473,at-risk
+806473,unhealthy
 806474,at-risk
 806475,at-risk
 806476,at-risk
@@ -116793,13 +116793,13 @@ id,health_condition
 806879,unhealthy
 806880,unhealthy
 806881,at-risk
-806882,at-risk
+806882,unhealthy
 806883,at-risk
 806884,unhealthy
 806885,at-risk
 806886,at-risk
 806887,at-risk
-806888,at-risk
+806888,unhealthy
 806889,at-risk
 806890,at-risk
 806891,unhealthy
@@ -116864,7 +116864,7 @@ id,health_condition
 806950,at-risk
 806951,at-risk
 806952,at-risk
-806953,at-risk
+806953,unhealthy
 806954,at-risk
 806955,at-risk
 806956,at-risk
@@ -118329,7 +118329,7 @@ id,health_condition
 808415,at-risk
 808416,at-risk
 808417,at-risk
-808418,at-risk
+808418,unhealthy
 808419,at-risk
 808420,at-risk
 808421,at-risk
@@ -119215,7 +119215,7 @@ id,health_condition
 809301,unhealthy
 809302,at-risk
 809303,at-risk
-809304,at-risk
+809304,unhealthy
 809305,at-risk
 809306,at-risk
 809307,at-risk
@@ -119809,7 +119809,7 @@ id,health_condition
 809895,at-risk
 809896,at-risk
 809897,unhealthy
-809898,at-risk
+809898,fit
 809899,at-risk
 809900,at-risk
 809901,at-risk
@@ -119829,7 +119829,7 @@ id,health_condition
 809915,at-risk
 809916,at-risk
 809917,at-risk
-809918,at-risk
+809918,unhealthy
 809919,at-risk
 809920,at-risk
 809921,at-risk
@@ -120482,7 +120482,7 @@ id,health_condition
 810568,at-risk
 810569,at-risk
 810570,at-risk
-810571,at-risk
+810571,unhealthy
 810572,unhealthy
 810573,fit
 810574,at-risk
@@ -120797,7 +120797,7 @@ id,health_condition
 810883,at-risk
 810884,unhealthy
 810885,at-risk
-810886,at-risk
+810886,unhealthy
 810887,at-risk
 810888,at-risk
 810889,at-risk
@@ -121301,7 +121301,7 @@ id,health_condition
 811387,at-risk
 811388,at-risk
 811389,at-risk
-811390,at-risk
+811390,unhealthy
 811391,fit
 811392,fit
 811393,at-risk
@@ -121830,7 +121830,7 @@ id,health_condition
 811916,unhealthy
 811917,at-risk
 811918,at-risk
-811919,unhealthy
+811919,at-risk
 811920,unhealthy
 811921,at-risk
 811922,unhealthy
@@ -122455,7 +122455,7 @@ id,health_condition
 812541,unhealthy
 812542,at-risk
 812543,at-risk
-812544,at-risk
+812544,unhealthy
 812545,at-risk
 812546,fit
 812547,at-risk
@@ -123113,7 +123113,7 @@ id,health_condition
 813199,at-risk
 813200,at-risk
 813201,at-risk
-813202,unhealthy
+813202,at-risk
 813203,at-risk
 813204,at-risk
 813205,at-risk
@@ -123521,7 +123521,7 @@ id,health_condition
 813607,at-risk
 813608,at-risk
 813609,at-risk
-813610,at-risk
+813610,unhealthy
 813611,at-risk
 813612,unhealthy
 813613,at-risk
@@ -123789,7 +123789,7 @@ id,health_condition
 813875,at-risk
 813876,at-risk
 813877,fit
-813878,at-risk
+813878,unhealthy
 813879,at-risk
 813880,at-risk
 813881,fit
@@ -123895,7 +123895,7 @@ id,health_condition
 813981,unhealthy
 813982,unhealthy
 813983,at-risk
-813984,at-risk
+813984,unhealthy
 813985,unhealthy
 813986,at-risk
 813987,unhealthy
@@ -124881,7 +124881,7 @@ id,health_condition
 814967,at-risk
 814968,at-risk
 814969,at-risk
-814970,unhealthy
+814970,at-risk
 814971,at-risk
 814972,at-risk
 814973,at-risk
@@ -125019,7 +125019,7 @@ id,health_condition
 815105,at-risk
 815106,at-risk
 815107,unhealthy
-815108,fit
+815108,at-risk
 815109,fit
 815110,at-risk
 815111,at-risk
@@ -125350,7 +125350,7 @@ id,health_condition
 815436,at-risk
 815437,at-risk
 815438,at-risk
-815439,fit
+815439,at-risk
 815440,at-risk
 815441,at-risk
 815442,unhealthy
@@ -125446,8 +125446,8 @@ id,health_condition
 815532,at-risk
 815533,at-risk
 815534,at-risk
-815535,at-risk
-815536,unhealthy
+815535,unhealthy
+815536,at-risk
 815537,at-risk
 815538,at-risk
 815539,at-risk
@@ -125582,7 +125582,7 @@ id,health_condition
 815668,at-risk
 815669,at-risk
 815670,at-risk
-815671,at-risk
+815671,unhealthy
 815672,unhealthy
 815673,at-risk
 815674,at-risk
@@ -125687,7 +125687,7 @@ id,health_condition
 815773,at-risk
 815774,at-risk
 815775,at-risk
-815776,unhealthy
+815776,at-risk
 815777,unhealthy
 815778,at-risk
 815779,at-risk
@@ -126165,7 +126165,7 @@ id,health_condition
 816251,at-risk
 816252,unhealthy
 816253,at-risk
-816254,at-risk
+816254,unhealthy
 816255,at-risk
 816256,at-risk
 816257,at-risk
@@ -127091,7 +127091,7 @@ id,health_condition
 817177,unhealthy
 817178,at-risk
 817179,fit
-817180,at-risk
+817180,unhealthy
 817181,unhealthy
 817182,at-risk
 817183,at-risk
@@ -127469,7 +127469,7 @@ id,health_condition
 817555,at-risk
 817556,at-risk
 817557,at-risk
-817558,at-risk
+817558,unhealthy
 817559,at-risk
 817560,at-risk
 817561,at-risk
@@ -127732,7 +127732,7 @@ id,health_condition
 817818,at-risk
 817819,at-risk
 817820,at-risk
-817821,fit
+817821,at-risk
 817822,at-risk
 817823,at-risk
 817824,fit
@@ -127923,7 +127923,7 @@ id,health_condition
 818009,at-risk
 818010,at-risk
 818011,at-risk
-818012,at-risk
+818012,unhealthy
 818013,at-risk
 818014,at-risk
 818015,at-risk
@@ -128180,7 +128180,7 @@ id,health_condition
 818266,at-risk
 818267,at-risk
 818268,unhealthy
-818269,at-risk
+818269,unhealthy
 818270,fit
 818271,at-risk
 818272,at-risk
@@ -128201,7 +128201,7 @@ id,health_condition
 818287,fit
 818288,at-risk
 818289,at-risk
-818290,at-risk
+818290,unhealthy
 818291,at-risk
 818292,fit
 818293,at-risk
@@ -128531,7 +128531,7 @@ id,health_condition
 818617,fit
 818618,fit
 818619,at-risk
-818620,at-risk
+818620,unhealthy
 818621,at-risk
 818622,at-risk
 818623,fit
@@ -128642,7 +128642,7 @@ id,health_condition
 818728,at-risk
 818729,at-risk
 818730,at-risk
-818731,at-risk
+818731,unhealthy
 818732,at-risk
 818733,at-risk
 818734,at-risk
@@ -128792,7 +128792,7 @@ id,health_condition
 818878,at-risk
 818879,at-risk
 818880,at-risk
-818881,at-risk
+818881,unhealthy
 818882,at-risk
 818883,at-risk
 818884,at-risk
@@ -129451,7 +129451,7 @@ id,health_condition
 819537,unhealthy
 819538,at-risk
 819539,fit
-819540,unhealthy
+819540,at-risk
 819541,at-risk
 819542,at-risk
 819543,unhealthy
@@ -129927,7 +129927,7 @@ id,health_condition
 820013,unhealthy
 820014,at-risk
 820015,unhealthy
-820016,unhealthy
+820016,at-risk
 820017,unhealthy
 820018,at-risk
 820019,at-risk
@@ -130237,7 +130237,7 @@ id,health_condition
 820323,at-risk
 820324,at-risk
 820325,at-risk
-820326,at-risk
+820326,unhealthy
 820327,at-risk
 820328,unhealthy
 820329,at-risk
@@ -130370,7 +130370,7 @@ id,health_condition
 820456,at-risk
 820457,at-risk
 820458,at-risk
-820459,at-risk
+820459,unhealthy
 820460,at-risk
 820461,at-risk
 820462,fit
@@ -130995,7 +130995,7 @@ id,health_condition
 821081,at-risk
 821082,at-risk
 821083,at-risk
-821084,at-risk
+821084,unhealthy
 821085,at-risk
 821086,fit
 821087,at-risk
@@ -132010,7 +132010,7 @@ id,health_condition
 822096,at-risk
 822097,unhealthy
 822098,at-risk
-822099,at-risk
+822099,unhealthy
 822100,at-risk
 822101,at-risk
 822102,at-risk
@@ -132063,7 +132063,7 @@ id,health_condition
 822149,at-risk
 822150,at-risk
 822151,at-risk
-822152,unhealthy
+822152,at-risk
 822153,at-risk
 822154,at-risk
 822155,unhealthy
@@ -132393,7 +132393,7 @@ id,health_condition
 822479,at-risk
 822480,at-risk
 822481,at-risk
-822482,fit
+822482,at-risk
 822483,at-risk
 822484,at-risk
 822485,unhealthy
@@ -132430,7 +132430,7 @@ id,health_condition
 822516,at-risk
 822517,at-risk
 822518,at-risk
-822519,at-risk
+822519,unhealthy
 822520,at-risk
 822521,fit
 822522,at-risk
@@ -132972,7 +132972,7 @@ id,health_condition
 823058,at-risk
 823059,at-risk
 823060,at-risk
-823061,fit
+823061,at-risk
 823062,at-risk
 823063,at-risk
 823064,unhealthy
@@ -132992,7 +132992,7 @@ id,health_condition
 823078,at-risk
 823079,at-risk
 823080,at-risk
-823081,at-risk
+823081,unhealthy
 823082,at-risk
 823083,at-risk
 823084,at-risk
@@ -133051,7 +133051,7 @@ id,health_condition
 823137,at-risk
 823138,at-risk
 823139,at-risk
-823140,at-risk
+823140,unhealthy
 823141,at-risk
 823142,fit
 823143,fit
@@ -133265,7 +133265,7 @@ id,health_condition
 823351,at-risk
 823352,at-risk
 823353,fit
-823354,at-risk
+823354,unhealthy
 823355,at-risk
 823356,fit
 823357,fit
@@ -133504,7 +133504,7 @@ id,health_condition
 823590,unhealthy
 823591,at-risk
 823592,unhealthy
-823593,unhealthy
+823593,at-risk
 823594,at-risk
 823595,at-risk
 823596,unhealthy
@@ -133595,7 +133595,7 @@ id,health_condition
 823681,at-risk
 823682,at-risk
 823683,at-risk
-823684,unhealthy
+823684,at-risk
 823685,at-risk
 823686,at-risk
 823687,at-risk
@@ -134066,7 +134066,7 @@ id,health_condition
 824152,at-risk
 824153,at-risk
 824154,at-risk
-824155,fit
+824155,at-risk
 824156,at-risk
 824157,at-risk
 824158,at-risk
@@ -134696,7 +134696,7 @@ id,health_condition
 824782,at-risk
 824783,at-risk
 824784,fit
-824785,at-risk
+824785,unhealthy
 824786,at-risk
 824787,at-risk
 824788,at-risk
@@ -135436,7 +135436,7 @@ id,health_condition
 825522,at-risk
 825523,unhealthy
 825524,at-risk
-825525,at-risk
+825525,unhealthy
 825526,at-risk
 825527,at-risk
 825528,at-risk
@@ -135790,7 +135790,7 @@ id,health_condition
 825876,at-risk
 825877,at-risk
 825878,at-risk
-825879,at-risk
+825879,unhealthy
 825880,at-risk
 825881,at-risk
 825882,at-risk
@@ -136117,7 +136117,7 @@ id,health_condition
 826203,unhealthy
 826204,at-risk
 826205,at-risk
-826206,fit
+826206,at-risk
 826207,at-risk
 826208,unhealthy
 826209,at-risk
@@ -136229,7 +136229,7 @@ id,health_condition
 826315,at-risk
 826316,at-risk
 826317,unhealthy
-826318,at-risk
+826318,unhealthy
 826319,at-risk
 826320,at-risk
 826321,unhealthy
@@ -136288,7 +136288,7 @@ id,health_condition
 826374,at-risk
 826375,at-risk
 826376,at-risk
-826377,fit
+826377,at-risk
 826378,at-risk
 826379,at-risk
 826380,at-risk
@@ -136311,7 +136311,7 @@ id,health_condition
 826397,at-risk
 826398,at-risk
 826399,unhealthy
-826400,at-risk
+826400,unhealthy
 826401,at-risk
 826402,at-risk
 826403,at-risk
@@ -136590,7 +136590,7 @@ id,health_condition
 826676,at-risk
 826677,at-risk
 826678,at-risk
-826679,at-risk
+826679,unhealthy
 826680,at-risk
 826681,at-risk
 826682,at-risk
@@ -136786,7 +136786,7 @@ id,health_condition
 826872,at-risk
 826873,at-risk
 826874,fit
-826875,at-risk
+826875,unhealthy
 826876,at-risk
 826877,at-risk
 826878,at-risk
@@ -136889,7 +136889,7 @@ id,health_condition
 826975,at-risk
 826976,unhealthy
 826977,at-risk
-826978,unhealthy
+826978,at-risk
 826979,at-risk
 826980,at-risk
 826981,at-risk
@@ -136977,7 +136977,7 @@ id,health_condition
 827063,at-risk
 827064,at-risk
 827065,fit
-827066,fit
+827066,at-risk
 827067,at-risk
 827068,at-risk
 827069,at-risk
@@ -137053,7 +137053,7 @@ id,health_condition
 827139,at-risk
 827140,unhealthy
 827141,at-risk
-827142,at-risk
+827142,unhealthy
 827143,at-risk
 827144,at-risk
 827145,at-risk
@@ -137849,7 +137849,7 @@ id,health_condition
 827935,at-risk
 827936,at-risk
 827937,at-risk
-827938,unhealthy
+827938,at-risk
 827939,at-risk
 827940,at-risk
 827941,at-risk
@@ -137878,7 +137878,7 @@ id,health_condition
 827964,at-risk
 827965,at-risk
 827966,at-risk
-827967,at-risk
+827967,unhealthy
 827968,unhealthy
 827969,at-risk
 827970,at-risk
@@ -138055,7 +138055,7 @@ id,health_condition
 828141,fit
 828142,at-risk
 828143,unhealthy
-828144,at-risk
+828144,unhealthy
 828145,at-risk
 828146,at-risk
 828147,fit
@@ -138197,11 +138197,11 @@ id,health_condition
 828283,unhealthy
 828284,at-risk
 828285,at-risk
-828286,at-risk
+828286,unhealthy
 828287,at-risk
 828288,at-risk
 828289,at-risk
-828290,at-risk
+828290,unhealthy
 828291,at-risk
 828292,fit
 828293,at-risk
@@ -138307,7 +138307,7 @@ id,health_condition
 828393,at-risk
 828394,at-risk
 828395,at-risk
-828396,at-risk
+828396,unhealthy
 828397,at-risk
 828398,at-risk
 828399,at-risk
@@ -138894,7 +138894,7 @@ id,health_condition
 828980,at-risk
 828981,at-risk
 828982,at-risk
-828983,at-risk
+828983,unhealthy
 828984,at-risk
 828985,at-risk
 828986,unhealthy
@@ -138979,7 +138979,7 @@ id,health_condition
 829065,fit
 829066,at-risk
 829067,at-risk
-829068,at-risk
+829068,unhealthy
 829069,at-risk
 829070,unhealthy
 829071,at-risk
@@ -139316,7 +139316,7 @@ id,health_condition
 829402,fit
 829403,at-risk
 829404,unhealthy
-829405,at-risk
+829405,unhealthy
 829406,at-risk
 829407,at-risk
 829408,at-risk
@@ -139641,7 +139641,7 @@ id,health_condition
 829727,at-risk
 829728,unhealthy
 829729,at-risk
-829730,fit
+829730,at-risk
 829731,at-risk
 829732,at-risk
 829733,unhealthy
@@ -139731,7 +139731,7 @@ id,health_condition
 829817,unhealthy
 829818,at-risk
 829819,at-risk
-829820,at-risk
+829820,unhealthy
 829821,at-risk
 829822,at-risk
 829823,at-risk
@@ -139842,7 +139842,7 @@ id,health_condition
 829928,at-risk
 829929,at-risk
 829930,at-risk
-829931,fit
+829931,at-risk
 829932,at-risk
 829933,at-risk
 829934,at-risk
@@ -140356,7 +140356,7 @@ id,health_condition
 830442,at-risk
 830443,at-risk
 830444,at-risk
-830445,at-risk
+830445,unhealthy
 830446,at-risk
 830447,at-risk
 830448,at-risk
@@ -140991,7 +140991,7 @@ id,health_condition
 831077,unhealthy
 831078,unhealthy
 831079,unhealthy
-831080,at-risk
+831080,unhealthy
 831081,at-risk
 831082,at-risk
 831083,at-risk
@@ -141144,7 +141144,7 @@ id,health_condition
 831230,fit
 831231,at-risk
 831232,at-risk
-831233,at-risk
+831233,unhealthy
 831234,at-risk
 831235,at-risk
 831236,unhealthy
@@ -141241,7 +141241,7 @@ id,health_condition
 831327,at-risk
 831328,at-risk
 831329,at-risk
-831330,at-risk
+831330,unhealthy
 831331,at-risk
 831332,unhealthy
 831333,at-risk
@@ -141394,7 +141394,7 @@ id,health_condition
 831480,at-risk
 831481,at-risk
 831482,at-risk
-831483,at-risk
+831483,unhealthy
 831484,at-risk
 831485,at-risk
 831486,at-risk
@@ -142558,7 +142558,7 @@ id,health_condition
 832644,at-risk
 832645,at-risk
 832646,at-risk
-832647,at-risk
+832647,unhealthy
 832648,at-risk
 832649,fit
 832650,at-risk
@@ -142916,7 +142916,7 @@ id,health_condition
 833002,at-risk
 833003,unhealthy
 833004,at-risk
-833005,at-risk
+833005,unhealthy
 833006,at-risk
 833007,at-risk
 833008,at-risk
@@ -143236,7 +143236,7 @@ id,health_condition
 833322,at-risk
 833323,at-risk
 833324,fit
-833325,at-risk
+833325,unhealthy
 833326,at-risk
 833327,at-risk
 833328,unhealthy
@@ -143328,9 +143328,9 @@ id,health_condition
 833414,fit
 833415,at-risk
 833416,at-risk
-833417,at-risk
+833417,unhealthy
 833418,at-risk
-833419,fit
+833419,at-risk
 833420,at-risk
 833421,at-risk
 833422,at-risk
@@ -143347,7 +143347,7 @@ id,health_condition
 833433,at-risk
 833434,at-risk
 833435,at-risk
-833436,fit
+833436,at-risk
 833437,at-risk
 833438,at-risk
 833439,unhealthy
@@ -143750,7 +143750,7 @@ id,health_condition
 833836,at-risk
 833837,at-risk
 833838,at-risk
-833839,unhealthy
+833839,fit
 833840,at-risk
 833841,unhealthy
 833842,at-risk
@@ -144866,7 +144866,7 @@ id,health_condition
 834952,at-risk
 834953,unhealthy
 834954,at-risk
-834955,at-risk
+834955,unhealthy
 834956,at-risk
 834957,fit
 834958,at-risk
@@ -145136,7 +145136,7 @@ id,health_condition
 835222,at-risk
 835223,fit
 835224,fit
-835225,at-risk
+835225,unhealthy
 835226,unhealthy
 835227,at-risk
 835228,unhealthy
@@ -146005,7 +146005,7 @@ id,health_condition
 836091,at-risk
 836092,unhealthy
 836093,at-risk
-836094,unhealthy
+836094,at-risk
 836095,at-risk
 836096,at-risk
 836097,at-risk
@@ -146425,7 +146425,7 @@ id,health_condition
 836511,at-risk
 836512,at-risk
 836513,at-risk
-836514,fit
+836514,at-risk
 836515,at-risk
 836516,at-risk
 836517,at-risk
@@ -147070,7 +147070,7 @@ id,health_condition
 837156,unhealthy
 837157,at-risk
 837158,at-risk
-837159,at-risk
+837159,unhealthy
 837160,fit
 837161,at-risk
 837162,at-risk
@@ -147616,7 +147616,7 @@ id,health_condition
 837702,at-risk
 837703,at-risk
 837704,unhealthy
-837705,unhealthy
+837705,at-risk
 837706,at-risk
 837707,at-risk
 837708,at-risk
@@ -148517,7 +148517,7 @@ id,health_condition
 838603,unhealthy
 838604,at-risk
 838605,at-risk
-838606,at-risk
+838606,unhealthy
 838607,unhealthy
 838608,unhealthy
 838609,at-risk
@@ -148660,7 +148660,7 @@ id,health_condition
 838746,at-risk
 838747,at-risk
 838748,at-risk
-838749,unhealthy
+838749,at-risk
 838750,at-risk
 838751,at-risk
 838752,at-risk
@@ -149238,7 +149238,7 @@ id,health_condition
 839324,at-risk
 839325,at-risk
 839326,unhealthy
-839327,at-risk
+839327,unhealthy
 839328,unhealthy
 839329,fit
 839330,at-risk
@@ -149592,7 +149592,7 @@ id,health_condition
 839678,at-risk
 839679,at-risk
 839680,at-risk
-839681,unhealthy
+839681,at-risk
 839682,at-risk
 839683,at-risk
 839684,at-risk
@@ -149738,7 +149738,7 @@ id,health_condition
 839824,at-risk
 839825,at-risk
 839826,at-risk
-839827,unhealthy
+839827,at-risk
 839828,unhealthy
 839829,at-risk
 839830,at-risk
@@ -149895,7 +149895,7 @@ id,health_condition
 839981,at-risk
 839982,at-risk
 839983,at-risk
-839984,at-risk
+839984,unhealthy
 839985,unhealthy
 839986,at-risk
 839987,at-risk
@@ -150320,7 +150320,7 @@ id,health_condition
 840406,unhealthy
 840407,at-risk
 840408,at-risk
-840409,at-risk
+840409,unhealthy
 840410,at-risk
 840411,fit
 840412,at-risk
@@ -151749,7 +151749,7 @@ id,health_condition
 841835,at-risk
 841836,at-risk
 841837,at-risk
-841838,fit
+841838,at-risk
 841839,unhealthy
 841840,at-risk
 841841,at-risk
@@ -151890,7 +151890,7 @@ id,health_condition
 841976,at-risk
 841977,at-risk
 841978,fit
-841979,unhealthy
+841979,at-risk
 841980,at-risk
 841981,at-risk
 841982,at-risk
@@ -152933,7 +152933,7 @@ id,health_condition
 843019,fit
 843020,at-risk
 843021,at-risk
-843022,at-risk
+843022,unhealthy
 843023,unhealthy
 843024,at-risk
 843025,at-risk
@@ -153628,7 +153628,7 @@ id,health_condition
 843714,at-risk
 843715,unhealthy
 843716,at-risk
-843717,at-risk
+843717,unhealthy
 843718,at-risk
 843719,unhealthy
 843720,at-risk
@@ -153799,7 +153799,7 @@ id,health_condition
 843885,at-risk
 843886,at-risk
 843887,at-risk
-843888,at-risk
+843888,unhealthy
 843889,at-risk
 843890,at-risk
 843891,at-risk
@@ -155109,7 +155109,7 @@ id,health_condition
 845195,at-risk
 845196,fit
 845197,at-risk
-845198,unhealthy
+845198,at-risk
 845199,at-risk
 845200,fit
 845201,unhealthy
@@ -155515,7 +155515,7 @@ id,health_condition
 845601,at-risk
 845602,at-risk
 845603,at-risk
-845604,at-risk
+845604,unhealthy
 845605,at-risk
 845606,at-risk
 845607,at-risk
@@ -155734,7 +155734,7 @@ id,health_condition
 845820,at-risk
 845821,at-risk
 845822,fit
-845823,at-risk
+845823,unhealthy
 845824,at-risk
 845825,at-risk
 845826,at-risk
@@ -156000,7 +156000,7 @@ id,health_condition
 846086,at-risk
 846087,at-risk
 846088,at-risk
-846089,at-risk
+846089,unhealthy
 846090,fit
 846091,at-risk
 846092,fit
@@ -156243,7 +156243,7 @@ id,health_condition
 846329,at-risk
 846330,at-risk
 846331,unhealthy
-846332,fit
+846332,at-risk
 846333,unhealthy
 846334,fit
 846335,unhealthy
@@ -156393,7 +156393,7 @@ id,health_condition
 846479,at-risk
 846480,unhealthy
 846481,at-risk
-846482,at-risk
+846482,unhealthy
 846483,at-risk
 846484,fit
 846485,at-risk
@@ -156460,7 +156460,7 @@ id,health_condition
 846546,at-risk
 846547,at-risk
 846548,at-risk
-846549,at-risk
+846549,unhealthy
 846550,at-risk
 846551,unhealthy
 846552,at-risk
@@ -157146,7 +157146,7 @@ id,health_condition
 847232,at-risk
 847233,at-risk
 847234,unhealthy
-847235,at-risk
+847235,unhealthy
 847236,at-risk
 847237,at-risk
 847238,at-risk
@@ -157364,7 +157364,7 @@ id,health_condition
 847450,at-risk
 847451,at-risk
 847452,at-risk
-847453,at-risk
+847453,unhealthy
 847454,unhealthy
 847455,fit
 847456,at-risk
@@ -157838,7 +157838,7 @@ id,health_condition
 847924,at-risk
 847925,at-risk
 847926,at-risk
-847927,at-risk
+847927,unhealthy
 847928,at-risk
 847929,at-risk
 847930,unhealthy
@@ -158422,7 +158422,7 @@ id,health_condition
 848508,at-risk
 848509,at-risk
 848510,at-risk
-848511,at-risk
+848511,unhealthy
 848512,at-risk
 848513,at-risk
 848514,at-risk
@@ -159094,7 +159094,7 @@ id,health_condition
 849180,at-risk
 849181,at-risk
 849182,unhealthy
-849183,at-risk
+849183,unhealthy
 849184,at-risk
 849185,at-risk
 849186,at-risk
@@ -159389,7 +159389,7 @@ id,health_condition
 849475,at-risk
 849476,at-risk
 849477,at-risk
-849478,at-risk
+849478,unhealthy
 849479,fit
 849480,at-risk
 849481,fit
@@ -159589,7 +159589,7 @@ id,health_condition
 849675,at-risk
 849676,at-risk
 849677,fit
-849678,unhealthy
+849678,at-risk
 849679,fit
 849680,at-risk
 849681,at-risk
@@ -159598,7 +159598,7 @@ id,health_condition
 849684,unhealthy
 849685,at-risk
 849686,at-risk
-849687,unhealthy
+849687,at-risk
 849688,at-risk
 849689,unhealthy
 849690,at-risk
@@ -160881,7 +160881,7 @@ id,health_condition
 850967,at-risk
 850968,at-risk
 850969,at-risk
-850970,unhealthy
+850970,fit
 850971,at-risk
 850972,at-risk
 850973,at-risk
@@ -161405,7 +161405,7 @@ id,health_condition
 851491,unhealthy
 851492,unhealthy
 851493,at-risk
-851494,at-risk
+851494,unhealthy
 851495,at-risk
 851496,at-risk
 851497,at-risk
@@ -161701,7 +161701,7 @@ id,health_condition
 851787,at-risk
 851788,at-risk
 851789,at-risk
-851790,at-risk
+851790,unhealthy
 851791,at-risk
 851792,at-risk
 851793,at-risk
@@ -162210,7 +162210,7 @@ id,health_condition
 852296,at-risk
 852297,at-risk
 852298,at-risk
-852299,at-risk
+852299,unhealthy
 852300,fit
 852301,at-risk
 852302,fit
@@ -162333,7 +162333,7 @@ id,health_condition
 852419,unhealthy
 852420,at-risk
 852421,unhealthy
-852422,at-risk
+852422,unhealthy
 852423,at-risk
 852424,at-risk
 852425,at-risk
@@ -162678,7 +162678,7 @@ id,health_condition
 852764,at-risk
 852765,at-risk
 852766,at-risk
-852767,at-risk
+852767,unhealthy
 852768,at-risk
 852769,at-risk
 852770,at-risk
@@ -162754,7 +162754,7 @@ id,health_condition
 852840,at-risk
 852841,at-risk
 852842,at-risk
-852843,at-risk
+852843,unhealthy
 852844,at-risk
 852845,at-risk
 852846,at-risk
@@ -162895,7 +162895,7 @@ id,health_condition
 852981,at-risk
 852982,at-risk
 852983,at-risk
-852984,at-risk
+852984,unhealthy
 852985,at-risk
 852986,at-risk
 852987,at-risk
@@ -163174,7 +163174,7 @@ id,health_condition
 853260,at-risk
 853261,at-risk
 853262,at-risk
-853263,fit
+853263,at-risk
 853264,fit
 853265,fit
 853266,at-risk
@@ -163247,7 +163247,7 @@ id,health_condition
 853333,fit
 853334,at-risk
 853335,at-risk
-853336,unhealthy
+853336,at-risk
 853337,at-risk
 853338,at-risk
 853339,at-risk
@@ -163258,11 +163258,11 @@ id,health_condition
 853344,at-risk
 853345,at-risk
 853346,at-risk
-853347,at-risk
+853347,unhealthy
 853348,at-risk
 853349,at-risk
 853350,at-risk
-853351,at-risk
+853351,unhealthy
 853352,at-risk
 853353,at-risk
 853354,at-risk
@@ -163316,7 +163316,7 @@ id,health_condition
 853402,at-risk
 853403,at-risk
 853404,at-risk
-853405,at-risk
+853405,unhealthy
 853406,at-risk
 853407,at-risk
 853408,at-risk
@@ -163437,7 +163437,7 @@ id,health_condition
 853523,at-risk
 853524,at-risk
 853525,at-risk
-853526,at-risk
+853526,unhealthy
 853527,at-risk
 853528,at-risk
 853529,at-risk
@@ -163457,7 +163457,7 @@ id,health_condition
 853543,unhealthy
 853544,at-risk
 853545,at-risk
-853546,at-risk
+853546,unhealthy
 853547,unhealthy
 853548,at-risk
 853549,at-risk
@@ -163542,7 +163542,7 @@ id,health_condition
 853628,at-risk
 853629,at-risk
 853630,unhealthy
-853631,at-risk
+853631,unhealthy
 853632,at-risk
 853633,at-risk
 853634,at-risk
@@ -163702,7 +163702,7 @@ id,health_condition
 853788,at-risk
 853789,at-risk
 853790,at-risk
-853791,at-risk
+853791,unhealthy
 853792,at-risk
 853793,at-risk
 853794,at-risk
@@ -164065,7 +164065,7 @@ id,health_condition
 854151,at-risk
 854152,at-risk
 854153,at-risk
-854154,at-risk
+854154,unhealthy
 854155,at-risk
 854156,at-risk
 854157,at-risk
@@ -164168,7 +164168,7 @@ id,health_condition
 854254,at-risk
 854255,at-risk
 854256,at-risk
-854257,unhealthy
+854257,at-risk
 854258,at-risk
 854259,at-risk
 854260,at-risk
@@ -164490,7 +164490,7 @@ id,health_condition
 854576,at-risk
 854577,unhealthy
 854578,at-risk
-854579,fit
+854579,at-risk
 854580,unhealthy
 854581,unhealthy
 854582,at-risk
@@ -164667,7 +164667,7 @@ id,health_condition
 854753,at-risk
 854754,at-risk
 854755,unhealthy
-854756,at-risk
+854756,unhealthy
 854757,at-risk
 854758,at-risk
 854759,at-risk
@@ -164946,7 +164946,7 @@ id,health_condition
 855032,at-risk
 855033,at-risk
 855034,at-risk
-855035,fit
+855035,at-risk
 855036,unhealthy
 855037,at-risk
 855038,at-risk
@@ -165176,7 +165176,7 @@ id,health_condition
 855262,at-risk
 855263,at-risk
 855264,at-risk
-855265,unhealthy
+855265,at-risk
 855266,at-risk
 855267,at-risk
 855268,fit
@@ -167326,7 +167326,7 @@ id,health_condition
 857412,fit
 857413,at-risk
 857414,at-risk
-857415,at-risk
+857415,unhealthy
 857416,at-risk
 857417,at-risk
 857418,at-risk
@@ -168286,7 +168286,7 @@ id,health_condition
 858372,at-risk
 858373,at-risk
 858374,at-risk
-858375,at-risk
+858375,unhealthy
 858376,fit
 858377,at-risk
 858378,at-risk
@@ -168465,7 +168465,7 @@ id,health_condition
 858551,at-risk
 858552,at-risk
 858553,at-risk
-858554,at-risk
+858554,unhealthy
 858555,fit
 858556,at-risk
 858557,at-risk
@@ -169016,7 +169016,7 @@ id,health_condition
 859102,at-risk
 859103,at-risk
 859104,at-risk
-859105,unhealthy
+859105,fit
 859106,at-risk
 859107,at-risk
 859108,unhealthy
@@ -169340,7 +169340,7 @@ id,health_condition
 859426,at-risk
 859427,at-risk
 859428,at-risk
-859429,unhealthy
+859429,at-risk
 859430,at-risk
 859431,at-risk
 859432,at-risk
@@ -169992,7 +169992,7 @@ id,health_condition
 860078,at-risk
 860079,at-risk
 860080,fit
-860081,at-risk
+860081,unhealthy
 860082,at-risk
 860083,at-risk
 860084,at-risk
@@ -170105,7 +170105,7 @@ id,health_condition
 860191,at-risk
 860192,at-risk
 860193,at-risk
-860194,at-risk
+860194,unhealthy
 860195,at-risk
 860196,at-risk
 860197,at-risk
@@ -170462,7 +170462,7 @@ id,health_condition
 860548,at-risk
 860549,at-risk
 860550,at-risk
-860551,at-risk
+860551,unhealthy
 860552,at-risk
 860553,at-risk
 860554,at-risk
@@ -171236,7 +171236,7 @@ id,health_condition
 861322,at-risk
 861323,at-risk
 861324,at-risk
-861325,at-risk
+861325,unhealthy
 861326,at-risk
 861327,at-risk
 861328,fit
@@ -171679,7 +171679,7 @@ id,health_condition
 861765,at-risk
 861766,at-risk
 861767,at-risk
-861768,at-risk
+861768,unhealthy
 861769,unhealthy
 861770,at-risk
 861771,at-risk
@@ -171868,7 +171868,7 @@ id,health_condition
 861954,at-risk
 861955,at-risk
 861956,at-risk
-861957,fit
+861957,at-risk
 861958,at-risk
 861959,at-risk
 861960,at-risk
@@ -172550,7 +172550,7 @@ id,health_condition
 862636,at-risk
 862637,unhealthy
 862638,at-risk
-862639,fit
+862639,at-risk
 862640,at-risk
 862641,at-risk
 862642,at-risk
@@ -172859,7 +172859,7 @@ id,health_condition
 862945,at-risk
 862946,at-risk
 862947,at-risk
-862948,at-risk
+862948,unhealthy
 862949,at-risk
 862950,at-risk
 862951,at-risk
@@ -172979,7 +172979,7 @@ id,health_condition
 863065,fit
 863066,at-risk
 863067,at-risk
-863068,at-risk
+863068,unhealthy
 863069,at-risk
 863070,at-risk
 863071,at-risk
@@ -173569,7 +173569,7 @@ id,health_condition
 863655,at-risk
 863656,unhealthy
 863657,at-risk
-863658,at-risk
+863658,unhealthy
 863659,at-risk
 863660,at-risk
 863661,at-risk
@@ -173585,7 +173585,7 @@ id,health_condition
 863671,at-risk
 863672,at-risk
 863673,at-risk
-863674,at-risk
+863674,unhealthy
 863675,fit
 863676,at-risk
 863677,at-risk
@@ -173638,7 +173638,7 @@ id,health_condition
 863724,at-risk
 863725,at-risk
 863726,at-risk
-863727,at-risk
+863727,unhealthy
 863728,at-risk
 863729,at-risk
 863730,fit
@@ -173975,9 +173975,9 @@ id,health_condition
 864061,fit
 864062,at-risk
 864063,at-risk
-864064,at-risk
+864064,unhealthy
 864065,fit
-864066,at-risk
+864066,unhealthy
 864067,at-risk
 864068,at-risk
 864069,at-risk
@@ -174514,7 +174514,7 @@ id,health_condition
 864600,at-risk
 864601,at-risk
 864602,fit
-864603,at-risk
+864603,unhealthy
 864604,fit
 864605,at-risk
 864606,at-risk
@@ -174787,7 +174787,7 @@ id,health_condition
 864873,at-risk
 864874,at-risk
 864875,at-risk
-864876,fit
+864876,at-risk
 864877,at-risk
 864878,fit
 864879,at-risk
@@ -175325,7 +175325,7 @@ id,health_condition
 865411,at-risk
 865412,at-risk
 865413,at-risk
-865414,at-risk
+865414,unhealthy
 865415,at-risk
 865416,fit
 865417,at-risk
@@ -175901,7 +175901,7 @@ id,health_condition
 865987,at-risk
 865988,at-risk
 865989,at-risk
-865990,at-risk
+865990,unhealthy
 865991,at-risk
 865992,at-risk
 865993,at-risk
@@ -176086,7 +176086,7 @@ id,health_condition
 866172,at-risk
 866173,at-risk
 866174,at-risk
-866175,at-risk
+866175,unhealthy
 866176,at-risk
 866177,at-risk
 866178,at-risk
@@ -176125,7 +176125,7 @@ id,health_condition
 866211,fit
 866212,at-risk
 866213,at-risk
-866214,at-risk
+866214,unhealthy
 866215,at-risk
 866216,at-risk
 866217,at-risk
@@ -176168,7 +176168,7 @@ id,health_condition
 866254,at-risk
 866255,fit
 866256,unhealthy
-866257,at-risk
+866257,unhealthy
 866258,at-risk
 866259,at-risk
 866260,at-risk
@@ -176497,7 +176497,7 @@ id,health_condition
 866583,at-risk
 866584,unhealthy
 866585,at-risk
-866586,at-risk
+866586,unhealthy
 866587,at-risk
 866588,unhealthy
 866589,at-risk
@@ -176532,7 +176532,7 @@ id,health_condition
 866618,unhealthy
 866619,at-risk
 866620,unhealthy
-866621,at-risk
+866621,unhealthy
 866622,at-risk
 866623,at-risk
 866624,at-risk
@@ -176878,7 +176878,7 @@ id,health_condition
 866964,fit
 866965,at-risk
 866966,at-risk
-866967,fit
+866967,unhealthy
 866968,at-risk
 866969,at-risk
 866970,at-risk
@@ -176935,7 +176935,7 @@ id,health_condition
 867021,at-risk
 867022,unhealthy
 867023,at-risk
-867024,at-risk
+867024,unhealthy
 867025,at-risk
 867026,at-risk
 867027,at-risk
@@ -177619,7 +177619,7 @@ id,health_condition
 867705,fit
 867706,at-risk
 867707,unhealthy
-867708,at-risk
+867708,unhealthy
 867709,at-risk
 867710,at-risk
 867711,fit
@@ -177793,7 +177793,7 @@ id,health_condition
 867879,at-risk
 867880,at-risk
 867881,at-risk
-867882,fit
+867882,at-risk
 867883,at-risk
 867884,at-risk
 867885,at-risk
@@ -178083,7 +178083,7 @@ id,health_condition
 868169,at-risk
 868170,at-risk
 868171,at-risk
-868172,at-risk
+868172,unhealthy
 868173,at-risk
 868174,at-risk
 868175,at-risk
@@ -178454,7 +178454,7 @@ id,health_condition
 868540,at-risk
 868541,at-risk
 868542,at-risk
-868543,at-risk
+868543,unhealthy
 868544,unhealthy
 868545,at-risk
 868546,at-risk
@@ -179400,7 +179400,7 @@ id,health_condition
 869486,unhealthy
 869487,at-risk
 869488,at-risk
-869489,fit
+869489,at-risk
 869490,at-risk
 869491,at-risk
 869492,at-risk
@@ -179513,7 +179513,7 @@ id,health_condition
 869599,at-risk
 869600,at-risk
 869601,at-risk
-869602,fit
+869602,at-risk
 869603,fit
 869604,at-risk
 869605,at-risk
@@ -179707,7 +179707,7 @@ id,health_condition
 869793,unhealthy
 869794,at-risk
 869795,at-risk
-869796,at-risk
+869796,unhealthy
 869797,at-risk
 869798,at-risk
 869799,at-risk
@@ -179901,7 +179901,7 @@ id,health_condition
 869987,fit
 869988,at-risk
 869989,fit
-869990,at-risk
+869990,unhealthy
 869991,at-risk
 869992,at-risk
 869993,at-risk
@@ -179973,7 +179973,7 @@ id,health_condition
 870059,at-risk
 870060,fit
 870061,at-risk
-870062,at-risk
+870062,unhealthy
 870063,at-risk
 870064,at-risk
 870065,fit
@@ -180779,7 +180779,7 @@ id,health_condition
 870865,fit
 870866,unhealthy
 870867,at-risk
-870868,at-risk
+870868,unhealthy
 870869,at-risk
 870870,at-risk
 870871,at-risk
@@ -181293,7 +181293,7 @@ id,health_condition
 871379,at-risk
 871380,at-risk
 871381,at-risk
-871382,unhealthy
+871382,at-risk
 871383,at-risk
 871384,at-risk
 871385,fit
@@ -181759,7 +181759,7 @@ id,health_condition
 871845,at-risk
 871846,at-risk
 871847,at-risk
-871848,unhealthy
+871848,fit
 871849,fit
 871850,at-risk
 871851,unhealthy
@@ -181787,7 +181787,7 @@ id,health_condition
 871873,at-risk
 871874,fit
 871875,at-risk
-871876,at-risk
+871876,unhealthy
 871877,at-risk
 871878,at-risk
 871879,at-risk
@@ -181891,7 +181891,7 @@ id,health_condition
 871977,fit
 871978,at-risk
 871979,fit
-871980,at-risk
+871980,unhealthy
 871981,at-risk
 871982,unhealthy
 871983,at-risk
@@ -182311,7 +182311,7 @@ id,health_condition
 872397,at-risk
 872398,at-risk
 872399,at-risk
-872400,at-risk
+872400,unhealthy
 872401,at-risk
 872402,at-risk
 872403,fit
@@ -182636,7 +182636,7 @@ id,health_condition
 872722,at-risk
 872723,unhealthy
 872724,unhealthy
-872725,at-risk
+872725,unhealthy
 872726,at-risk
 872727,at-risk
 872728,at-risk
@@ -182793,7 +182793,7 @@ id,health_condition
 872879,at-risk
 872880,at-risk
 872881,at-risk
-872882,at-risk
+872882,unhealthy
 872883,fit
 872884,at-risk
 872885,at-risk
@@ -183190,7 +183190,7 @@ id,health_condition
 873276,at-risk
 873277,at-risk
 873278,at-risk
-873279,at-risk
+873279,unhealthy
 873280,at-risk
 873281,at-risk
 873282,at-risk
@@ -183522,7 +183522,7 @@ id,health_condition
 873608,at-risk
 873609,at-risk
 873610,at-risk
-873611,at-risk
+873611,unhealthy
 873612,at-risk
 873613,unhealthy
 873614,at-risk
@@ -183772,7 +183772,7 @@ id,health_condition
 873858,at-risk
 873859,unhealthy
 873860,unhealthy
-873861,at-risk
+873861,unhealthy
 873862,at-risk
 873863,at-risk
 873864,at-risk
@@ -183865,12 +183865,12 @@ id,health_condition
 873951,at-risk
 873952,at-risk
 873953,at-risk
-873954,at-risk
+873954,unhealthy
 873955,at-risk
 873956,at-risk
 873957,at-risk
 873958,at-risk
-873959,at-risk
+873959,unhealthy
 873960,at-risk
 873961,unhealthy
 873962,at-risk
@@ -184050,7 +184050,7 @@ id,health_condition
 874136,unhealthy
 874137,fit
 874138,at-risk
-874139,at-risk
+874139,unhealthy
 874140,at-risk
 874141,unhealthy
 874142,at-risk
@@ -184750,7 +184750,7 @@ id,health_condition
 874836,at-risk
 874837,at-risk
 874838,fit
-874839,fit
+874839,at-risk
 874840,at-risk
 874841,at-risk
 874842,at-risk
@@ -184925,7 +184925,7 @@ id,health_condition
 875011,unhealthy
 875012,unhealthy
 875013,at-risk
-875014,at-risk
+875014,unhealthy
 875015,at-risk
 875016,fit
 875017,at-risk
@@ -185004,7 +185004,7 @@ id,health_condition
 875090,at-risk
 875091,at-risk
 875092,at-risk
-875093,at-risk
+875093,fit
 875094,at-risk
 875095,at-risk
 875096,at-risk
@@ -185294,7 +185294,7 @@ id,health_condition
 875380,at-risk
 875381,at-risk
 875382,at-risk
-875383,at-risk
+875383,unhealthy
 875384,at-risk
 875385,at-risk
 875386,at-risk
@@ -185480,7 +185480,7 @@ id,health_condition
 875566,at-risk
 875567,unhealthy
 875568,at-risk
-875569,at-risk
+875569,unhealthy
 875570,at-risk
 875571,at-risk
 875572,at-risk
@@ -185491,7 +185491,7 @@ id,health_condition
 875577,at-risk
 875578,at-risk
 875579,at-risk
-875580,at-risk
+875580,fit
 875581,at-risk
 875582,at-risk
 875583,at-risk
@@ -185531,7 +185531,7 @@ id,health_condition
 875617,at-risk
 875618,at-risk
 875619,at-risk
-875620,at-risk
+875620,fit
 875621,at-risk
 875622,at-risk
 875623,at-risk
@@ -185860,7 +185860,7 @@ id,health_condition
 875946,fit
 875947,at-risk
 875948,fit
-875949,at-risk
+875949,unhealthy
 875950,at-risk
 875951,at-risk
 875952,at-risk
@@ -186258,7 +186258,7 @@ id,health_condition
 876344,unhealthy
 876345,at-risk
 876346,at-risk
-876347,unhealthy
+876347,at-risk
 876348,at-risk
 876349,unhealthy
 876350,at-risk
@@ -186987,7 +186987,7 @@ id,health_condition
 877073,at-risk
 877074,unhealthy
 877075,at-risk
-877076,fit
+877076,at-risk
 877077,at-risk
 877078,at-risk
 877079,at-risk
@@ -187016,7 +187016,7 @@ id,health_condition
 877102,at-risk
 877103,at-risk
 877104,at-risk
-877105,at-risk
+877105,unhealthy
 877106,at-risk
 877107,at-risk
 877108,unhealthy
@@ -187332,7 +187332,7 @@ id,health_condition
 877418,at-risk
 877419,unhealthy
 877420,at-risk
-877421,at-risk
+877421,unhealthy
 877422,at-risk
 877423,at-risk
 877424,at-risk
@@ -187585,7 +187585,7 @@ id,health_condition
 877671,at-risk
 877672,at-risk
 877673,at-risk
-877674,unhealthy
+877674,at-risk
 877675,unhealthy
 877676,at-risk
 877677,at-risk
@@ -188499,7 +188499,7 @@ id,health_condition
 878585,unhealthy
 878586,at-risk
 878587,at-risk
-878588,at-risk
+878588,unhealthy
 878589,at-risk
 878590,at-risk
 878591,at-risk
@@ -188935,7 +188935,7 @@ id,health_condition
 879021,at-risk
 879022,at-risk
 879023,at-risk
-879024,at-risk
+879024,unhealthy
 879025,at-risk
 879026,unhealthy
 879027,at-risk
@@ -189051,7 +189051,7 @@ id,health_condition
 879137,at-risk
 879138,unhealthy
 879139,unhealthy
-879140,unhealthy
+879140,fit
 879141,at-risk
 879142,at-risk
 879143,at-risk
@@ -189340,7 +189340,7 @@ id,health_condition
 879426,at-risk
 879427,at-risk
 879428,at-risk
-879429,at-risk
+879429,unhealthy
 879430,at-risk
 879431,at-risk
 879432,at-risk
@@ -189905,7 +189905,7 @@ id,health_condition
 879991,at-risk
 879992,unhealthy
 879993,at-risk
-879994,at-risk
+879994,unhealthy
 879995,at-risk
 879996,at-risk
 879997,at-risk
@@ -189936,7 +189936,7 @@ id,health_condition
 880022,at-risk
 880023,at-risk
 880024,at-risk
-880025,fit
+880025,at-risk
 880026,at-risk
 880027,at-risk
 880028,unhealthy
@@ -189965,7 +189965,7 @@ id,health_condition
 880051,fit
 880052,at-risk
 880053,unhealthy
-880054,at-risk
+880054,unhealthy
 880055,at-risk
 880056,at-risk
 880057,at-risk
@@ -190045,7 +190045,7 @@ id,health_condition
 880131,at-risk
 880132,at-risk
 880133,at-risk
-880134,at-risk
+880134,unhealthy
 880135,unhealthy
 880136,at-risk
 880137,at-risk
@@ -190072,7 +190072,7 @@ id,health_condition
 880158,at-risk
 880159,at-risk
 880160,at-risk
-880161,fit
+880161,at-risk
 880162,fit
 880163,at-risk
 880164,at-risk
@@ -190223,7 +190223,7 @@ id,health_condition
 880309,at-risk
 880310,at-risk
 880311,at-risk
-880312,at-risk
+880312,unhealthy
 880313,at-risk
 880314,fit
 880315,at-risk
@@ -190558,7 +190558,7 @@ id,health_condition
 880644,at-risk
 880645,at-risk
 880646,at-risk
-880647,at-risk
+880647,unhealthy
 880648,at-risk
 880649,at-risk
 880650,at-risk
@@ -190604,7 +190604,7 @@ id,health_condition
 880690,at-risk
 880691,at-risk
 880692,at-risk
-880693,unhealthy
+880693,at-risk
 880694,at-risk
 880695,at-risk
 880696,at-risk
@@ -190837,7 +190837,7 @@ id,health_condition
 880923,fit
 880924,at-risk
 880925,at-risk
-880926,at-risk
+880926,unhealthy
 880927,at-risk
 880928,at-risk
 880929,at-risk
@@ -190868,7 +190868,7 @@ id,health_condition
 880954,at-risk
 880955,at-risk
 880956,at-risk
-880957,at-risk
+880957,unhealthy
 880958,at-risk
 880959,unhealthy
 880960,at-risk
@@ -191522,7 +191522,7 @@ id,health_condition
 881608,at-risk
 881609,fit
 881610,at-risk
-881611,unhealthy
+881611,at-risk
 881612,at-risk
 881613,at-risk
 881614,at-risk
@@ -192202,7 +192202,7 @@ id,health_condition
 882288,at-risk
 882289,at-risk
 882290,unhealthy
-882291,at-risk
+882291,unhealthy
 882292,unhealthy
 882293,at-risk
 882294,at-risk
@@ -192380,7 +192380,7 @@ id,health_condition
 882466,at-risk
 882467,at-risk
 882468,at-risk
-882469,at-risk
+882469,unhealthy
 882470,fit
 882471,at-risk
 882472,at-risk
@@ -192595,7 +192595,7 @@ id,health_condition
 882681,at-risk
 882682,at-risk
 882683,at-risk
-882684,fit
+882684,at-risk
 882685,unhealthy
 882686,at-risk
 882687,at-risk
@@ -192820,7 +192820,7 @@ id,health_condition
 882906,at-risk
 882907,at-risk
 882908,unhealthy
-882909,unhealthy
+882909,at-risk
 882910,at-risk
 882911,at-risk
 882912,unhealthy
@@ -192960,7 +192960,7 @@ id,health_condition
 883046,at-risk
 883047,at-risk
 883048,at-risk
-883049,at-risk
+883049,unhealthy
 883050,at-risk
 883051,unhealthy
 883052,at-risk
@@ -193472,7 +193472,7 @@ id,health_condition
 883558,at-risk
 883559,at-risk
 883560,at-risk
-883561,at-risk
+883561,unhealthy
 883562,at-risk
 883563,fit
 883564,at-risk
@@ -193799,7 +193799,7 @@ id,health_condition
 883885,at-risk
 883886,at-risk
 883887,at-risk
-883888,at-risk
+883888,unhealthy
 883889,at-risk
 883890,at-risk
 883891,at-risk
@@ -194490,7 +194490,7 @@ id,health_condition
 884576,at-risk
 884577,fit
 884578,at-risk
-884579,unhealthy
+884579,fit
 884580,unhealthy
 884581,at-risk
 884582,at-risk
@@ -195082,7 +195082,7 @@ id,health_condition
 885168,at-risk
 885169,at-risk
 885170,at-risk
-885171,at-risk
+885171,unhealthy
 885172,at-risk
 885173,unhealthy
 885174,fit
@@ -195186,7 +195186,7 @@ id,health_condition
 885272,at-risk
 885273,at-risk
 885274,unhealthy
-885275,unhealthy
+885275,at-risk
 885276,fit
 885277,at-risk
 885278,fit
@@ -195413,7 +195413,7 @@ id,health_condition
 885499,at-risk
 885500,at-risk
 885501,at-risk
-885502,at-risk
+885502,unhealthy
 885503,at-risk
 885504,at-risk
 885505,at-risk
@@ -195642,7 +195642,7 @@ id,health_condition
 885728,at-risk
 885729,at-risk
 885730,at-risk
-885731,fit
+885731,at-risk
 885732,at-risk
 885733,at-risk
 885734,at-risk
@@ -196181,7 +196181,7 @@ id,health_condition
 886267,at-risk
 886268,at-risk
 886269,at-risk
-886270,fit
+886270,at-risk
 886271,at-risk
 886272,at-risk
 886273,at-risk
@@ -196591,7 +196591,7 @@ id,health_condition
 886677,unhealthy
 886678,at-risk
 886679,at-risk
-886680,fit
+886680,at-risk
 886681,fit
 886682,at-risk
 886683,at-risk
@@ -196823,7 +196823,7 @@ id,health_condition
 886909,fit
 886910,at-risk
 886911,at-risk
-886912,unhealthy
+886912,fit
 886913,at-risk
 886914,unhealthy
 886915,fit
@@ -197049,7 +197049,7 @@ id,health_condition
 887135,at-risk
 887136,at-risk
 887137,at-risk
-887138,at-risk
+887138,unhealthy
 887139,at-risk
 887140,at-risk
 887141,at-risk
@@ -197478,7 +197478,7 @@ id,health_condition
 887564,at-risk
 887565,at-risk
 887566,at-risk
-887567,at-risk
+887567,unhealthy
 887568,at-risk
 887569,unhealthy
 887570,fit
@@ -198010,7 +198010,7 @@ id,health_condition
 888096,at-risk
 888097,unhealthy
 888098,at-risk
-888099,at-risk
+888099,unhealthy
 888100,at-risk
 888101,at-risk
 888102,at-risk
@@ -198250,7 +198250,7 @@ id,health_condition
 888336,at-risk
 888337,at-risk
 888338,at-risk
-888339,at-risk
+888339,unhealthy
 888340,at-risk
 888341,at-risk
 888342,at-risk
@@ -198803,7 +198803,7 @@ id,health_condition
 888889,at-risk
 888890,at-risk
 888891,at-risk
-888892,at-risk
+888892,unhealthy
 888893,unhealthy
 888894,at-risk
 888895,at-risk
@@ -199301,7 +199301,7 @@ id,health_condition
 889387,at-risk
 889388,at-risk
 889389,at-risk
-889390,at-risk
+889390,unhealthy
 889391,at-risk
 889392,at-risk
 889393,at-risk
@@ -199803,7 +199803,7 @@ id,health_condition
 889889,at-risk
 889890,at-risk
 889891,at-risk
-889892,at-risk
+889892,unhealthy
 889893,at-risk
 889894,at-risk
 889895,at-risk
@@ -199896,7 +199896,7 @@ id,health_condition
 889982,at-risk
 889983,at-risk
 889984,at-risk
-889985,at-risk
+889985,unhealthy
 889986,at-risk
 889987,at-risk
 889988,at-risk
@@ -199922,7 +199922,7 @@ id,health_condition
 890008,at-risk
 890009,at-risk
 890010,at-risk
-890011,unhealthy
+890011,at-risk
 890012,at-risk
 890013,at-risk
 890014,at-risk
@@ -200161,7 +200161,7 @@ id,health_condition
 890247,at-risk
 890248,at-risk
 890249,at-risk
-890250,unhealthy
+890250,at-risk
 890251,at-risk
 890252,at-risk
 890253,at-risk
@@ -200267,7 +200267,7 @@ id,health_condition
 890353,fit
 890354,at-risk
 890355,fit
-890356,fit
+890356,at-risk
 890357,at-risk
 890358,at-risk
 890359,at-risk
@@ -202356,7 +202356,7 @@ id,health_condition
 892442,unhealthy
 892443,at-risk
 892444,unhealthy
-892445,at-risk
+892445,unhealthy
 892446,fit
 892447,at-risk
 892448,at-risk
@@ -202689,7 +202689,7 @@ id,health_condition
 892775,at-risk
 892776,at-risk
 892777,fit
-892778,at-risk
+892778,unhealthy
 892779,fit
 892780,fit
 892781,at-risk
@@ -202750,7 +202750,7 @@ id,health_condition
 892836,at-risk
 892837,at-risk
 892838,fit
-892839,at-risk
+892839,unhealthy
 892840,at-risk
 892841,at-risk
 892842,at-risk
@@ -203794,7 +203794,7 @@ id,health_condition
 893880,at-risk
 893881,at-risk
 893882,at-risk
-893883,at-risk
+893883,unhealthy
 893884,unhealthy
 893885,at-risk
 893886,at-risk
@@ -204663,7 +204663,7 @@ id,health_condition
 894749,at-risk
 894750,at-risk
 894751,at-risk
-894752,unhealthy
+894752,at-risk
 894753,at-risk
 894754,at-risk
 894755,unhealthy
@@ -205083,7 +205083,7 @@ id,health_condition
 895169,unhealthy
 895170,at-risk
 895171,unhealthy
-895172,unhealthy
+895172,fit
 895173,at-risk
 895174,at-risk
 895175,at-risk
@@ -205103,7 +205103,7 @@ id,health_condition
 895189,unhealthy
 895190,fit
 895191,at-risk
-895192,unhealthy
+895192,fit
 895193,at-risk
 895194,at-risk
 895195,at-risk
@@ -205142,7 +205142,7 @@ id,health_condition
 895228,at-risk
 895229,at-risk
 895230,at-risk
-895231,fit
+895231,at-risk
 895232,at-risk
 895233,unhealthy
 895234,unhealthy
@@ -205397,7 +205397,7 @@ id,health_condition
 895483,at-risk
 895484,at-risk
 895485,at-risk
-895486,at-risk
+895486,unhealthy
 895487,at-risk
 895488,at-risk
 895489,at-risk
@@ -206610,7 +206610,7 @@ id,health_condition
 896696,at-risk
 896697,at-risk
 896698,at-risk
-896699,at-risk
+896699,unhealthy
 896700,at-risk
 896701,at-risk
 896702,at-risk
@@ -207234,7 +207234,7 @@ id,health_condition
 897320,at-risk
 897321,at-risk
 897322,at-risk
-897323,at-risk
+897323,unhealthy
 897324,at-risk
 897325,at-risk
 897326,at-risk
@@ -207308,7 +207308,7 @@ id,health_condition
 897394,unhealthy
 897395,at-risk
 897396,at-risk
-897397,at-risk
+897397,unhealthy
 897398,at-risk
 897399,at-risk
 897400,at-risk
@@ -207665,7 +207665,7 @@ id,health_condition
 897751,at-risk
 897752,at-risk
 897753,at-risk
-897754,at-risk
+897754,unhealthy
 897755,at-risk
 897756,at-risk
 897757,at-risk
@@ -207844,7 +207844,7 @@ id,health_condition
 897930,unhealthy
 897931,at-risk
 897932,at-risk
-897933,at-risk
+897933,unhealthy
 897934,unhealthy
 897935,at-risk
 897936,at-risk
@@ -209139,7 +209139,7 @@ id,health_condition
 899225,at-risk
 899226,at-risk
 899227,at-risk
-899228,at-risk
+899228,unhealthy
 899229,at-risk
 899230,at-risk
 899231,at-risk
@@ -209299,7 +209299,7 @@ id,health_condition
 899385,at-risk
 899386,at-risk
 899387,fit
-899388,at-risk
+899388,unhealthy
 899389,at-risk
 899390,at-risk
 899391,at-risk
@@ -209447,7 +209447,7 @@ id,health_condition
 899533,fit
 899534,at-risk
 899535,fit
-899536,at-risk
+899536,unhealthy
 899537,unhealthy
 899538,at-risk
 899539,at-risk
@@ -209457,7 +209457,7 @@ id,health_condition
 899543,unhealthy
 899544,unhealthy
 899545,at-risk
-899546,at-risk
+899546,unhealthy
 899547,at-risk
 899548,fit
 899549,at-risk
@@ -209522,7 +209522,7 @@ id,health_condition
 899608,at-risk
 899609,at-risk
 899610,fit
-899611,at-risk
+899611,unhealthy
 899612,at-risk
 899613,at-risk
 899614,at-risk
@@ -209878,7 +209878,7 @@ id,health_condition
 899964,at-risk
 899965,fit
 899966,fit
-899967,unhealthy
+899967,at-risk
 899968,at-risk
 899969,at-risk
 899970,at-risk
@@ -210314,7 +210314,7 @@ id,health_condition
 900400,at-risk
 900401,unhealthy
 900402,unhealthy
-900403,fit
+900403,at-risk
 900404,fit
 900405,unhealthy
 900406,at-risk
@@ -210559,7 +210559,7 @@ id,health_condition
 900645,at-risk
 900646,at-risk
 900647,at-risk
-900648,unhealthy
+900648,at-risk
 900649,unhealthy
 900650,at-risk
 900651,at-risk
@@ -210846,7 +210846,7 @@ id,health_condition
 900932,at-risk
 900933,at-risk
 900934,unhealthy
-900935,at-risk
+900935,unhealthy
 900936,at-risk
 900937,at-risk
 900938,at-risk
@@ -211442,7 +211442,7 @@ id,health_condition
 901528,at-risk
 901529,fit
 901530,at-risk
-901531,at-risk
+901531,unhealthy
 901532,at-risk
 901533,at-risk
 901534,unhealthy
@@ -211604,7 +211604,7 @@ id,health_condition
 901690,at-risk
 901691,fit
 901692,at-risk
-901693,at-risk
+901693,unhealthy
 901694,unhealthy
 901695,at-risk
 901696,at-risk
@@ -211840,7 +211840,7 @@ id,health_condition
 901926,at-risk
 901927,at-risk
 901928,at-risk
-901929,at-risk
+901929,unhealthy
 901930,at-risk
 901931,at-risk
 901932,at-risk
@@ -212564,7 +212564,7 @@ id,health_condition
 902650,at-risk
 902651,at-risk
 902652,at-risk
-902653,at-risk
+902653,unhealthy
 902654,at-risk
 902655,at-risk
 902656,at-risk
@@ -212661,7 +212661,7 @@ id,health_condition
 902747,at-risk
 902748,at-risk
 902749,at-risk
-902750,at-risk
+902750,unhealthy
 902751,unhealthy
 902752,at-risk
 902753,at-risk
@@ -213426,7 +213426,7 @@ id,health_condition
 903512,at-risk
 903513,at-risk
 903514,unhealthy
-903515,unhealthy
+903515,at-risk
 903516,at-risk
 903517,at-risk
 903518,at-risk
@@ -213841,7 +213841,7 @@ id,health_condition
 903927,at-risk
 903928,at-risk
 903929,at-risk
-903930,at-risk
+903930,fit
 903931,at-risk
 903932,at-risk
 903933,at-risk
@@ -213903,7 +213903,7 @@ id,health_condition
 903989,at-risk
 903990,at-risk
 903991,at-risk
-903992,at-risk
+903992,unhealthy
 903993,unhealthy
 903994,at-risk
 903995,at-risk
@@ -213982,7 +213982,7 @@ id,health_condition
 904068,at-risk
 904069,at-risk
 904070,at-risk
-904071,fit
+904071,at-risk
 904072,at-risk
 904073,at-risk
 904074,at-risk
@@ -214197,7 +214197,7 @@ id,health_condition
 904283,at-risk
 904284,at-risk
 904285,unhealthy
-904286,unhealthy
+904286,at-risk
 904287,at-risk
 904288,at-risk
 904289,at-risk
@@ -214282,7 +214282,7 @@ id,health_condition
 904368,at-risk
 904369,at-risk
 904370,at-risk
-904371,fit
+904371,at-risk
 904372,at-risk
 904373,at-risk
 904374,fit
@@ -214354,7 +214354,7 @@ id,health_condition
 904440,at-risk
 904441,fit
 904442,at-risk
-904443,at-risk
+904443,unhealthy
 904444,at-risk
 904445,at-risk
 904446,unhealthy
@@ -214430,7 +214430,7 @@ id,health_condition
 904516,at-risk
 904517,at-risk
 904518,fit
-904519,unhealthy
+904519,at-risk
 904520,at-risk
 904521,at-risk
 904522,at-risk
@@ -214466,7 +214466,7 @@ id,health_condition
 904552,at-risk
 904553,at-risk
 904554,at-risk
-904555,at-risk
+904555,unhealthy
 904556,at-risk
 904557,at-risk
 904558,at-risk
@@ -214633,7 +214633,7 @@ id,health_condition
 904719,at-risk
 904720,fit
 904721,at-risk
-904722,at-risk
+904722,unhealthy
 904723,at-risk
 904724,at-risk
 904725,at-risk
@@ -214673,7 +214673,7 @@ id,health_condition
 904759,at-risk
 904760,at-risk
 904761,at-risk
-904762,at-risk
+904762,unhealthy
 904763,unhealthy
 904764,at-risk
 904765,unhealthy
@@ -216026,7 +216026,7 @@ id,health_condition
 906112,at-risk
 906113,at-risk
 906114,unhealthy
-906115,at-risk
+906115,unhealthy
 906116,unhealthy
 906117,at-risk
 906118,at-risk
@@ -217526,7 +217526,7 @@ id,health_condition
 907612,at-risk
 907613,at-risk
 907614,unhealthy
-907615,unhealthy
+907615,at-risk
 907616,at-risk
 907617,unhealthy
 907618,at-risk
@@ -217553,7 +217553,7 @@ id,health_condition
 907639,at-risk
 907640,at-risk
 907641,at-risk
-907642,unhealthy
+907642,at-risk
 907643,at-risk
 907644,at-risk
 907645,fit
@@ -217767,7 +217767,7 @@ id,health_condition
 907853,at-risk
 907854,at-risk
 907855,at-risk
-907856,at-risk
+907856,unhealthy
 907857,at-risk
 907858,at-risk
 907859,at-risk
@@ -218121,7 +218121,7 @@ id,health_condition
 908207,at-risk
 908208,unhealthy
 908209,at-risk
-908210,at-risk
+908210,unhealthy
 908211,at-risk
 908212,at-risk
 908213,unhealthy
@@ -218176,7 +218176,7 @@ id,health_condition
 908262,at-risk
 908263,at-risk
 908264,at-risk
-908265,at-risk
+908265,unhealthy
 908266,at-risk
 908267,at-risk
 908268,at-risk
@@ -218232,7 +218232,7 @@ id,health_condition
 908318,at-risk
 908319,at-risk
 908320,at-risk
-908321,fit
+908321,at-risk
 908322,unhealthy
 908323,unhealthy
 908324,at-risk
@@ -218337,7 +218337,7 @@ id,health_condition
 908423,unhealthy
 908424,at-risk
 908425,at-risk
-908426,at-risk
+908426,unhealthy
 908427,fit
 908428,at-risk
 908429,unhealthy
@@ -219239,7 +219239,7 @@ id,health_condition
 909325,unhealthy
 909326,at-risk
 909327,at-risk
-909328,at-risk
+909328,unhealthy
 909329,at-risk
 909330,at-risk
 909331,fit
@@ -219315,7 +219315,7 @@ id,health_condition
 909401,at-risk
 909402,at-risk
 909403,at-risk
-909404,fit
+909404,at-risk
 909405,at-risk
 909406,at-risk
 909407,at-risk
@@ -219412,7 +219412,7 @@ id,health_condition
 909498,at-risk
 909499,at-risk
 909500,at-risk
-909501,at-risk
+909501,unhealthy
 909502,at-risk
 909503,at-risk
 909504,at-risk
@@ -219697,7 +219697,7 @@ id,health_condition
 909783,at-risk
 909784,at-risk
 909785,at-risk
-909786,at-risk
+909786,unhealthy
 909787,at-risk
 909788,at-risk
 909789,at-risk
@@ -219943,14 +219943,14 @@ id,health_condition
 910029,at-risk
 910030,at-risk
 910031,at-risk
-910032,at-risk
+910032,unhealthy
 910033,at-risk
 910034,fit
 910035,at-risk
 910036,at-risk
 910037,unhealthy
 910038,at-risk
-910039,at-risk
+910039,unhealthy
 910040,at-risk
 910041,unhealthy
 910042,at-risk
@@ -220032,7 +220032,7 @@ id,health_condition
 910118,at-risk
 910119,at-risk
 910120,unhealthy
-910121,at-risk
+910121,unhealthy
 910122,at-risk
 910123,unhealthy
 910124,unhealthy
@@ -220058,7 +220058,7 @@ id,health_condition
 910144,at-risk
 910145,at-risk
 910146,at-risk
-910147,at-risk
+910147,unhealthy
 910148,unhealthy
 910149,at-risk
 910150,at-risk
@@ -220101,7 +220101,7 @@ id,health_condition
 910187,at-risk
 910188,at-risk
 910189,at-risk
-910190,at-risk
+910190,unhealthy
 910191,at-risk
 910192,at-risk
 910193,at-risk
@@ -220765,7 +220765,7 @@ id,health_condition
 910851,at-risk
 910852,at-risk
 910853,at-risk
-910854,unhealthy
+910854,at-risk
 910855,fit
 910856,unhealthy
 910857,at-risk
@@ -221268,7 +221268,7 @@ id,health_condition
 911354,at-risk
 911355,at-risk
 911356,at-risk
-911357,fit
+911357,at-risk
 911358,at-risk
 911359,unhealthy
 911360,at-risk
@@ -221337,7 +221337,7 @@ id,health_condition
 911423,at-risk
 911424,at-risk
 911425,at-risk
-911426,at-risk
+911426,unhealthy
 911427,at-risk
 911428,at-risk
 911429,at-risk
@@ -221737,7 +221737,7 @@ id,health_condition
 911823,at-risk
 911824,at-risk
 911825,at-risk
-911826,unhealthy
+911826,at-risk
 911827,at-risk
 911828,unhealthy
 911829,at-risk
@@ -222106,7 +222106,7 @@ id,health_condition
 912192,fit
 912193,at-risk
 912194,at-risk
-912195,fit
+912195,at-risk
 912196,at-risk
 912197,at-risk
 912198,at-risk
@@ -222347,7 +222347,7 @@ id,health_condition
 912433,unhealthy
 912434,unhealthy
 912435,at-risk
-912436,at-risk
+912436,unhealthy
 912437,at-risk
 912438,at-risk
 912439,at-risk
@@ -223439,7 +223439,7 @@ id,health_condition
 913525,at-risk
 913526,at-risk
 913527,at-risk
-913528,unhealthy
+913528,fit
 913529,at-risk
 913530,fit
 913531,at-risk
@@ -223879,7 +223879,7 @@ id,health_condition
 913965,at-risk
 913966,at-risk
 913967,at-risk
-913968,fit
+913968,at-risk
 913969,at-risk
 913970,at-risk
 913971,at-risk
@@ -224024,7 +224024,7 @@ id,health_condition
 914110,at-risk
 914111,unhealthy
 914112,at-risk
-914113,at-risk
+914113,unhealthy
 914114,at-risk
 914115,at-risk
 914116,at-risk
@@ -224051,7 +224051,7 @@ id,health_condition
 914137,at-risk
 914138,at-risk
 914139,fit
-914140,at-risk
+914140,unhealthy
 914141,at-risk
 914142,at-risk
 914143,unhealthy
@@ -224155,7 +224155,7 @@ id,health_condition
 914241,at-risk
 914242,at-risk
 914243,at-risk
-914244,at-risk
+914244,unhealthy
 914245,at-risk
 914246,at-risk
 914247,unhealthy
@@ -224473,7 +224473,7 @@ id,health_condition
 914559,at-risk
 914560,at-risk
 914561,unhealthy
-914562,at-risk
+914562,unhealthy
 914563,at-risk
 914564,at-risk
 914565,fit
@@ -224580,7 +224580,7 @@ id,health_condition
 914666,at-risk
 914667,at-risk
 914668,at-risk
-914669,at-risk
+914669,unhealthy
 914670,at-risk
 914671,unhealthy
 914672,fit
@@ -224752,7 +224752,7 @@ id,health_condition
 914838,at-risk
 914839,unhealthy
 914840,at-risk
-914841,at-risk
+914841,unhealthy
 914842,fit
 914843,at-risk
 914844,at-risk
@@ -225465,7 +225465,7 @@ id,health_condition
 915551,at-risk
 915552,unhealthy
 915553,at-risk
-915554,at-risk
+915554,unhealthy
 915555,at-risk
 915556,at-risk
 915557,at-risk
@@ -225780,7 +225780,7 @@ id,health_condition
 915866,at-risk
 915867,at-risk
 915868,unhealthy
-915869,at-risk
+915869,unhealthy
 915870,at-risk
 915871,at-risk
 915872,at-risk
@@ -226086,7 +226086,7 @@ id,health_condition
 916172,at-risk
 916173,fit
 916174,unhealthy
-916175,at-risk
+916175,unhealthy
 916176,fit
 916177,at-risk
 916178,at-risk
@@ -226228,7 +226228,7 @@ id,health_condition
 916314,at-risk
 916315,at-risk
 916316,at-risk
-916317,fit
+916317,at-risk
 916318,fit
 916319,at-risk
 916320,at-risk
@@ -226263,7 +226263,7 @@ id,health_condition
 916349,at-risk
 916350,fit
 916351,at-risk
-916352,unhealthy
+916352,at-risk
 916353,at-risk
 916354,at-risk
 916355,at-risk
@@ -226889,7 +226889,7 @@ id,health_condition
 916975,at-risk
 916976,at-risk
 916977,at-risk
-916978,at-risk
+916978,unhealthy
 916979,at-risk
 916980,at-risk
 916981,at-risk
@@ -227137,7 +227137,7 @@ id,health_condition
 917223,at-risk
 917224,at-risk
 917225,at-risk
-917226,at-risk
+917226,unhealthy
 917227,at-risk
 917228,at-risk
 917229,at-risk
@@ -228955,7 +228955,7 @@ id,health_condition
 919041,fit
 919042,at-risk
 919043,at-risk
-919044,at-risk
+919044,unhealthy
 919045,unhealthy
 919046,at-risk
 919047,at-risk
@@ -229416,7 +229416,7 @@ id,health_condition
 919502,at-risk
 919503,at-risk
 919504,at-risk
-919505,at-risk
+919505,unhealthy
 919506,at-risk
 919507,at-risk
 919508,at-risk
@@ -229682,7 +229682,7 @@ id,health_condition
 919768,at-risk
 919769,at-risk
 919770,at-risk
-919771,at-risk
+919771,unhealthy
 919772,fit
 919773,at-risk
 919774,at-risk
@@ -229827,7 +229827,7 @@ id,health_condition
 919913,at-risk
 919914,at-risk
 919915,at-risk
-919916,at-risk
+919916,unhealthy
 919917,fit
 919918,at-risk
 919919,at-risk
@@ -229955,7 +229955,7 @@ id,health_condition
 920041,at-risk
 920042,at-risk
 920043,at-risk
-920044,at-risk
+920044,unhealthy
 920045,at-risk
 920046,at-risk
 920047,unhealthy
@@ -230074,7 +230074,7 @@ id,health_condition
 920160,at-risk
 920161,at-risk
 920162,at-risk
-920163,at-risk
+920163,unhealthy
 920164,at-risk
 920165,at-risk
 920166,at-risk
@@ -230114,7 +230114,7 @@ id,health_condition
 920200,unhealthy
 920201,at-risk
 920202,at-risk
-920203,fit
+920203,at-risk
 920204,at-risk
 920205,fit
 920206,at-risk
@@ -230169,8 +230169,8 @@ id,health_condition
 920255,at-risk
 920256,fit
 920257,at-risk
-920258,at-risk
-920259,at-risk
+920258,unhealthy
+920259,unhealthy
 920260,at-risk
 920261,at-risk
 920262,unhealthy
@@ -230267,13 +230267,13 @@ id,health_condition
 920353,fit
 920354,at-risk
 920355,at-risk
-920356,at-risk
+920356,unhealthy
 920357,at-risk
 920358,at-risk
 920359,fit
 920360,at-risk
 920361,at-risk
-920362,at-risk
+920362,unhealthy
 920363,at-risk
 920364,unhealthy
 920365,at-risk
@@ -230961,7 +230961,7 @@ id,health_condition
 921047,fit
 921048,at-risk
 921049,unhealthy
-921050,at-risk
+921050,unhealthy
 921051,at-risk
 921052,at-risk
 921053,at-risk
@@ -231442,7 +231442,7 @@ id,health_condition
 921528,at-risk
 921529,at-risk
 921530,at-risk
-921531,fit
+921531,at-risk
 921532,at-risk
 921533,at-risk
 921534,at-risk
@@ -231897,7 +231897,7 @@ id,health_condition
 921983,at-risk
 921984,at-risk
 921985,unhealthy
-921986,at-risk
+921986,unhealthy
 921987,at-risk
 921988,at-risk
 921989,unhealthy
@@ -231945,7 +231945,7 @@ id,health_condition
 922031,at-risk
 922032,at-risk
 922033,unhealthy
-922034,at-risk
+922034,unhealthy
 922035,at-risk
 922036,at-risk
 922037,at-risk
@@ -232224,7 +232224,7 @@ id,health_condition
 922310,at-risk
 922311,at-risk
 922312,at-risk
-922313,at-risk
+922313,unhealthy
 922314,at-risk
 922315,at-risk
 922316,at-risk
@@ -232590,7 +232590,7 @@ id,health_condition
 922676,at-risk
 922677,at-risk
 922678,at-risk
-922679,at-risk
+922679,unhealthy
 922680,unhealthy
 922681,at-risk
 922682,fit
@@ -232735,7 +232735,7 @@ id,health_condition
 922821,at-risk
 922822,at-risk
 922823,at-risk
-922824,at-risk
+922824,unhealthy
 922825,at-risk
 922826,at-risk
 922827,unhealthy
@@ -233164,7 +233164,7 @@ id,health_condition
 923250,at-risk
 923251,at-risk
 923252,at-risk
-923253,at-risk
+923253,unhealthy
 923254,at-risk
 923255,fit
 923256,at-risk
@@ -233653,7 +233653,7 @@ id,health_condition
 923739,at-risk
 923740,at-risk
 923741,at-risk
-923742,at-risk
+923742,unhealthy
 923743,at-risk
 923744,at-risk
 923745,at-risk
@@ -233886,7 +233886,7 @@ id,health_condition
 923972,at-risk
 923973,at-risk
 923974,at-risk
-923975,at-risk
+923975,unhealthy
 923976,at-risk
 923977,at-risk
 923978,unhealthy
@@ -233944,7 +233944,7 @@ id,health_condition
 924030,at-risk
 924031,at-risk
 924032,at-risk
-924033,unhealthy
+924033,fit
 924034,at-risk
 924035,at-risk
 924036,at-risk
@@ -234995,7 +234995,7 @@ id,health_condition
 925081,at-risk
 925082,at-risk
 925083,at-risk
-925084,at-risk
+925084,unhealthy
 925085,at-risk
 925086,at-risk
 925087,at-risk
@@ -235390,7 +235390,7 @@ id,health_condition
 925476,at-risk
 925477,at-risk
 925478,at-risk
-925479,at-risk
+925479,unhealthy
 925480,at-risk
 925481,at-risk
 925482,at-risk
@@ -235834,7 +235834,7 @@ id,health_condition
 925920,at-risk
 925921,at-risk
 925922,at-risk
-925923,at-risk
+925923,unhealthy
 925924,at-risk
 925925,fit
 925926,at-risk
@@ -236461,7 +236461,7 @@ id,health_condition
 926547,at-risk
 926548,unhealthy
 926549,at-risk
-926550,unhealthy
+926550,at-risk
 926551,at-risk
 926552,at-risk
 926553,at-risk
@@ -236554,7 +236554,7 @@ id,health_condition
 926640,at-risk
 926641,at-risk
 926642,fit
-926643,at-risk
+926643,unhealthy
 926644,fit
 926645,at-risk
 926646,at-risk
@@ -236567,7 +236567,7 @@ id,health_condition
 926653,at-risk
 926654,at-risk
 926655,at-risk
-926656,at-risk
+926656,unhealthy
 926657,at-risk
 926658,at-risk
 926659,at-risk
@@ -237301,7 +237301,7 @@ id,health_condition
 927387,at-risk
 927388,at-risk
 927389,fit
-927390,unhealthy
+927390,at-risk
 927391,at-risk
 927392,at-risk
 927393,at-risk
@@ -237378,7 +237378,7 @@ id,health_condition
 927464,at-risk
 927465,at-risk
 927466,at-risk
-927467,at-risk
+927467,unhealthy
 927468,at-risk
 927469,at-risk
 927470,at-risk
@@ -237433,7 +237433,7 @@ id,health_condition
 927519,at-risk
 927520,at-risk
 927521,at-risk
-927522,at-risk
+927522,unhealthy
 927523,at-risk
 927524,at-risk
 927525,at-risk
@@ -238039,8 +238039,8 @@ id,health_condition
 928125,at-risk
 928126,at-risk
 928127,at-risk
-928128,at-risk
-928129,unhealthy
+928128,unhealthy
+928129,at-risk
 928130,at-risk
 928131,at-risk
 928132,at-risk
@@ -238635,7 +238635,7 @@ id,health_condition
 928721,unhealthy
 928722,at-risk
 928723,at-risk
-928724,at-risk
+928724,unhealthy
 928725,at-risk
 928726,at-risk
 928727,at-risk
@@ -238863,7 +238863,7 @@ id,health_condition
 928949,at-risk
 928950,at-risk
 928951,at-risk
-928952,fit
+928952,at-risk
 928953,at-risk
 928954,at-risk
 928955,at-risk
@@ -238891,7 +238891,7 @@ id,health_condition
 928977,at-risk
 928978,at-risk
 928979,at-risk
-928980,fit
+928980,at-risk
 928981,unhealthy
 928982,at-risk
 928983,at-risk
@@ -239187,7 +239187,7 @@ id,health_condition
 929273,at-risk
 929274,at-risk
 929275,at-risk
-929276,fit
+929276,at-risk
 929277,at-risk
 929278,at-risk
 929279,at-risk
@@ -239386,7 +239386,7 @@ id,health_condition
 929472,at-risk
 929473,at-risk
 929474,at-risk
-929475,at-risk
+929475,unhealthy
 929476,at-risk
 929477,at-risk
 929478,at-risk
@@ -239526,7 +239526,7 @@ id,health_condition
 929612,at-risk
 929613,at-risk
 929614,at-risk
-929615,at-risk
+929615,unhealthy
 929616,at-risk
 929617,at-risk
 929618,unhealthy
@@ -239581,7 +239581,7 @@ id,health_condition
 929667,at-risk
 929668,at-risk
 929669,fit
-929670,at-risk
+929670,unhealthy
 929671,at-risk
 929672,unhealthy
 929673,at-risk
@@ -239688,7 +239688,7 @@ id,health_condition
 929774,at-risk
 929775,at-risk
 929776,at-risk
-929777,fit
+929777,at-risk
 929778,unhealthy
 929779,at-risk
 929780,at-risk
@@ -240091,7 +240091,7 @@ id,health_condition
 930177,at-risk
 930178,at-risk
 930179,at-risk
-930180,unhealthy
+930180,at-risk
 930181,at-risk
 930182,at-risk
 930183,fit
@@ -240626,7 +240626,7 @@ id,health_condition
 930712,at-risk
 930713,at-risk
 930714,at-risk
-930715,at-risk
+930715,unhealthy
 930716,at-risk
 930717,at-risk
 930718,unhealthy
@@ -240678,7 +240678,7 @@ id,health_condition
 930764,at-risk
 930765,at-risk
 930766,at-risk
-930767,at-risk
+930767,unhealthy
 930768,at-risk
 930769,at-risk
 930770,at-risk
@@ -240820,7 +240820,7 @@ id,health_condition
 930906,at-risk
 930907,unhealthy
 930908,unhealthy
-930909,unhealthy
+930909,at-risk
 930910,unhealthy
 930911,at-risk
 930912,at-risk
@@ -241126,7 +241126,7 @@ id,health_condition
 931212,at-risk
 931213,at-risk
 931214,at-risk
-931215,at-risk
+931215,unhealthy
 931216,at-risk
 931217,at-risk
 931218,at-risk
@@ -241154,7 +241154,7 @@ id,health_condition
 931240,at-risk
 931241,fit
 931242,unhealthy
-931243,fit
+931243,at-risk
 931244,at-risk
 931245,at-risk
 931246,at-risk
@@ -241347,7 +241347,7 @@ id,health_condition
 931433,at-risk
 931434,at-risk
 931435,unhealthy
-931436,at-risk
+931436,unhealthy
 931437,unhealthy
 931438,at-risk
 931439,at-risk
@@ -241364,7 +241364,7 @@ id,health_condition
 931450,unhealthy
 931451,fit
 931452,at-risk
-931453,at-risk
+931453,unhealthy
 931454,unhealthy
 931455,at-risk
 931456,at-risk
@@ -241509,7 +241509,7 @@ id,health_condition
 931595,at-risk
 931596,at-risk
 931597,at-risk
-931598,at-risk
+931598,unhealthy
 931599,fit
 931600,fit
 931601,at-risk
@@ -241667,7 +241667,7 @@ id,health_condition
 931753,unhealthy
 931754,fit
 931755,at-risk
-931756,at-risk
+931756,unhealthy
 931757,at-risk
 931758,at-risk
 931759,at-risk
@@ -241761,7 +241761,7 @@ id,health_condition
 931847,at-risk
 931848,at-risk
 931849,at-risk
-931850,at-risk
+931850,unhealthy
 931851,at-risk
 931852,at-risk
 931853,unhealthy
@@ -243016,7 +243016,7 @@ id,health_condition
 933102,at-risk
 933103,at-risk
 933104,unhealthy
-933105,at-risk
+933105,unhealthy
 933106,at-risk
 933107,at-risk
 933108,at-risk
@@ -243382,7 +243382,7 @@ id,health_condition
 933468,at-risk
 933469,at-risk
 933470,at-risk
-933471,fit
+933471,at-risk
 933472,at-risk
 933473,at-risk
 933474,unhealthy
@@ -243652,7 +243652,7 @@ id,health_condition
 933738,at-risk
 933739,at-risk
 933740,at-risk
-933741,at-risk
+933741,unhealthy
 933742,at-risk
 933743,at-risk
 933744,at-risk
@@ -244228,7 +244228,7 @@ id,health_condition
 934314,at-risk
 934315,at-risk
 934316,at-risk
-934317,fit
+934317,unhealthy
 934318,at-risk
 934319,at-risk
 934320,at-risk
@@ -244311,7 +244311,7 @@ id,health_condition
 934397,fit
 934398,at-risk
 934399,at-risk
-934400,at-risk
+934400,unhealthy
 934401,at-risk
 934402,at-risk
 934403,at-risk
@@ -244397,7 +244397,7 @@ id,health_condition
 934483,at-risk
 934484,at-risk
 934485,at-risk
-934486,at-risk
+934486,unhealthy
 934487,at-risk
 934488,at-risk
 934489,at-risk
@@ -244417,7 +244417,7 @@ id,health_condition
 934503,at-risk
 934504,at-risk
 934505,at-risk
-934506,fit
+934506,at-risk
 934507,at-risk
 934508,unhealthy
 934509,at-risk
@@ -244552,7 +244552,7 @@ id,health_condition
 934638,at-risk
 934639,fit
 934640,unhealthy
-934641,unhealthy
+934641,at-risk
 934642,at-risk
 934643,at-risk
 934644,at-risk
@@ -244718,7 +244718,7 @@ id,health_condition
 934804,at-risk
 934805,at-risk
 934806,at-risk
-934807,at-risk
+934807,unhealthy
 934808,fit
 934809,at-risk
 934810,at-risk
@@ -245109,7 +245109,7 @@ id,health_condition
 935195,at-risk
 935196,at-risk
 935197,unhealthy
-935198,at-risk
+935198,unhealthy
 935199,at-risk
 935200,at-risk
 935201,unhealthy
@@ -245308,7 +245308,7 @@ id,health_condition
 935394,unhealthy
 935395,at-risk
 935396,at-risk
-935397,unhealthy
+935397,at-risk
 935398,at-risk
 935399,at-risk
 935400,at-risk
@@ -245620,7 +245620,7 @@ id,health_condition
 935706,at-risk
 935707,at-risk
 935708,at-risk
-935709,fit
+935709,at-risk
 935710,at-risk
 935711,at-risk
 935712,at-risk
@@ -245852,7 +245852,7 @@ id,health_condition
 935938,at-risk
 935939,at-risk
 935940,at-risk
-935941,at-risk
+935941,unhealthy
 935942,at-risk
 935943,at-risk
 935944,at-risk
@@ -246287,7 +246287,7 @@ id,health_condition
 936373,at-risk
 936374,unhealthy
 936375,at-risk
-936376,at-risk
+936376,unhealthy
 936377,at-risk
 936378,fit
 936379,at-risk
@@ -246432,7 +246432,7 @@ id,health_condition
 936518,at-risk
 936519,at-risk
 936520,at-risk
-936521,at-risk
+936521,unhealthy
 936522,fit
 936523,at-risk
 936524,unhealthy
@@ -246537,7 +246537,7 @@ id,health_condition
 936623,at-risk
 936624,at-risk
 936625,at-risk
-936626,at-risk
+936626,unhealthy
 936627,unhealthy
 936628,at-risk
 936629,at-risk
@@ -246646,7 +246646,7 @@ id,health_condition
 936732,at-risk
 936733,at-risk
 936734,unhealthy
-936735,at-risk
+936735,unhealthy
 936736,at-risk
 936737,at-risk
 936738,at-risk
@@ -246722,7 +246722,7 @@ id,health_condition
 936808,at-risk
 936809,at-risk
 936810,at-risk
-936811,unhealthy
+936811,at-risk
 936812,at-risk
 936813,at-risk
 936814,at-risk
@@ -246740,7 +246740,7 @@ id,health_condition
 936826,at-risk
 936827,at-risk
 936828,unhealthy
-936829,at-risk
+936829,fit
 936830,at-risk
 936831,at-risk
 936832,at-risk
@@ -247251,7 +247251,7 @@ id,health_condition
 937337,at-risk
 937338,at-risk
 937339,at-risk
-937340,at-risk
+937340,unhealthy
 937341,at-risk
 937342,at-risk
 937343,at-risk
@@ -248009,7 +248009,7 @@ id,health_condition
 938095,at-risk
 938096,at-risk
 938097,at-risk
-938098,at-risk
+938098,unhealthy
 938099,unhealthy
 938100,at-risk
 938101,at-risk
@@ -248418,7 +248418,7 @@ id,health_condition
 938504,at-risk
 938505,at-risk
 938506,at-risk
-938507,at-risk
+938507,unhealthy
 938508,at-risk
 938509,at-risk
 938510,at-risk
@@ -248574,7 +248574,7 @@ id,health_condition
 938660,fit
 938661,at-risk
 938662,at-risk
-938663,at-risk
+938663,unhealthy
 938664,unhealthy
 938665,fit
 938666,unhealthy
@@ -248618,7 +248618,7 @@ id,health_condition
 938704,unhealthy
 938705,at-risk
 938706,at-risk
-938707,unhealthy
+938707,at-risk
 938708,unhealthy
 938709,at-risk
 938710,at-risk
@@ -248815,7 +248815,7 @@ id,health_condition
 938901,at-risk
 938902,at-risk
 938903,at-risk
-938904,fit
+938904,at-risk
 938905,unhealthy
 938906,at-risk
 938907,at-risk
@@ -248839,7 +248839,7 @@ id,health_condition
 938925,at-risk
 938926,at-risk
 938927,at-risk
-938928,at-risk
+938928,unhealthy
 938929,at-risk
 938930,at-risk
 938931,at-risk
@@ -249003,7 +249003,7 @@ id,health_condition
 939089,at-risk
 939090,at-risk
 939091,unhealthy
-939092,fit
+939092,at-risk
 939093,at-risk
 939094,at-risk
 939095,at-risk
@@ -249727,7 +249727,7 @@ id,health_condition
 939813,at-risk
 939814,unhealthy
 939815,at-risk
-939816,at-risk
+939816,unhealthy
 939817,at-risk
 939818,at-risk
 939819,at-risk
@@ -249755,7 +249755,7 @@ id,health_condition
 939841,at-risk
 939842,at-risk
 939843,at-risk
-939844,at-risk
+939844,unhealthy
 939845,at-risk
 939846,fit
 939847,at-risk
@@ -250259,7 +250259,7 @@ id,health_condition
 940345,at-risk
 940346,at-risk
 940347,at-risk
-940348,at-risk
+940348,unhealthy
 940349,at-risk
 940350,at-risk
 940351,at-risk
@@ -251330,7 +251330,7 @@ id,health_condition
 941416,at-risk
 941417,fit
 941418,at-risk
-941419,fit
+941419,at-risk
 941420,at-risk
 941421,unhealthy
 941422,unhealthy
@@ -252281,7 +252281,7 @@ id,health_condition
 942367,at-risk
 942368,at-risk
 942369,at-risk
-942370,at-risk
+942370,unhealthy
 942371,at-risk
 942372,fit
 942373,at-risk
@@ -252301,7 +252301,7 @@ id,health_condition
 942387,unhealthy
 942388,at-risk
 942389,at-risk
-942390,at-risk
+942390,unhealthy
 942391,at-risk
 942392,at-risk
 942393,unhealthy
@@ -252456,7 +252456,7 @@ id,health_condition
 942542,fit
 942543,at-risk
 942544,at-risk
-942545,at-risk
+942545,unhealthy
 942546,at-risk
 942547,unhealthy
 942548,at-risk
@@ -252543,7 +252543,7 @@ id,health_condition
 942629,at-risk
 942630,at-risk
 942631,at-risk
-942632,at-risk
+942632,unhealthy
 942633,at-risk
 942634,at-risk
 942635,at-risk
@@ -253361,7 +253361,7 @@ id,health_condition
 943447,at-risk
 943448,at-risk
 943449,unhealthy
-943450,unhealthy
+943450,at-risk
 943451,at-risk
 943452,at-risk
 943453,at-risk
@@ -253585,7 +253585,7 @@ id,health_condition
 943671,at-risk
 943672,at-risk
 943673,unhealthy
-943674,fit
+943674,at-risk
 943675,unhealthy
 943676,at-risk
 943677,fit
@@ -253822,9 +253822,9 @@ id,health_condition
 943908,at-risk
 943909,fit
 943910,at-risk
-943911,at-risk
+943911,fit
 943912,at-risk
-943913,at-risk
+943913,unhealthy
 943914,at-risk
 943915,at-risk
 943916,at-risk
@@ -254855,7 +254855,7 @@ id,health_condition
 944941,at-risk
 944942,at-risk
 944943,at-risk
-944944,at-risk
+944944,unhealthy
 944945,at-risk
 944946,at-risk
 944947,at-risk
@@ -254964,7 +254964,7 @@ id,health_condition
 945050,at-risk
 945051,at-risk
 945052,at-risk
-945053,unhealthy
+945053,at-risk
 945054,at-risk
 945055,at-risk
 945056,at-risk
@@ -256148,7 +256148,7 @@ id,health_condition
 946234,at-risk
 946235,fit
 946236,at-risk
-946237,fit
+946237,unhealthy
 946238,unhealthy
 946239,at-risk
 946240,unhealthy
@@ -256376,7 +256376,7 @@ id,health_condition
 946462,at-risk
 946463,at-risk
 946464,at-risk
-946465,at-risk
+946465,unhealthy
 946466,at-risk
 946467,at-risk
 946468,at-risk
@@ -256565,7 +256565,7 @@ id,health_condition
 946651,fit
 946652,at-risk
 946653,at-risk
-946654,at-risk
+946654,unhealthy
 946655,at-risk
 946656,at-risk
 946657,at-risk
@@ -256685,7 +256685,7 @@ id,health_condition
 946771,at-risk
 946772,at-risk
 946773,at-risk
-946774,fit
+946774,at-risk
 946775,at-risk
 946776,at-risk
 946777,at-risk
@@ -257093,7 +257093,7 @@ id,health_condition
 947179,at-risk
 947180,at-risk
 947181,at-risk
-947182,fit
+947182,at-risk
 947183,fit
 947184,at-risk
 947185,at-risk
@@ -257119,7 +257119,7 @@ id,health_condition
 947205,at-risk
 947206,at-risk
 947207,at-risk
-947208,fit
+947208,at-risk
 947209,at-risk
 947210,at-risk
 947211,at-risk
@@ -257171,7 +257171,7 @@ id,health_condition
 947257,at-risk
 947258,fit
 947259,at-risk
-947260,at-risk
+947260,unhealthy
 947261,at-risk
 947262,at-risk
 947263,at-risk
@@ -257247,9 +257247,9 @@ id,health_condition
 947333,at-risk
 947334,unhealthy
 947335,at-risk
-947336,at-risk
+947336,unhealthy
 947337,at-risk
-947338,unhealthy
+947338,at-risk
 947339,at-risk
 947340,at-risk
 947341,at-risk
@@ -257418,7 +257418,7 @@ id,health_condition
 947504,unhealthy
 947505,at-risk
 947506,at-risk
-947507,at-risk
+947507,unhealthy
 947508,at-risk
 947509,at-risk
 947510,at-risk
@@ -257831,7 +257831,7 @@ id,health_condition
 947917,unhealthy
 947918,at-risk
 947919,at-risk
-947920,at-risk
+947920,unhealthy
 947921,at-risk
 947922,at-risk
 947923,fit
@@ -258060,7 +258060,7 @@ id,health_condition
 948146,at-risk
 948147,at-risk
 948148,at-risk
-948149,fit
+948149,at-risk
 948150,fit
 948151,at-risk
 948152,at-risk
@@ -258099,7 +258099,7 @@ id,health_condition
 948185,at-risk
 948186,at-risk
 948187,at-risk
-948188,at-risk
+948188,unhealthy
 948189,at-risk
 948190,at-risk
 948191,at-risk
@@ -258328,7 +258328,7 @@ id,health_condition
 948414,fit
 948415,at-risk
 948416,at-risk
-948417,at-risk
+948417,unhealthy
 948418,at-risk
 948419,at-risk
 948420,at-risk
@@ -258365,7 +258365,7 @@ id,health_condition
 948451,at-risk
 948452,at-risk
 948453,at-risk
-948454,unhealthy
+948454,at-risk
 948455,at-risk
 948456,at-risk
 948457,at-risk
@@ -258711,7 +258711,7 @@ id,health_condition
 948797,at-risk
 948798,at-risk
 948799,unhealthy
-948800,fit
+948800,at-risk
 948801,at-risk
 948802,at-risk
 948803,fit
@@ -258733,7 +258733,7 @@ id,health_condition
 948819,at-risk
 948820,at-risk
 948821,at-risk
-948822,unhealthy
+948822,at-risk
 948823,at-risk
 948824,at-risk
 948825,at-risk
@@ -259297,7 +259297,7 @@ id,health_condition
 949383,at-risk
 949384,at-risk
 949385,at-risk
-949386,at-risk
+949386,unhealthy
 949387,at-risk
 949388,at-risk
 949389,at-risk
@@ -259682,7 +259682,7 @@ id,health_condition
 949768,at-risk
 949769,at-risk
 949770,at-risk
-949771,at-risk
+949771,unhealthy
 949772,at-risk
 949773,at-risk
 949774,fit
@@ -260145,7 +260145,7 @@ id,health_condition
 950231,at-risk
 950232,at-risk
 950233,at-risk
-950234,at-risk
+950234,unhealthy
 950235,at-risk
 950236,at-risk
 950237,at-risk
@@ -260375,7 +260375,7 @@ id,health_condition
 950461,at-risk
 950462,at-risk
 950463,at-risk
-950464,unhealthy
+950464,at-risk
 950465,at-risk
 950466,at-risk
 950467,at-risk
@@ -260585,7 +260585,7 @@ id,health_condition
 950671,at-risk
 950672,unhealthy
 950673,at-risk
-950674,at-risk
+950674,unhealthy
 950675,at-risk
 950676,at-risk
 950677,at-risk
@@ -261955,7 +261955,7 @@ id,health_condition
 952041,at-risk
 952042,at-risk
 952043,at-risk
-952044,at-risk
+952044,unhealthy
 952045,at-risk
 952046,fit
 952047,at-risk
@@ -262523,7 +262523,7 @@ id,health_condition
 952609,fit
 952610,at-risk
 952611,at-risk
-952612,fit
+952612,at-risk
 952613,at-risk
 952614,at-risk
 952615,at-risk
@@ -262542,7 +262542,7 @@ id,health_condition
 952628,at-risk
 952629,at-risk
 952630,at-risk
-952631,at-risk
+952631,unhealthy
 952632,at-risk
 952633,fit
 952634,at-risk
@@ -262633,7 +262633,7 @@ id,health_condition
 952719,at-risk
 952720,at-risk
 952721,fit
-952722,at-risk
+952722,unhealthy
 952723,at-risk
 952724,unhealthy
 952725,at-risk
@@ -262669,7 +262669,7 @@ id,health_condition
 952755,at-risk
 952756,at-risk
 952757,at-risk
-952758,at-risk
+952758,unhealthy
 952759,at-risk
 952760,at-risk
 952761,unhealthy
@@ -262753,7 +262753,7 @@ id,health_condition
 952839,fit
 952840,at-risk
 952841,at-risk
-952842,at-risk
+952842,unhealthy
 952843,fit
 952844,at-risk
 952845,unhealthy
@@ -263045,7 +263045,7 @@ id,health_condition
 953131,at-risk
 953132,at-risk
 953133,at-risk
-953134,fit
+953134,at-risk
 953135,unhealthy
 953136,at-risk
 953137,at-risk
@@ -263357,7 +263357,7 @@ id,health_condition
 953443,at-risk
 953444,at-risk
 953445,at-risk
-953446,unhealthy
+953446,at-risk
 953447,at-risk
 953448,at-risk
 953449,at-risk
@@ -264506,7 +264506,7 @@ id,health_condition
 954592,at-risk
 954593,at-risk
 954594,at-risk
-954595,at-risk
+954595,unhealthy
 954596,at-risk
 954597,at-risk
 954598,at-risk
@@ -264605,7 +264605,7 @@ id,health_condition
 954691,at-risk
 954692,at-risk
 954693,at-risk
-954694,at-risk
+954694,unhealthy
 954695,at-risk
 954696,unhealthy
 954697,unhealthy
@@ -264730,7 +264730,7 @@ id,health_condition
 954816,at-risk
 954817,at-risk
 954818,at-risk
-954819,at-risk
+954819,unhealthy
 954820,at-risk
 954821,at-risk
 954822,unhealthy
@@ -264774,7 +264774,7 @@ id,health_condition
 954860,at-risk
 954861,unhealthy
 954862,fit
-954863,at-risk
+954863,unhealthy
 954864,unhealthy
 954865,at-risk
 954866,at-risk
@@ -265735,7 +265735,7 @@ id,health_condition
 955821,at-risk
 955822,at-risk
 955823,at-risk
-955824,unhealthy
+955824,fit
 955825,fit
 955826,at-risk
 955827,at-risk
@@ -266162,7 +266162,7 @@ id,health_condition
 956248,at-risk
 956249,unhealthy
 956250,at-risk
-956251,at-risk
+956251,unhealthy
 956252,at-risk
 956253,at-risk
 956254,at-risk
@@ -266213,7 +266213,7 @@ id,health_condition
 956299,fit
 956300,at-risk
 956301,at-risk
-956302,at-risk
+956302,unhealthy
 956303,at-risk
 956304,at-risk
 956305,at-risk
@@ -266886,7 +266886,7 @@ id,health_condition
 956972,at-risk
 956973,at-risk
 956974,at-risk
-956975,fit
+956975,at-risk
 956976,at-risk
 956977,at-risk
 956978,unhealthy
@@ -267179,7 +267179,7 @@ id,health_condition
 957265,unhealthy
 957266,fit
 957267,at-risk
-957268,at-risk
+957268,unhealthy
 957269,at-risk
 957270,at-risk
 957271,at-risk
@@ -268299,7 +268299,7 @@ id,health_condition
 958385,at-risk
 958386,at-risk
 958387,at-risk
-958388,at-risk
+958388,unhealthy
 958389,unhealthy
 958390,at-risk
 958391,at-risk
@@ -268910,7 +268910,7 @@ id,health_condition
 958996,at-risk
 958997,unhealthy
 958998,at-risk
-958999,at-risk
+958999,unhealthy
 959000,at-risk
 959001,at-risk
 959002,at-risk
@@ -269557,7 +269557,7 @@ id,health_condition
 959643,at-risk
 959644,fit
 959645,at-risk
-959646,at-risk
+959646,unhealthy
 959647,at-risk
 959648,fit
 959649,at-risk
@@ -269688,7 +269688,7 @@ id,health_condition
 959774,at-risk
 959775,at-risk
 959776,at-risk
-959777,at-risk
+959777,unhealthy
 959778,at-risk
 959779,at-risk
 959780,at-risk
@@ -270897,7 +270897,7 @@ id,health_condition
 960983,at-risk
 960984,fit
 960985,at-risk
-960986,at-risk
+960986,unhealthy
 960987,at-risk
 960988,fit
 960989,at-risk
@@ -270979,7 +270979,7 @@ id,health_condition
 961065,at-risk
 961066,at-risk
 961067,unhealthy
-961068,at-risk
+961068,unhealthy
 961069,unhealthy
 961070,at-risk
 961071,at-risk
@@ -271117,7 +271117,7 @@ id,health_condition
 961203,at-risk
 961204,at-risk
 961205,at-risk
-961206,at-risk
+961206,unhealthy
 961207,at-risk
 961208,at-risk
 961209,at-risk
@@ -273366,7 +273366,7 @@ id,health_condition
 963452,at-risk
 963453,at-risk
 963454,at-risk
-963455,fit
+963455,at-risk
 963456,at-risk
 963457,at-risk
 963458,at-risk
@@ -273586,7 +273586,7 @@ id,health_condition
 963672,at-risk
 963673,at-risk
 963674,at-risk
-963675,at-risk
+963675,unhealthy
 963676,at-risk
 963677,fit
 963678,at-risk
@@ -273959,7 +273959,7 @@ id,health_condition
 964045,at-risk
 964046,at-risk
 964047,unhealthy
-964048,at-risk
+964048,unhealthy
 964049,at-risk
 964050,at-risk
 964051,at-risk
@@ -274242,7 +274242,7 @@ id,health_condition
 964328,at-risk
 964329,at-risk
 964330,fit
-964331,unhealthy
+964331,at-risk
 964332,at-risk
 964333,at-risk
 964334,at-risk
@@ -274952,7 +274952,7 @@ id,health_condition
 965038,at-risk
 965039,at-risk
 965040,at-risk
-965041,at-risk
+965041,fit
 965042,unhealthy
 965043,at-risk
 965044,at-risk
@@ -274966,7 +274966,7 @@ id,health_condition
 965052,at-risk
 965053,at-risk
 965054,at-risk
-965055,at-risk
+965055,unhealthy
 965056,at-risk
 965057,at-risk
 965058,unhealthy
@@ -275989,7 +275989,7 @@ id,health_condition
 966075,at-risk
 966076,at-risk
 966077,unhealthy
-966078,at-risk
+966078,unhealthy
 966079,at-risk
 966080,at-risk
 966081,at-risk
@@ -276917,7 +276917,7 @@ id,health_condition
 967003,at-risk
 967004,at-risk
 967005,at-risk
-967006,at-risk
+967006,unhealthy
 967007,at-risk
 967008,at-risk
 967009,at-risk
@@ -277859,7 +277859,7 @@ id,health_condition
 967945,at-risk
 967946,at-risk
 967947,at-risk
-967948,at-risk
+967948,unhealthy
 967949,at-risk
 967950,at-risk
 967951,at-risk
@@ -277964,7 +277964,7 @@ id,health_condition
 968050,at-risk
 968051,at-risk
 968052,at-risk
-968053,unhealthy
+968053,fit
 968054,at-risk
 968055,at-risk
 968056,at-risk
@@ -278127,7 +278127,7 @@ id,health_condition
 968213,at-risk
 968214,at-risk
 968215,at-risk
-968216,at-risk
+968216,unhealthy
 968217,unhealthy
 968218,at-risk
 968219,unhealthy
@@ -278254,7 +278254,7 @@ id,health_condition
 968340,unhealthy
 968341,at-risk
 968342,at-risk
-968343,at-risk
+968343,unhealthy
 968344,at-risk
 968345,at-risk
 968346,unhealthy
@@ -278473,7 +278473,7 @@ id,health_condition
 968559,at-risk
 968560,at-risk
 968561,at-risk
-968562,unhealthy
+968562,at-risk
 968563,unhealthy
 968564,at-risk
 968565,at-risk
@@ -278486,7 +278486,7 @@ id,health_condition
 968572,at-risk
 968573,at-risk
 968574,at-risk
-968575,at-risk
+968575,unhealthy
 968576,at-risk
 968577,unhealthy
 968578,at-risk
@@ -278792,7 +278792,7 @@ id,health_condition
 968878,at-risk
 968879,unhealthy
 968880,unhealthy
-968881,at-risk
+968881,unhealthy
 968882,at-risk
 968883,unhealthy
 968884,at-risk
@@ -279057,7 +279057,7 @@ id,health_condition
 969143,at-risk
 969144,unhealthy
 969145,at-risk
-969146,fit
+969146,at-risk
 969147,at-risk
 969148,at-risk
 969149,at-risk
@@ -279227,7 +279227,7 @@ id,health_condition
 969313,at-risk
 969314,unhealthy
 969315,at-risk
-969316,at-risk
+969316,unhealthy
 969317,at-risk
 969318,at-risk
 969319,fit
@@ -279294,7 +279294,7 @@ id,health_condition
 969380,at-risk
 969381,at-risk
 969382,unhealthy
-969383,at-risk
+969383,unhealthy
 969384,unhealthy
 969385,at-risk
 969386,at-risk
@@ -279429,7 +279429,7 @@ id,health_condition
 969515,at-risk
 969516,at-risk
 969517,unhealthy
-969518,unhealthy
+969518,at-risk
 969519,at-risk
 969520,at-risk
 969521,at-risk
@@ -281006,7 +281006,7 @@ id,health_condition
 971092,at-risk
 971093,at-risk
 971094,at-risk
-971095,at-risk
+971095,fit
 971096,at-risk
 971097,fit
 971098,at-risk
@@ -281192,7 +281192,7 @@ id,health_condition
 971278,at-risk
 971279,at-risk
 971280,at-risk
-971281,unhealthy
+971281,at-risk
 971282,at-risk
 971283,at-risk
 971284,at-risk
@@ -281821,7 +281821,7 @@ id,health_condition
 971907,at-risk
 971908,at-risk
 971909,at-risk
-971910,at-risk
+971910,unhealthy
 971911,at-risk
 971912,at-risk
 971913,at-risk
@@ -282419,7 +282419,7 @@ id,health_condition
 972505,unhealthy
 972506,at-risk
 972507,at-risk
-972508,at-risk
+972508,unhealthy
 972509,at-risk
 972510,at-risk
 972511,at-risk
@@ -282675,7 +282675,7 @@ id,health_condition
 972761,at-risk
 972762,at-risk
 972763,unhealthy
-972764,unhealthy
+972764,at-risk
 972765,at-risk
 972766,at-risk
 972767,fit
@@ -282917,7 +282917,7 @@ id,health_condition
 973003,at-risk
 973004,fit
 973005,at-risk
-973006,at-risk
+973006,fit
 973007,at-risk
 973008,at-risk
 973009,fit
@@ -283598,7 +283598,7 @@ id,health_condition
 973684,at-risk
 973685,at-risk
 973686,at-risk
-973687,unhealthy
+973687,at-risk
 973688,at-risk
 973689,at-risk
 973690,at-risk
@@ -283925,7 +283925,7 @@ id,health_condition
 974011,unhealthy
 974012,at-risk
 974013,at-risk
-974014,at-risk
+974014,unhealthy
 974015,at-risk
 974016,at-risk
 974017,at-risk
@@ -284352,7 +284352,7 @@ id,health_condition
 974438,at-risk
 974439,at-risk
 974440,at-risk
-974441,at-risk
+974441,unhealthy
 974442,at-risk
 974443,at-risk
 974444,at-risk
@@ -284431,7 +284431,7 @@ id,health_condition
 974517,fit
 974518,at-risk
 974519,unhealthy
-974520,at-risk
+974520,unhealthy
 974521,at-risk
 974522,at-risk
 974523,at-risk
@@ -284822,7 +284822,7 @@ id,health_condition
 974908,at-risk
 974909,at-risk
 974910,at-risk
-974911,at-risk
+974911,unhealthy
 974912,at-risk
 974913,unhealthy
 974914,unhealthy
@@ -285021,7 +285021,7 @@ id,health_condition
 975107,at-risk
 975108,at-risk
 975109,at-risk
-975110,at-risk
+975110,unhealthy
 975111,at-risk
 975112,at-risk
 975113,at-risk
@@ -285311,7 +285311,7 @@ id,health_condition
 975397,at-risk
 975398,at-risk
 975399,at-risk
-975400,at-risk
+975400,unhealthy
 975401,at-risk
 975402,at-risk
 975403,unhealthy
@@ -285327,7 +285327,7 @@ id,health_condition
 975413,at-risk
 975414,at-risk
 975415,at-risk
-975416,at-risk
+975416,fit
 975417,at-risk
 975418,at-risk
 975419,at-risk
@@ -285393,7 +285393,7 @@ id,health_condition
 975479,at-risk
 975480,at-risk
 975481,fit
-975482,at-risk
+975482,unhealthy
 975483,unhealthy
 975484,at-risk
 975485,at-risk
@@ -285681,7 +285681,7 @@ id,health_condition
 975767,at-risk
 975768,at-risk
 975769,at-risk
-975770,unhealthy
+975770,at-risk
 975771,at-risk
 975772,at-risk
 975773,at-risk
@@ -286081,7 +286081,7 @@ id,health_condition
 976167,unhealthy
 976168,fit
 976169,at-risk
-976170,at-risk
+976170,unhealthy
 976171,at-risk
 976172,at-risk
 976173,at-risk
@@ -286723,7 +286723,7 @@ id,health_condition
 976809,at-risk
 976810,at-risk
 976811,fit
-976812,at-risk
+976812,unhealthy
 976813,at-risk
 976814,at-risk
 976815,at-risk
@@ -286868,7 +286868,7 @@ id,health_condition
 976954,at-risk
 976955,at-risk
 976956,at-risk
-976957,unhealthy
+976957,at-risk
 976958,at-risk
 976959,at-risk
 976960,unhealthy
@@ -286974,7 +286974,7 @@ id,health_condition
 977060,at-risk
 977061,at-risk
 977062,fit
-977063,at-risk
+977063,unhealthy
 977064,at-risk
 977065,at-risk
 977066,at-risk
@@ -287039,7 +287039,7 @@ id,health_condition
 977125,at-risk
 977126,unhealthy
 977127,at-risk
-977128,at-risk
+977128,unhealthy
 977129,at-risk
 977130,at-risk
 977131,at-risk
@@ -287163,7 +287163,7 @@ id,health_condition
 977249,at-risk
 977250,at-risk
 977251,at-risk
-977252,unhealthy
+977252,at-risk
 977253,at-risk
 977254,unhealthy
 977255,fit
@@ -287558,7 +287558,7 @@ id,health_condition
 977644,at-risk
 977645,at-risk
 977646,at-risk
-977647,at-risk
+977647,unhealthy
 977648,at-risk
 977649,fit
 977650,at-risk
@@ -287621,7 +287621,7 @@ id,health_condition
 977707,at-risk
 977708,at-risk
 977709,unhealthy
-977710,at-risk
+977710,unhealthy
 977711,at-risk
 977712,at-risk
 977713,at-risk
@@ -288148,7 +288148,7 @@ id,health_condition
 978234,unhealthy
 978235,unhealthy
 978236,fit
-978237,at-risk
+978237,unhealthy
 978238,fit
 978239,at-risk
 978240,at-risk
@@ -288247,7 +288247,7 @@ id,health_condition
 978333,at-risk
 978334,at-risk
 978335,at-risk
-978336,at-risk
+978336,unhealthy
 978337,at-risk
 978338,at-risk
 978339,at-risk
@@ -288727,7 +288727,7 @@ id,health_condition
 978813,at-risk
 978814,at-risk
 978815,at-risk
-978816,at-risk
+978816,unhealthy
 978817,at-risk
 978818,unhealthy
 978819,at-risk
@@ -289435,7 +289435,7 @@ id,health_condition
 979521,at-risk
 979522,at-risk
 979523,unhealthy
-979524,at-risk
+979524,unhealthy
 979525,at-risk
 979526,unhealthy
 979527,at-risk
@@ -290130,7 +290130,7 @@ id,health_condition
 980216,at-risk
 980217,at-risk
 980218,at-risk
-980219,at-risk
+980219,fit
 980220,at-risk
 980221,at-risk
 980222,at-risk
@@ -290307,7 +290307,7 @@ id,health_condition
 980393,at-risk
 980394,unhealthy
 980395,at-risk
-980396,at-risk
+980396,unhealthy
 980397,at-risk
 980398,at-risk
 980399,fit
@@ -291037,7 +291037,7 @@ id,health_condition
 981123,at-risk
 981124,at-risk
 981125,at-risk
-981126,fit
+981126,at-risk
 981127,at-risk
 981128,unhealthy
 981129,at-risk
@@ -291065,7 +291065,7 @@ id,health_condition
 981151,at-risk
 981152,at-risk
 981153,unhealthy
-981154,at-risk
+981154,unhealthy
 981155,at-risk
 981156,fit
 981157,at-risk
@@ -291316,7 +291316,7 @@ id,health_condition
 981402,unhealthy
 981403,at-risk
 981404,fit
-981405,at-risk
+981405,unhealthy
 981406,at-risk
 981407,at-risk
 981408,at-risk
@@ -291610,7 +291610,7 @@ id,health_condition
 981696,at-risk
 981697,at-risk
 981698,at-risk
-981699,at-risk
+981699,unhealthy
 981700,at-risk
 981701,unhealthy
 981702,at-risk
@@ -291636,7 +291636,7 @@ id,health_condition
 981722,at-risk
 981723,at-risk
 981724,at-risk
-981725,at-risk
+981725,unhealthy
 981726,at-risk
 981727,at-risk
 981728,at-risk
@@ -291916,7 +291916,7 @@ id,health_condition
 982002,at-risk
 982003,fit
 982004,unhealthy
-982005,at-risk
+982005,unhealthy
 982006,at-risk
 982007,at-risk
 982008,at-risk
@@ -292419,7 +292419,7 @@ id,health_condition
 982505,at-risk
 982506,at-risk
 982507,fit
-982508,fit
+982508,at-risk
 982509,unhealthy
 982510,unhealthy
 982511,at-risk
@@ -292581,7 +292581,7 @@ id,health_condition
 982667,at-risk
 982668,at-risk
 982669,at-risk
-982670,at-risk
+982670,unhealthy
 982671,at-risk
 982672,unhealthy
 982673,at-risk
@@ -293027,7 +293027,7 @@ id,health_condition
 983113,at-risk
 983114,at-risk
 983115,at-risk
-983116,at-risk
+983116,unhealthy
 983117,at-risk
 983118,fit
 983119,unhealthy
@@ -293375,7 +293375,7 @@ id,health_condition
 983461,fit
 983462,at-risk
 983463,at-risk
-983464,at-risk
+983464,unhealthy
 983465,at-risk
 983466,at-risk
 983467,at-risk
@@ -293518,7 +293518,7 @@ id,health_condition
 983604,fit
 983605,at-risk
 983606,at-risk
-983607,at-risk
+983607,unhealthy
 983608,at-risk
 983609,at-risk
 983610,at-risk
@@ -294092,7 +294092,7 @@ id,health_condition
 984178,at-risk
 984179,at-risk
 984180,fit
-984181,unhealthy
+984181,fit
 984182,at-risk
 984183,at-risk
 984184,at-risk
@@ -294504,7 +294504,7 @@ id,health_condition
 984590,at-risk
 984591,at-risk
 984592,unhealthy
-984593,at-risk
+984593,unhealthy
 984594,unhealthy
 984595,at-risk
 984596,at-risk
@@ -294778,7 +294778,7 @@ id,health_condition
 984864,at-risk
 984865,at-risk
 984866,at-risk
-984867,at-risk
+984867,unhealthy
 984868,at-risk
 984869,at-risk
 984870,at-risk
