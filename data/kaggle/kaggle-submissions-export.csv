@@ -1,4 +1,12 @@
 ref,fileName,date,description,status,publicScore,privateScore
+55127615,submission.v0.4.3.csv,2026-07-31 05:02:26.230000,"Submission Version v0.4.3: # Release Notes for v0.4.3
+
+## Model architecture & tuning
+- hill-climb accepted model 2 (median BA=0.94888)
+
+## General maintenance
+- fix: stabilize hill-climb runtime and crop leaderboard plot to >=0.94
+- fix: cache-bust README leaderboard plot image",SubmissionStatus.COMPLETE,0.94999,
 55127407,submission.v0.4.2.csv,2026-07-31 04:52:10.103000,"Submission Version v0.4.2: # Release Notes for v0.4.2
 
 ## Model architecture & tuning
