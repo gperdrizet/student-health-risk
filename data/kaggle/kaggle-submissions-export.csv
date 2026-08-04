@@ -1,4 +1,10 @@
 ref,fileName,date,description,status,publicScore,privateScore
+55147531,submission.v0.5.0.csv,2026-07-31 21:51:06.587000,"Submission Version v0.5.0: # Release Notes for v0.5.0
+
+## General maintenance
+- Added automatic submission to end of metalearner notebook
+- Set for final submission run
+- submission: final metalearner predictions",SubmissionStatus.COMPLETE,0.94825,
 55146510,submission.v0.4.6.csv,2026-07-31 20:32:26.040000,"Submission Version v0.4.6: # Release Notes for v0.4.6
 
 ## Model architecture & tuning
