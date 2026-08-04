@@ -26,7 +26,7 @@ Kaggle Playground Series Season 6 Episode 7 solution. In addition to the S6E7 so
 
 ## Hill-climb runtime module
 
-The hill-climbing search execution has been moved out of notebook 08 into a root package: [`hill_climbing_ensemble/`](hill_climbing_ensemble). The package provides a resumable Optuna-tracked search runtime with automatic checkpointing and run logs, while notebook 08 focuses on analysis and visualization of run artifacts.
+The hill-climbing search execution has been moved out of notebook 08 into a root package: [`hill_climbing_ensemble/`](hill_climbing_ensemble). The package provides a resumable Optuna-tracked search runtime with automatic checkpointing and run logs using simple weighting of base learner output to make final classification predictions. Notebook 08 trains and optimized XGBoost meta learner over the models selected by the hill climb.
 
 Primary entrypoints:
 
@@ -55,12 +55,18 @@ Key artifacts:
 
 ## Submissions
 
-| Submission                 | Pull request | Estimated balanced accuracy | Leaderboard balanced accuracy | Leaderboard rank              |
-|----------------------------|--------------|-----------------------------|-------------------------------|-------------------------------|
-| 1. Majority class          | PR #10       | 33.3%                       | 33.3%                         | 1380                          |
-| 2. Gradient boosting tree  | PR #12       | 86.6% - 87.2%               | 86.3%                         | 1184                          |
-| 3. Optimized preprocessing | PR #15       | 86.9% - 87.7%               | 87.6%                         | 1855/2332 (~20th percentile)  |
-| 4. Class weighting         | PR #17       | 94.8% - 95.0%               | 95.0%                         | 1084/2666 (~60th percentile)  |
+| Submission                                         | PR/Release version   | Estimated balanced accuracy | Public Leaderboard balanced accuracy | Private leaderboard balanced accuracy | Leaderboard rank              |
+|----------------------------------------------------|--------------=-------|-----------------------------|--------------------------------------|---------------------------------------|-------------------------------|
+| 1. Majority class                                  | PR #10               | 33.3%                       | 33.3%                                | 33.3%                                 | 1380                          |
+| 2. Gradient boosting tree                          | PR #12               | 86.6% - 87.2%               | 86.3%                                | 86.36%                                | 1184                          |
+| 3. Optimized preprocessing                         | PR #15               | 86.9% - 87.7%               | 87.6%                                | 87.50%                                | 1855/2332 (~20th percentile)  |
+| 4. Class weighting                                 | PR #17               | 94.8% - 95.0%               | 94.97%                               | 94.96%                                | 1084/2666 (~60th percentile)  |
+| 5. SKlearn gradient boosting + engineered features | v0.3.2               | 94.77% - 95.11%             | 94.99%                               | 94.96%                                |                               |
+| 6. XGBoost + engineered features                   | v0.4.0               | 94.89% - 95.02%             | 94.96%                               | 95.02%                                |                               |
+| 7. Hill climbing ensemble (2 base models, weighted output) | v0.4.3       | 94.888%                     | 94.999%                              | 94.98%                                |                               |
+| 8. Hill climbing ensemble (3 base models, weighted output) | v0.4.5       | 94.939%                     | 94.963%                              | 95.02%                                |                               |
+| 9. Hill climbing ensemble (11 base models, XGBoost meta-learner) | v0.5.0 | 94.76% - 94.90%             | 94.825%                              | 94.78%                                |                               |
+
 
 ## Submission workflow
 
