@@ -62,8 +62,8 @@ Key artifacts:
 | 3. Optimized preprocessing                         | PR #15               | 86.9% - 87.7%               | 87.6%                                | 87.50%                                | 1855/2332 (~20th percentile)  |
 | 4. Class weighting                                 | PR #17               | 94.8% - 95.0%               | 94.97%                               | 94.96%                                | 1084/2666 (~60th percentile)  |
 | 5. SKlearn gradient boosting + engineered features | v0.3.2               | 94.77% - 95.11%             | 94.99%                               | 94.96%                                |                               |
-| 6. XGBoost + engineered features                   | v0.4.0               | 94.89% - 95.02%             | 94.96%                               | 95.02%                                |                               |
-| 7. Hill climbing ensemble (2 base models, weighted output) | v0.4.3       | 94.888%                     | 94.999%                              | 94.98%                                |                               |
+| 6. XGBoost + engineered features                   | v0.4.0               | 94.89% - 95.02%             | 94.96%                               | 95.02%                                | Best potential - public: 1554/3355 (~50th), private: 520/2255 (~85th)|
+| 7. Hill climbing ensemble (2 base models, weighted output) | v0.4.3       | 94.888%                     | 94.999%                              | 94.98%                                | Final - public: 1048/3355 (~70th), private: 1291/3355 (~60th) |
 | 8. Hill climbing ensemble (3 base models, weighted output) | v0.4.5       | 94.939%                     | 94.963%                              | 95.02%                                |                               |
 | 9. Hill climbing ensemble (11 base models, XGBoost meta-learner) | v0.5.0 | 94.76% - 94.90%             | 94.825%                              | 94.78%                                |                               |
 
